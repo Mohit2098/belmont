@@ -1,0 +1,378 @@
+/*
+	Theme Name: Client_NAME Theme
+	Theme URI: https://CLIENTDOMAIN.COM/
+	Description: Custom theme built by Rubico for CLIENT_NAME
+	Author: Rubico
+  Author URI: https://rubicotech.in/
+  Text Domain: wpbp-theme
+	Version: 1.0
+*/
+
+/*--------------------------------------------------------------
+TABLE OF CONTENTS
+1. Modern Normalize
+2. WordPress Core CSS
+3. Accessibility
+4. Print
+5. Pagination
+6. Search Form
+7. Custom Theme Styles
+7. Accessible and SEO friendly listing pages
+8. Custom styles
+-------------------------------------------------------------- */
+/*--------------------------------------------------------------
+1. Modern Normalize
+https://github.com/sindresorhus/modern-normalize
+-------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+:root {
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+body {
+  margin: 0;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system, /* Firefox supports this but not yet `system-ui` */
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji';
+}
+
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+}
+
+abbr[title] {
+  text-decoration: underline dotted;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Consolas,
+    'Liberation Mono',
+    Menlo,
+    monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+}
+
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+legend {
+  padding: 0;
+}
+progress {
+  vertical-align: baseline;
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+summary {
+  display: list-item;
+}
+
+/*--------------------------------------------------------------
+2. WordPress Core CSS
+-------------------------------------------------------------- */
+.alignnone { margin: 5px 20px 20px 0;}
+.aligncenter, div.aligncenter { display: block; margin: 5px auto 5px auto;}
+.alignright {float:right;margin: 5px 0 20px 20px;}
+.alignleft {float: left;margin: 5px 20px 20px 0;}
+a img.alignright {float: right; margin: 5px 0 20px 20px;}
+a img.alignnone {margin: 5px 20px 20px 0;}
+a img.alignleft { float: left;margin: 5px 20px 20px 0;}
+a img.aligncenter { display: block; margin-left: auto;margin-right: auto;}
+.wp-caption { background: #fff;border: 1px solid #f0f0f0;max-width: 96%;  padding: 5px 3px 10pxtext-align: center;}
+.wp-caption.alignnone {margin: 5px 20px 20px 0;}
+.wp-caption.alignleft {margin: 5px 20px 20px 0;}
+.wp-caption.alignright {margin: 5px 0 20px 20px;}
+.wp-caption img { border: 0 none;height: auto;margin: 0;max-width: 98.5%; padding: 0;width: auto;}
+.wp-caption p.wp-caption-text {font-size: 11px;line-height: 17px;margin: 0;padding: 0 4px 5px;}
+/*--------------------------------------------------------------
+End WordPress Core CSS
+-------------------------------------------------------------- */
+
+/*--------------------------------------------------------------
+3. Accessibility
+a. Use WordPress Core screen reader class:
+https://make.wordpress.org/accessibility/handbook/best-practices/markup/the-css-class-screen-reader-text/
+b. DO NOT remove the default browser focus style or modify it.
+-------------------------------------------------------------- */
+
+.screen-reader-text, .screen-reader-text a {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+.screen-reader-text:focus, .screen-reader-text a:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
+}
+
+/*--------------------------------------------------------------
+End Accessibility
+-------------------------------------------------------------- */
+
+/*--------------------------------------------------------------
+4. Print
+-------------------------------------------------------------- */
+
+@media print {
+  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* h5bp.com/t */
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+  .global-header, .global-footer { display:none;}
+}
+/*--------------------------------------------------------------
+End Print
+-------------------------------------------------------------- */
+
+img {max-width:100%; height:auto;}
+
+.alert { background:red; color:white ;}
+
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {margin: 0;
+ padding: 0;border: 0;outline: 0;vertical-align: baseline;background: transparent; box-sizing: border-box;}
+
+/*--------------------------------------------------------------
+5. Pagination
+-------------------------------------------------------------- */
+.wpbp_pagination ul li {
+    display: inline-block;
+    border: 1px solid;
+    margin: 0 2px;
+    padding: 5px 10px;
+}
+
+nav.wpbp_pagination {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+/*--------------------------------------------------------------
+End Pagination
+-------------------------------------------------------------- */
+
+/*--------------------------------------------------------------
+6. Search Form
+-------------------------------------------------------------- */
+.search-submit{
+  background: url('_images/search-icon.svg') no-repeat center center;
+  background-color: transparent;
+  width: 19px;
+  height: 19px;
+  border: 0;
+  text-align: left;
+  text-indent: 19px;
+  overflow: hidden;
+}
+.header-search-container .search-modal-container{
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 0;
+  background-color: rgba(0,0,0,0.2);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s linear;
+}
+.header-search-container .search-modal-background{
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%; height: 100%;
+  z-index: 1001;
+  display: block;
+}
+.header-search-container .search-modal{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  z-index: 1002;
+  width: 100%;
+  padding: 10px;
+  transition: all 0.3s linear;
+  transform: translateY(-100%);
+}
+.header-search-container .search-modal-container.open{
+  visibility: visible;
+  height: 100%;
+  opacity: 1;
+}
+.header-search-container .search-modal-container.open .search-modal-background{
+
+}
+.header-search-container .search-modal-container.open .search-modal{
+  transform: translateY(0);
+}
+.header-search-container .search-form-container{
+  width: calc(100% - 30px);
+}
+.header-search-container .search-close-modal{
+  width: 20px;
+  margin-left: 10px;
+}
+.header-search-container .search-field{
+  width: 100%;
+}
+.header-search-container input[type=submit] {
+  right: 40px;
+  left: auto;
+}
+.header-search-container button[type=button] {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+/*--------------------------------------------------------------
+End Search Form
+-------------------------------------------------------------- */
+
+/*--------------------------------------------------------------
+7. Accessible and SEO friendly listing pages
+https://inclusive-components.design/cards/
+-------------------------------------------------------------- */
+
+
+/*--------------------------------------------------------------
+7. End Accessible and SEO friendly listing pages
+-------------------------------------------------------------- */
+
+/*--------------------------------------------------------------
+8. Custom Theme Styles
+-------------------------------------------------------------- */

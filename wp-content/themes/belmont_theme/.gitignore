@@ -1,0 +1,6 @@
+# The only files that should be in the theme .gitignore file are system files or anything that could get safely removed without affecting the functionality of the site.
+# If the files you'd like to add here don't meet that description, they need to be in wp-content/uploads or a custom wp-content directory.
+.log
+.DS_Store
+Thumbs.db
+_notes
