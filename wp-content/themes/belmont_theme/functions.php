@@ -29,10 +29,7 @@ require_once( __DIR__ . '/_includes/functions-clean-up.php');
 // 1.d. Pagination
 require_once( __DIR__ . '/_includes/functions-pagination.php');
 
-// 1.f. ACF Sync - Warn if ACF field sync is needed
-require_once( __DIR__ . '/_includes/functions-security.php');
-
-//1.g. Require Featured Image
+//1.e. Require Featured Image
 // Required for valid structured data. Does not need to display on website frontend
 add_theme_support('post-thumbnails'); // this needs to be defined before the following include
 // 2. Theme setups
