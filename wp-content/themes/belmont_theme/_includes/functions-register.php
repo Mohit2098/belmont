@@ -12,6 +12,7 @@ function wpbp_register_menus() {
 	register_nav_menus( array(
 		'primary_menu' => 'Primary Menu',
 		'footer_menu' => 'Footer Menu',
+    'top_bar_menu' => 'Top Bar Menu',
 	) );
 }
 // 3. Register Custom Post Types
