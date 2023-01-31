@@ -29,7 +29,7 @@
 					<button class="menu-toggle rt-menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Open Menu">
 						<span></span><span></span><span></span>
 					</button>
-					<nav id="site-navigation" class="main-navigation rt-navigation" aria-label="<?php _e( 'Primary Navigation', 'wpbp-theme' ); ?>" >
+					<nav id="site-navigation" class="main-navigation bl-navigation" aria-label="<?php _e( 'Primary Navigation', 'wpbp-theme' ); ?>" >
 					<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary_menu' ) ); ?>
 			</nav>
 				</div>
