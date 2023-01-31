@@ -130,6 +130,20 @@ header.site-header{
     top: 0;
     background-color: transparent;
 }
+.top-utility-menu .menu-header ul{
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+.top-utility-menu .menu-header ul li a{
+    padding: 10px 33px;
+    background-color: var(--theme-yellow);
+    color: var(--white);
+    text-decoration: none;
+    display: inline-block;
+    border-right: 1px solid var(--black);
+}
 
 
 @media screen and (min-width:992px){
