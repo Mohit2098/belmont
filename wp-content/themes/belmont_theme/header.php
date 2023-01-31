@@ -10,9 +10,9 @@
   	<a class="screen-reader-text" href="#content"><?php _e( 'Skip to Main Content', 'wpbp-theme' ); ?></a>
   	<header class="global-header">
   		<a href="<?php echo home_url( '/' ); ?>" rel="home" ><?php bloginfo( 'name' ); ?></a>
-		  <?php $header_logo = get_field('header_logo', 'option'); ?>
-        <?php if(!empty($header_logo)):?>
-         <img src="<?php echo esc_url($header_logo['url']); ?>" alt="<?php echo esc_attr($header_logo['alt']); ?>"/>
+		  <?php $site_logo = get_field('site_logo', 'option'); ?>
+        <?php if(!empty($site_logo)):?>
+         <img src="<?php echo esc_url($site_logo['url']); ?>" alt="<?php echo esc_attr($site_logo['alt']); ?>"/>
       <?php endif;?>
 		  <nav id="access" aria-label="<?php _e( 'Top Bar Navigation', 'wpbp-theme' ); ?>" >
   			<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'top_bar_menu' ) ); ?>
