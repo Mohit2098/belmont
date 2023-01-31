@@ -11,7 +11,7 @@
 
   	<header class="site-header">
 		<div class="container">
-			<div class="row">
+			<div class="row align-items-center">
 				<div class="col-12">
 					<nav id="access" class="top-utility-menu" aria-label="<?php _e( 'Top Bar Navigation', 'wpbp-theme' ); ?>" >
 				    <?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'top_bar_menu' ) ); ?>

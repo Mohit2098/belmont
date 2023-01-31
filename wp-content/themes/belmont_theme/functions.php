@@ -29,6 +29,10 @@ require_once( __DIR__ . '/_includes/functions-clean-up.php');
 // 1.d. Pagination
 require_once( __DIR__ . '/_includes/functions-pagination.php');
 
+///* Register ACF Functions
+require_once( __DIR__ . '/_includes/functions-acf-sync.php');
+
+
 //1.e. Require Featured Image
 // Required for valid structured data. Does not need to display on website frontend
 add_theme_support('post-thumbnails'); // this needs to be defined before the following include
@@ -37,6 +41,7 @@ add_action('after_setup_theme', 'wpbp_theme_setup');
 function wpbp_theme_setup(){
     // HTML5 Support
     add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ) );
+	
 }
 
 // 3. Theme Supports
