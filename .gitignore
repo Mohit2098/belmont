@@ -9,7 +9,7 @@
 !.gitignore
 
 # track readme.md in the root (i.e. do NOT ignore it)
-!readme.md
+!README.md
 
 
 # ignore all files that start with ~
