@@ -11,13 +11,10 @@
 	*1.  Enqueue everything
 **/
 
-global $wp_version;
-$wp_version = '1.0';
 
 // 1. Enqueue everything
 function wp_nq_scripts() {
-  global $wp_version;
-  wp_enqueue_style( 'style', get_stylesheet_uri(),null,$wp_version);
-  wp_enqueue_script ('wp-script', get_stylesheet_directory_uri() . '/_js/js.js', array('jquery'), $wp_version, true);
+  wp_enqueue_style( 'style', get_stylesheet_uri(),null,1.0);
+  wp_enqueue_script ('wp-script', get_stylesheet_directory_uri() . '/_js/js.js', array('jquery'), 1.0, true);
 }
 add_action('wp_enqueue_scripts', 'wp_nq_scripts');
