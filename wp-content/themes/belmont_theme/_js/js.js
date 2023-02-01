@@ -29,4 +29,4 @@ jQuery(document).ready(function($){
       .trigger("resize");
 });
 // Slick Slider 
-jQuery('.banner-slider').slick();
+jQuery('.hero-slider-cl').slick();
