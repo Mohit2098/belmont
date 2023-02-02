@@ -13,9 +13,46 @@
     --theme-lt-gray: #E6E7E8;
     --theme-lt-black: #313133;
     --theme-dark-gray: #6D6F71;
+    --link-footer: #939598;
+    /* fonts */
+    --font-rift: "rift",sans-serif;
+    --font-neue-haas: "neue-haas-unica",sans-serif;
 }
 
+/* font families coming from third party (adobe link) in header */
+.tk-rift { 
+  font-family: "rift",sans-serif;
+ }
+.tk-neue-haas-unica { 
+  font-family: "neue-haas-unica",sans-serif;
+ }
     
+ /* global spacing */
+.bl-section{
+  padding-top: 4.0625rem;
+  padding-bottom: 4.0625rem;
+}
+.pt-70{
+  padding-top: 4.375rem;
+}
+.pb-70{
+  padding-bottom: 4.375rem;
+}
+.pt-50{
+  padding-top: 3.125rem;
+}
+.pb-50{
+  padding-bottom: 3.125rem;
+}
+
+
+h1, h2, h3, h4, h5, h6{
+  font-family: "rift",sans-serif;
+}
+p, a{
+  font-family: "neue-haas-unica",sans-serif;
+}
+
 /* =====  mobile typography ===== */
 h1, .h1 {
     font-size: 2rem;
@@ -40,6 +77,10 @@ h3, .h3 {
    font-weight: 500;
    font-family: var(--font-barlow);
 }
+
+/* ==== btns ==== */
+
+
 
 
 /* global spacing for small devices */
@@ -123,10 +164,6 @@ h3, .h3 {
 
 .text-decoration-underline {
   text-decoration: underline !important;
-}
-
-.text-decoration-line-through {
-  text-decoration: line-through !important;
 }
 
 .text-lowercase {

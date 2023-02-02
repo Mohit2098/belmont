@@ -145,6 +145,25 @@ header.site-header{
     border-right: 1px solid var(--black);
 }
 
+/* ======= footer styling ========= */
+footer.global-footer{
+    background-color: var(--black);
+    color: var(--white);
+}
+footer.global-footer nav ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+footer.global-footer nav ul li a{
+    color: var(--link-footer);
+    font-family: var(--font-neue-haas);
+    font-weight: 800;
+    font-size: 1.5625rem;
+    line-height: 2.375rem;
+}
+
 
 @media screen and (min-width:992px){
     header.site-header .rt-menu-toggle{
