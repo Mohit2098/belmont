@@ -2,9 +2,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-6">
-                <?php $image = get_sub_field('image'); ?>
-                <?php if (!empty($image)) { ?>
-                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                <?php $background_image = get_sub_field('background_image'); ?>
+                <?php if (!empty($background_image)) { ?>
+                    <img src="<?php echo esc_url($background_image['url']); ?>" alt="<?php echo esc_attr($background_image['alt']); ?>" />
                 <?php } ?>
             </div>
             <div class="col-lg-6" style="background-color:#F1AC21;">
