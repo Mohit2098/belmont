@@ -13,11 +13,7 @@
                     $heading = get_sub_field('heading');
                     $description = get_sub_field('description');
                     $add_cta = get_sub_field('add_cta');
-                    if ($add_cta) {
-                        $button_url = $add_cta['url'];
-                        $button_title = $add_cta['title'];
-                        $button_target = $add_cta['target'] ? $add_cta['target'] : '_self';
-                    } ?>
+                ?>
                     <div class="col-lg-6 justify-content-center d-grid">
                         <a href="<?php echo $button_url; ?>">
                             <?php if (!empty($image)) { ?>
@@ -31,7 +27,11 @@
                             <?php if (!empty($description)) {
                                 echo "<h2 style='font-size:14px'>" . $description . "</h2>";
                             } ?>
-                            <?php if (!empty($add_cta)) { ?>
+                            <?php if (!empty($add_cta)) {
+                                $button_url = $add_cta['url'];
+                                $button_title = $add_cta['title'];
+                                $button_target = $add_cta['target'] ? $add_cta['target'] : '_self';
+                            ?>
                                 <a class="button" href="<?php echo $button_url; ?>" target="<?php echo $button_target; ?>">
                                     <?php echo $button_title; ?>
                                 </a>
