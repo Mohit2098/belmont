@@ -56,4 +56,58 @@
         <?php } ?>
     </div>
     </div>
+
+
+    <!-- new structure -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="d-flex flex-wrap">
+                    <img src="<?php echo get_stylesheet_directory_uri() ?>/_images/Warranty.svg" class="banner-back" alt="">
+                    <div class="content-wrapper">
+                        <h3>Belmont Warranty</h3>
+                        <p>One of the best in the industry.</p>
+                        <a href="#" class="learn-more">READ MORE</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /col -->
+            <div class="col-lg-6">
+                <div class="d-flex flex-wrap">
+                    <img src="<?php echo get_stylesheet_directory_uri() ?>/_images/Warranty.svg" class="banner-back" alt="">
+                    <div class="content-wrapper">
+                        <h3>Belmont Warranty</h3>
+                        <p>One of the best in the industry.</p>
+                        <a href="#" class="learn-more">READ MORE</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /col -->
+            <div class="col-lg-6">
+                <div class="d-flex flex-wrap">
+                    <img src="<?php echo get_stylesheet_directory_uri() ?>/_images/Warranty.svg" class="banner-back" alt="">
+                    <div class="content-wrapper">
+                        <h3>Belmont Warranty</h3>
+                        <p>One of the best in the industry.</p>
+                        <a href="#" class="learn-more">READ MORE</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /col -->
+            <div class="col-lg-6">
+                <div class="d-flex flex-wrap">
+                    <img src="<?php echo get_stylesheet_directory_uri() ?>/_images/Warranty.svg" class="banner-back" alt="">
+                    <div class="content-wrapper">
+                        <h3>Belmont Warranty</h3>
+                        <p>One of the best in the industry.</p>
+                        <a href="#" class="learn-more">READ MORE</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /col -->
+            <div class="col-12 text-center">
+                <a href="#" class="btn-custom">See Trailer Models</a>
+            </div>
+        </div>
+    </div>
 </section>

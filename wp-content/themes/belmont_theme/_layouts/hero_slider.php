@@ -41,4 +41,89 @@
                <?php endwhile; ?>
             </div>
          <?php endif; ?>
+
+
+   <div class="hero-slider-bl">
+      <div class="items-hero">
+          <img src="<?php echo get_stylesheet_directory_uri() ?>/_images/dummy.png" class="banner-back" alt="">    
+          <div class="container">
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="caption-wrap">
+                        <h1>proven performance</h1>
+                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form</p>
+                        <a href="#" class="btn-custom outline-yellow">All trailer models</a>
+                  </div>
+               </div>
+               <!-- /col -->
+               <div class="col-lg-6">
+                  <img src="<?php echo get_stylesheet_directory_uri() ?>/_images/trailer.png" alt="">   
+               </div>
+               <!-- /col -->
+            </div>
+          </div>        
+      </div>
+      <!-- /items -->
+      <div class="items-hero">
+          <img src="<?php echo get_stylesheet_directory_uri() ?>/_images/dummy.png" class="banner-back" alt="">    
+          <div class="container">
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="caption-wrap">
+                        <h1>proven performance</h1>
+                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form</p>
+                        <a href="#" class="btn-custom outline-yellow">All trailer models</a>
+                  </div>
+               </div>
+               <!-- /col -->
+               <div class="col-lg-6">
+                  <img src="<?php echo get_stylesheet_directory_uri() ?>/_images/trailer.png" alt="">   
+               </div>
+               <!-- /col -->
+            </div>
+          </div>        
+      </div>
+      <!-- /items -->
+      <div class="items-hero">
+          <img src="<?php echo get_stylesheet_directory_uri() ?>/_images/dummy.png" class="banner-back" alt="">    
+          <div class="container">
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="caption-wrap">
+                        <h1>proven performance</h1>
+                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form</p>
+                        <a href="#" class="btn-custom outline-yellow">All trailer models</a>
+                  </div>
+               </div>
+               <!-- /col -->
+               <div class="col-lg-6">
+                  <img src="<?php echo get_stylesheet_directory_uri() ?>/_images/trailer.png" alt="">   
+               </div>
+               <!-- /col -->
+            </div>
+          </div>        
+      </div>
+      <!-- /items -->
+      <div class="items-hero">
+          <img src="<?php echo get_stylesheet_directory_uri() ?>/_images/dummy.png" class="banner-back" alt="">    
+          <div class="container">
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="caption-wrap">
+                        <h1>proven performance</h1>
+                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form</p>
+                        <a href="#" class="btn-custom outline-yellow">All trailer models</a>
+                  </div>
+               </div>
+               <!-- /col -->
+               <div class="col-lg-6">
+                  <img src="<?php echo get_stylesheet_directory_uri() ?>/_images/trailer.png" alt="">   
+               </div>
+               <!-- /col -->
+            </div>
+          </div>        
+      </div>
+      <!-- /items -->
+   </div>
+
    </section>

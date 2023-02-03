@@ -164,6 +164,58 @@ footer.global-footer nav ul li a{
     line-height: 2.375rem;
 }
 
+/* ====== hero-slider ===== */
+.hero-slider .items-hero{
+    position: relative;
+}
+.hero-slider .items-hero .banner-back{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    max-width: 80%;
+    object-fit: cover;
+    object-position: left center;
+}
+.hero-slider .items-hero:after{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+    border-left: 240px solid transparent;
+    border-bottom: 766px solid var(--theme-yellow);
+}
+.hero-slider .items-hero .caption-wrap{
+    max-width: 40rem;
+}
+
+
+/* ====== gallery-slider-section ======= */
+.gallery-slider-section .gallery-slider .items{
+    position: relative;
+}
+.gallery-slider-section .gallery-slider .items .text-box{
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.5);
+    color: var(--white);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: .4s;
+}
+.gallery-slider-section .gallery-slider .items:hover .text-box{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
 
 @media screen and (min-width:992px){
     header.site-header .rt-menu-toggle{

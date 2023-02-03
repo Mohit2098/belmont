@@ -15,7 +15,7 @@
                     ?>
                         <div>
                             <?php if (!empty($heading)) {
-                                echo "<h1>" . $heading . "</h1>";
+                                echo "<h3>" . $heading . "</h3>";
                             } ?>
                             <?php if (!empty($description)) {
                                 echo "<div>" . $description . "</div>";

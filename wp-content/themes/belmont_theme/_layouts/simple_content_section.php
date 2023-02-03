@@ -12,3 +12,12 @@ $upload_logo = get_sub_field('upload_logo');
 <?php if($section_heading != '' || $upload_logo != '' ): ?></div><?php endif; ?>
 <?php if($section_content):?><div class="content-wrapper"><?php echo $section_content; ?></div><?php endif; ?>
 </div>
+
+<section class="simple-content-section">
+    <div class="container">
+        <div class="content-inner">
+            <h2 class="h3">PROVEN PERFORMANCE </h2>
+            <p>For over 15 years, the trailers made by Belmont have been tried and proven on highways, country roads, and wherever else they have gone to get the job done. we Also stand behind our product with one of the best warranties in the industry. For over 15 years, the trailers made by Belmont have been tried and proven on highways, country roads, and wherever else they have gone to get the job done. we Also stand behind our product with one of the best warranties in the industry. For over 15 years, the trailers made by Belmont have been tried and proven on highways, country roads, and wherever else they have gone to get the job done. we Also stand behind our product with one of the best warranties in the industry.</p>
+        </div>
+    </div>
+</section>
