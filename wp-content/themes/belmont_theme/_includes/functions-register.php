@@ -47,7 +47,7 @@ function belmont_cpt() {
     'show_in_nav_menus' => true,
     "menu_icon" => "dashicons-hammer",
     'rewrite' => array('slug' => 'trailers'),
-    'supports' => array('title')
+    'supports' => array('title'),
   )
 );
 

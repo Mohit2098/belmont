@@ -1,30 +1,41 @@
+<?php
+$trailer_type = get_terms([
+'taxonomy' => 'trailer_type',
+'hide_empty' => false,
+'parent' => 0,
+'orderby'    => 'ID',
+'order'      => 'ASC',
+]);
+if ( !empty($trailer_type) ) : ?>
 <section class="all-trailers-sec">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="inner-white-box d-flex flex-wrap">
-                    <div class="caption">
-                        <h3>Tube Top Utility Trailers</h3>
-                        <a href="#" class="btn-custom-small">SEE TRAILER SPECS</a>
-                    </div>
-                    <div class="img-box">
-                        <img class="trailer-img" src="<?php echo get_stylesheet_directory_uri() ?>/_images/dummy.png" alt="">
-                    </div>
+<div class="container">
+    <div class="row">
+    <?php foreach( $trailer_type as $trailer ):
+        $trailer_featured_img = get_field( 'trailer_type_featured_image', $trailer->taxonomy . '_' . $trailer->term_id );
+        $trailer_icon = get_field( 'trailer_icon', $trailer->taxonomy . '_' . $trailer->term_id );
+        ?>
+        <div class="col-lg-6">
+            <div class="inner-white-box d-flex flex-wrap">
+                <div class="caption">
+                    <h3><?php echo $trailer->name; ?></h3>
+                    <a href="<?php echo get_term_link($trailer->term_id); ?>" class="btn-custom-small">SEE TRAILER SPECS</a>
+                    <?php /* if(!empty($trailer_icon)): ?>
+                        <img class="trailer-icon" src="<?php echo $trailer_icon['url']; ?>" alt="<?php echo $trailer_icon['alt']; ?>" />
+                    <?php endif; */ ?>
                 </div>
+                <?php if(!empty($trailer_featured_img)): ?>
+                    <div class="img-box"><img class="trailer-img" src="<?php echo $trailer_featured_img['url']; ?>" alt="<?php echo $trailer_featured_img['alt']; ?>"></div>
+                <?php else: ?>
+                    <div class="img-box"><img class="trailer-img" src="<?php echo get_stylesheet_directory_uri() ?>/_images/dummy.png" alt="default image"></div>
+                <?php endif; ?>
             </div>
-            <!-- /col -->
-            <div class="col-lg-6">
-                <div class="inner-white-box d-flex flex-wrap">
-                    <div class="caption">
-                        <h3>Tube Top Utility Trailers</h3>
-                        <a href="#" class="btn-custom-small">SEE TRAILER SPECS</a>
-                    </div>
-                    <div class="img-box">
-                        <img class="trailer-img" src="<?php echo get_stylesheet_directory_uri() ?>/_images/dummy.png" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- /col -->
         </div>
+<?php endforeach; ?>
+
+        
+        
+
     </div>
+</div>
 </section>
+<?php endif; ?>
