@@ -9,7 +9,7 @@
     --white: #ffffff;
     --black: #000000;
     --theme-blue: #4475BA;
-    --theme-yellow: #F9B42D;
+    --theme-yellow: #f0ae2e;
     --theme-lt-gray: #E6E7E8;
     --theme-lt-black: #313133;
     --theme-dark-gray: #6D6F71;
@@ -26,7 +26,9 @@
 .tk-neue-haas-unica { 
   font-family: "neue-haas-unica",sans-serif;
  }
-    
+  body{
+    -webkit-font-smoothing: antialiased;
+  }
  /* global spacing */
 .bl-section{
   padding-top: 4.0625rem;
@@ -74,7 +76,6 @@ h3, .h3 {
    padding-bottom: 1.5175rem;
    margin-bottom: 0;
    font-weight: 500;
-   font-family: var(--font-barlow);
 }
 
 /* ==== btns ==== */
@@ -124,11 +125,14 @@ h3, .h3 {
 
 /* root font size */
 html{
-  font-size: 16px;
+  font-size: 12px;
 }
-@media screen and (max-width:1500px){
+@media screen and (min-width:1600px){
   html{
-    font-size: 12px;
+    font-size: 16px;
+  }
+  .container{
+    max-width: 1500px !important;
   }
 }
 
@@ -163,7 +167,6 @@ html{
        padding-bottom: 1.5175rem;
        margin-bottom: 0;
        font-weight: 500;
-       font-family: var(--font-barlow);
     }
    
 }
@@ -171,7 +174,7 @@ html{
 @media screen and (min-width:1025px){
     h1, .h1 {
         font-size: 7.5rem;
-        line-height: 1.2;
+        line-height: 1.1;
     }
     
     h2, .h2 {
@@ -192,6 +195,7 @@ html{
     p{
       font-size: 1.875rem;
       line-height: 2.5rem;
+      font-weight: 400;
     }
 }
 

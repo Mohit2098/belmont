@@ -91,7 +91,7 @@
                                     "label": "Content Background Color",
                                     "name": "content_background_color",
                                     "aria-label": "",
-                                    "type": "color_picker",
+                                    "type": "select",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -100,9 +100,18 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "#000000",
-                                    "enable_opacity": 0,
-                                    "return_format": "string",
+                                    "choices": {
+                                        "black-bg": "Black",
+                                        "yellow-bg": "Yellow",
+                                        "grey-bg": "Grey"
+                                    },
+                                    "default_value": "black-bg",
+                                    "return_format": "value",
+                                    "multiple": 0,
+                                    "allow_null": 0,
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "placeholder": "",
                                     "parent_repeater": "field_63d8ddbf6026f"
                                 },
                                 {
@@ -704,5 +713,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1675662285
+    "modified": 1675667554
 }
