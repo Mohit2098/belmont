@@ -60,7 +60,9 @@ jQuery(document).ready(function($){
     dots: true,
     arrows: false,
     infinite: true,
-    speed: 300,
+     speed: 300,
+     fade: true,
+     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     responsive: [
@@ -76,7 +78,6 @@ jQuery(document).ready(function($){
 
   
 });
-// Slick Slider 
-jQuery('.hero-slider-cl').slick();
+
 
 
