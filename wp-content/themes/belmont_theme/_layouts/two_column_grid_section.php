@@ -22,22 +22,9 @@
                             <div class="content-wrapper">
                                 <?php if (!empty($heading)) : ?><h3><?php echo $heading; ?></h3><?php endif; ?>
                                 <?php if (!empty($description)) : ?><div><?php echo $description; ?></div><?php endif; ?>
-<<<<<<< HEAD
-                                <?php if (!empty($add_cta)) : 
-                                    $add_cta_target = $add_cta['target'] ? $add_cta['target'] : '_self';
-                                ?>
-                                    <a class="learn-more" href="<?php echo $add_cta['url']; ?>" target="<?php echo $add_cta_target; ?>">
-                                        <?php echo $add_cta['title']; ?>
-=======
-                                <?php if (!empty($add_cta)) : ?>
-                                    <?php
-                                    $button_url = $add_cta['url'];
-                                    $button_title = $add_cta['title'];
-                                    $button_target = $add_cta['target'] ? $add_cta['target'] : '_self';
-                                    ?>
-                                    <a class="learn-more" href="<?php echo $button_url; ?>" target="<?php echo $button_target; ?>">
-                                        <?php echo $button_title; ?> <span>»</span>
->>>>>>> df99ddc9f2ec1537f697298200d29cf984a84a20
+                                <?php if (!empty($add_cta)) : $button_target = $add_cta['target'] ? $add_cta['target'] : '_self'; ?>
+                                    <a class="learn-more" href="<?php echo $add_cta['url']; ?>" target="<?php echo $button_target; ?>">
+                                        <?php echo $add_cta['title']; ?> <span>»</span>
                                     </a>
                                 <?php endif; ?>
                             </div>
