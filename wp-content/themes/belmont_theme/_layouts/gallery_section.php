@@ -1,7 +1,7 @@
 <section class="gallery-slider-section">
     <div class="slider-wrapper container-fluid">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 p-0">
                 <div class="slick-slider gallery-slider">
                 <div class="items">
                     <img src="<?php echo get_stylesheet_directory_uri() ?>/_images/dummy.png" alt="">

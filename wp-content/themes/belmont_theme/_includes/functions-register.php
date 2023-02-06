@@ -16,9 +16,10 @@ function wpbp_register_menus() {
 	) );
 }
 // 2. Register Custom Post Types
-//Vendors CPT Starts
+
 add_action('init', 'belmont_cpt');
 function belmont_cpt() {
+  //Partners CPT Starts
   register_post_type('partners', array(
       'labels' => array(
         'name' => 'Partners',
@@ -33,6 +34,45 @@ function belmont_cpt() {
       'supports' => array('title')
     )
   );
+
+  //Trailers CPT Starts
+  register_post_type('trailers', array(
+    'labels' => array(
+      'name' => 'Trailers',
+      'singular_name' => 'Trailer'
+    ),
+    'public' => true,
+    'show_ui' => true,
+    'show_in_menu' => true,
+    'show_in_nav_menus' => true,
+    "menu_icon" => "dashicons-hammer",
+    'rewrite' => array('slug' => 'trailers'),
+    'supports' => array('title')
+  )
+);
+
+//Trailers Type Taxonomy Starts
+register_taxonomy('trailer_type',
+array('trailers'),
+array(
+  'hierarchical' => true,
+  'labels' => array(
+    'name'              => 'Trailer Type',
+    'singular_name'     => 'Trailer Type',
+    'search_items'      => 'Search Trailer Type',
+    'all_items'         => 'All Trailer Type',
+    'parent_item'       => 'Parent Trailer Type',
+    'parent_item_colon' => 'Parent Trailer Type',
+    'edit_item'         => 'Edit Trailer Type',
+    'update_item'       => 'Update Trailer Type',
+    'add_new_item'      => 'Add New Trailer Type',
+    'new_item_name'     => 'New Trailer Type',
+    'menu_name'         => 'Trailer Type'
+  ),
+  'show_in_nav_menus' => true
+)
+);
+
 }
 
 // 3. Sidebars
