@@ -14,11 +14,11 @@
                         $description = get_sub_field('description');
                     ?>
                         <div>
-                            <?php if (!empty($heading)) : ?><h3><?php echo $heading; ?></h3>;<?php endif; ?>
-                                <?php if (!empty($description)) : ?><div><?php echo $description; ?></div><?php endif; ?>
-                            <?php endwhile; ?>
-                        <?php endif; ?>
+                            <?php if (!empty($heading)) : ?><h3><?php echo $heading; ?></h3><?php endif; ?>
+                            <?php if (!empty($description)) : ?><div><?php echo $description; ?></div><?php endif; ?>
                         </div>
+                    <?php endwhile; ?>
+                <?php endif; ?>
             </div>
         </div>
 </section>
