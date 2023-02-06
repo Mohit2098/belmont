@@ -76,17 +76,20 @@ h3, .h3 {
    padding-bottom: 1.5175rem;
    margin-bottom: 0;
    font-weight: 500;
+   font-family: var(--font-neue-haas);
 }
 
 /* ==== btns ==== */
 .btn-custom{
   font-size: 1.875rem;
   line-height: 1.1;
+  font-weight: 700;
   padding: 0.875rem 3.625rem;
   color: var(--black);
   border: 5px solid var(--theme-yellow);
   border-radius: 0.875rem;
   background-color: transparent;
+  box-shadow: 0px 1px 3px rgb(0 0 0 / 15%);
   display: inline-block;
   text-decoration: none;
   transition: .4s;

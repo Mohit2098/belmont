@@ -1,10 +1,10 @@
 <section class="bl-section two-column-grid-section">
     <div class="container">
         <div class="row">
-            <div class="col-12 text-center">
+            <div class="col-12 text-center pb-50">
                 <?php $section_heading = get_sub_field('section_heading'); ?>
                 <?php if (!empty($section_heading)) : ?>
-                    <h1><?php echo $section_heading; ?></h1>
+                    <h2><?php echo $section_heading; ?></h2>
                 <?php endif; ?>
             </div>
             <?php if (have_rows('grid_content')) : ?>
@@ -15,9 +15,9 @@
                     $add_cta = get_sub_field('add_cta');
                 ?>
                     <div class="col-lg-6">
-                        <div class="d-flex flex-wrap">
+                        <div class="d-flex col-wrap">
                             <?php if (!empty($image)) : ?>
-                                <img class="banner-back" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                                <img class="logo-left" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                             <?php endif; ?>
                             <div class="content-wrapper">
                                 <?php if (!empty($heading)) : ?><h3><?php echo $heading; ?></h3><?php endif; ?>
@@ -29,7 +29,7 @@
                                     $button_target = $add_cta['target'] ? $add_cta['target'] : '_self';
                                     ?>
                                     <a class="learn-more" href="<?php echo $button_url; ?>" target="<?php echo $button_target; ?>">
-                                        <?php echo $button_title; ?>
+                                        <?php echo $button_title; ?> <span>»</span>
                                     </a>
                                 <?php endif; ?>
                             </div>

@@ -32,16 +32,16 @@ jQuery(document).ready(function($){
   $('.gallery-slider').slick({
     dots: false,
     arrows: false,
-    infinite: true,
+    infinite: false,
+    centerMode: false,
     speed: 300,
-    slidesToShow: 4,
+    slidesToShow: 4.8,
     slidesToScroll: 4,
-    padding: 30,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 3.8,
           slidesToScroll: 3,
         }
       },
