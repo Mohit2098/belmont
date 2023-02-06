@@ -18,7 +18,7 @@
                   <div class="row">
                      <div class="col-lg-6">
                         <div class="caption-wrap">
-                        <?php if (!empty($slide_heading)):?><h1><?php echo $slide_heading; ?><?php endif; ?></h1>
+                        <?php if (!empty($slide_heading)):?><h1><?php echo $slide_heading; ?></h1><?php endif; ?>
                           <?php if (!empty($slide_description)):?><div><?php echo $slide_description;?></div><?php endif;?>
                            <?php if (!empty($slide_cta)):?>
                               <?php 
@@ -40,7 +40,6 @@
                      </div>
                      <!-- /col -->
                   </div>
-                  <!-- /row -->
                </div>
                 <!-- /container -->
             </div>
