@@ -1,12 +1,10 @@
 <section class="bl-section two-column-grid-section">
     <div class="container">
         <div class="row">
-            <div class="col-12 text-center">
-                <?php $section_heading = get_sub_field('section_heading'); ?>
-                <?php if (!empty($section_heading)) : ?>
-                    <h1><?php echo $section_heading; ?></h1>
-                <?php endif; ?>
-            </div>
+        <?php $section_heading = get_sub_field('section_heading');
+            if (!empty($section_heading)) : ?>
+                <div class="col-12 text-center"><h1><?php echo $section_heading; ?></h1></div>
+            <?php endif; ?>
             <?php if (have_rows('grid_content')) : ?>
                 <?php while (have_rows('grid_content')) : the_row();
                     $image = get_sub_field('image');
@@ -22,14 +20,11 @@
                             <div class="content-wrapper">
                                 <?php if (!empty($heading)) : ?><h3><?php echo $heading; ?></h3><?php endif; ?>
                                 <?php if (!empty($description)) : ?><div><?php echo $description; ?></div><?php endif; ?>
-                                <?php if (!empty($add_cta)) : ?>
-                                    <?php
-                                    $button_url = $add_cta['url'];
-                                    $button_title = $add_cta['title'];
-                                    $button_target = $add_cta['target'] ? $add_cta['target'] : '_self';
-                                    ?>
-                                    <a class="learn-more" href="<?php echo $button_url; ?>" target="<?php echo $button_target; ?>">
-                                        <?php echo $button_title; ?>
+                                <?php if (!empty($add_cta)) : 
+                                    $add_cta_target = $add_cta['target'] ? $add_cta['target'] : '_self';
+                                ?>
+                                    <a class="learn-more" href="<?php echo $add_cta['url']; ?>" target="<?php echo $add_cta_target; ?>">
+                                        <?php echo $add_cta['title']; ?>
                                     </a>
                                 <?php endif; ?>
                             </div>
@@ -41,12 +36,9 @@
             <div class="col-12 text-center">
                 <?php $section_cta = get_sub_field('section_cta'); ?>
                 <?php if (!empty($section_cta)) : ?>
-                    <?php
-                    $button_url = $section_cta['url'];
-                    $button_title = $section_cta['title'];
-                    $button_target = $section_cta['target'] ? $section_cta['target'] : '_self'; ?>
-                    <a class="btn-custom" href="<?php echo $button_url; ?>" target="<?php echo $button_target; ?>">
-                        <?php echo $button_title; ?>
+                    <?php $section_cta_target = $section_cta['target'] ? $section_cta['target'] : '_self'; ?>
+                    <a class="btn-custom" href="<?php echo $section_cta['url']; ?>" target="<?php echo $section_cta_target; ?>">
+                        <?php echo $section_cta['title']; ?>
                     </a>
                 <?php endif; ?>
             </div>

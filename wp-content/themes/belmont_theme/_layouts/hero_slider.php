@@ -20,14 +20,10 @@
                         <div class="caption-wrap">
                            <?php if (!empty($slide_heading)) : ?><h1><?php echo $slide_heading; ?></h1><?php endif; ?>
                            <?php if (!empty($slide_description)) : ?><div><?php echo $slide_description; ?></div><?php endif; ?>
-                           <?php if (!empty($slide_cta)) : ?>
-                              <?php
-                              $button_url = $slide_cta['url'];
-                              $button_title = $slide_cta['title'];
-                              $button_target = $slide_cta['target'] ? $slide_cta['target'] : '_self';
-                              ?>
-                              <a class="btn-custom outline-yellow" href="<?php echo $button_url; ?>" target="<?php echo $button_target; ?>">
-                                 <?php echo $button_title; ?>
+                           <?php if (!empty($slide_cta)) : 
+                              $button_target = $slide_cta['target'] ? $slide_cta['target'] : '_self'; ?>
+                              <a class="btn-custom outline-yellow" href="<?php echo $slide_cta['url']; ?>" target="<?php echo $button_target; ?>">
+                                 <?php echo $slide_cta['title']; ?>
                               </a>
                            <?php endif; ?>
                         </div>
