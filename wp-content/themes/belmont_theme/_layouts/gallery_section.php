@@ -1,6 +1,6 @@
 <?php
 $trailer_type = get_terms([
-'taxonomy' => 'trailer_type',
+'taxonomy' => 'trailers',
 'hide_empty' => false,
 'parent' => 0,
 'orderby'    => 'ID',
