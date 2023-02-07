@@ -13,8 +13,7 @@
             $slide_desktop_image = get_sub_field('slide_desktop_image');
             $slide_mobile_image = get_sub_field('slide_mobile_image');
          ?>
-            <div class="items-hero <?php echo esc_attr($text_color) ?> <?php if ($i != 1) : ?>
-            <?php echo $content_alignment; ?><?php endif; ?>">
+            <div class="items-hero <?php echo esc_attr($text_color) ?> <?php if ($i != 1): echo $content_alignment; endif; ?>">
                <?php if (!empty($slide_desktop_image)) : ?>
                   <img class="banner-back" src="<?php echo esc_url($slide_desktop_image['url']); ?>" alt="<?php echo esc_attr($slide_desktop_image['alt']); ?>" />
                <?php endif; ?>
