@@ -51,4 +51,11 @@ add_theme_support( "title-tag" );
 
 // 5. Custom Code
 
+//Current Year Shortcode
+function current_year_shortcode() {
+	$current_year = date('Y');
+	return $current_year;
+}
+add_shortcode('current_year', 'current_year_shortcode');
+
 ?>
