@@ -88,8 +88,8 @@
                                 },
                                 {
                                     "key": "field_63dba28acef5a",
-                                    "label": "Content Background Color",
-                                    "name": "content_background_color",
+                                    "label": "Text Color",
+                                    "name": "text_color",
                                     "aria-label": "",
                                     "type": "select",
                                     "instructions": "",
@@ -115,16 +115,16 @@
                                     "parent_repeater": "field_63d8ddbf6026f"
                                 },
                                 {
-                                    "key": "field_63db8cbd23853",
-                                    "label": "Upload Column Image (Optional)",
-                                    "name": "upload_column_image",
+                                    "key": "field_63d8df2260272",
+                                    "label": "Slide Desktop Image",
+                                    "name": "slide_desktop_image",
                                     "aria-label": "",
                                     "type": "image",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "34",
+                                        "width": "33",
                                         "class": "",
                                         "id": ""
                                     },
@@ -141,9 +141,9 @@
                                     "parent_repeater": "field_63d8ddbf6026f"
                                 },
                                 {
-                                    "key": "field_63d8df2260272",
-                                    "label": "Slide Background Image",
-                                    "name": "slide_background_image",
+                                    "key": "field_63e1e46cee5ad",
+                                    "label": "Slide Mobile Image",
+                                    "name": "slide_mobile_image",
                                     "aria-label": "",
                                     "type": "image",
                                     "instructions": "",
@@ -181,10 +181,10 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "left": "Left",
-                                        "right": "Right"
+                                        "align-left": "Left",
+                                        "align-right": "Right"
                                     },
-                                    "default_value": "left",
+                                    "default_value": "align-left",
                                     "return_format": "value",
                                     "multiple": 0,
                                     "allow_null": 0,
@@ -855,5 +855,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1675745159
+    "modified": 1675749484
 }

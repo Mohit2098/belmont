@@ -1,18 +1,25 @@
 <?php if (have_rows('add_slides')) : ?>
    <section class="hero-slider">
       <div class="hero-slider-bl">
-         <?php while (have_rows('add_slides')) : the_row();
+         <?php
+         $i = 0;
+         while (have_rows('add_slides')) : the_row();
+            $i++;
             $slide_heading = get_sub_field('heading');
             $slide_description = get_sub_field('description');
             $slide_cta = get_sub_field('add_cta');
             $content_alignment = get_sub_field('content_alignment');
-            $content_background_color = get_sub_field('content_background_color');
-            $column_image = get_sub_field('upload_column_image');
-            $slide_background_image = get_sub_field('slide_background_image');
+            $text_color = get_sub_field('text_color');
+            $slide_desktop_image = get_sub_field('slide_desktop_image');
+            $slide_mobile_image = get_sub_field('slide_mobile_image');
          ?>
-            <div class="items-hero <?php echo esc_attr($content_background_color); ?> <?php echo $content_alignment == 'left' ? 'align-left' : 'align-right'; ?>">
-               <?php if (!empty($slide_background_image)) : ?>
-                  <img class="banner-back" src="<?php echo esc_url($slide_background_image['url']); ?>" alt="<?php echo esc_attr($slide_background_image['alt']); ?>" />
+            <div class="items-hero <?php echo esc_attr($text_color) ?> <?php if ($i != 1) : ?>
+            <?php echo $content_alignment; ?><?php endif; ?>">
+               <?php if (!empty($slide_desktop_image)) : ?>
+                  <img class="banner-back" src="<?php echo esc_url($slide_desktop_image['url']); ?>" alt="<?php echo esc_attr($slide_desktop_image['alt']); ?>" />
+               <?php endif; ?>
+               <?php if (!empty($slide_mobile_image)) : ?>
+                  <img class="banner-back-mobile" src="<?php echo esc_url($slide_mobile_image['url']); ?>" alt="<?php echo esc_attr($slide_mobile_image['alt']); ?>" />
                <?php endif; ?>
                <div class="container">
                   <div class="row">
@@ -20,7 +27,7 @@
                         <div class="caption-wrap">
                            <?php if (!empty($slide_heading)) : ?><h1><?php echo $slide_heading; ?></h1><?php endif; ?>
                            <?php if (!empty($slide_description)) : ?><div><?php echo $slide_description; ?></div><?php endif; ?>
-                           <?php if (!empty($slide_cta)) : 
+                           <?php if (!empty($slide_cta)) :
                               $button_target = $slide_cta['target'] ? $slide_cta['target'] : '_self'; ?>
                               <a class="btn-custom outline-yellow" href="<?php echo $slide_cta['url']; ?>" target="<?php echo $button_target; ?>">
                                  <?php echo $slide_cta['title']; ?>
