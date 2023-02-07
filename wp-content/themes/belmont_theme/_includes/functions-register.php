@@ -36,7 +36,7 @@ function belmont_cpt() {
   );
 
   //Trailers CPT Starts
-  register_post_type('trailers', array(
+  register_post_type('btrailers', array(
     'labels' => array(
       'name' => 'Trailers',
       'singular_name' => 'Trailer'
@@ -46,14 +46,14 @@ function belmont_cpt() {
     'show_in_menu' => true,
     'show_in_nav_menus' => true,
     "menu_icon" => "dashicons-hammer",
-    'rewrite' => array('slug' => 'trailers'),
+    'rewrite' => array('slug' => 'btrailers'),
     'supports' => array('title'),
   )
 );
 
 //Trailers Type Taxonomy Starts
-register_taxonomy('trailer_type',
-array('trailers'),
+register_taxonomy('trailers',
+array('btrailers'),
 array(
   'hierarchical' => true,
   'labels' => array(
@@ -69,7 +69,8 @@ array(
     'new_item_name'     => 'New Trailer Type',
     'menu_name'         => 'Trailer Type'
   ),
-  'show_in_nav_menus' => true
+  'show_in_nav_menus' => true,
+  'rewrite' => array('slug' => 'trailers'),
 )
 );
 

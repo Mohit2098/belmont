@@ -269,7 +269,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "trailers"
+                "value": "btrailers"
             }
         ]
     ],
@@ -282,5 +282,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1675669965
+    "modified": 1675751890
 }
