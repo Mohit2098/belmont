@@ -16,12 +16,13 @@ if ( !empty($trailer_type) ) : ?>
         ?>
         <div class="col-lg-6">
             <div class="inner-white-box d-flex flex-wrap">
+            <?php  if(!empty($trailer_icon)): ?>
+                        <img class="trailer-bg" src="<?php echo $trailer_icon['url']; ?>" alt="<?php echo $trailer_icon['alt']; ?>" />
+                    <?php endif;  ?>
                 <div class="caption">
                     <h3><?php echo $trailer->name; ?></h3>
                     <a href="<?php echo get_term_link($trailer->term_id); ?>" class="btn-custom-small">SEE TRAILER SPECS</a>
-                    <?php /* if(!empty($trailer_icon)): ?>
-                        <img class="trailer-icon" src="<?php echo $trailer_icon['url']; ?>" alt="<?php echo $trailer_icon['alt']; ?>" />
-                    <?php endif; */ ?>
+                    
                 </div>
                 <?php if(!empty($trailer_featured_img)): ?>
                     <div class="img-box"><img class="trailer-img" src="<?php echo $trailer_featured_img['url']; ?>" alt="<?php echo $trailer_featured_img['alt']; ?>"></div>
