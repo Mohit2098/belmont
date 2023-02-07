@@ -5,7 +5,7 @@ $section_content = get_sub_field('section_content');
 $select_section_width = get_sub_field('select_section_width');
 $upload_logo = get_sub_field('upload_logo');
 ?>
-<section class="simple-content-section <?php echo $select_section_width; ?> <?php echo $select_heading_type; ?>">
+<section class="simple-content-section pt-70 pb-70 <?php echo $select_section_width; ?> <?php echo $select_heading_type; ?>">
     <div class="container">
         <div class="content-inner">
             <?php if($section_heading != ''): ?><h2 class="h3"><?php echo $section_heading; ?></h2><?php endif; ?>
