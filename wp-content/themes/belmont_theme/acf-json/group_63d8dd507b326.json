@@ -88,8 +88,8 @@
                                 },
                                 {
                                     "key": "field_63dba28acef5a",
-                                    "label": "Content Background Color",
-                                    "name": "content_background_color",
+                                    "label": "Text Color",
+                                    "name": "text_color",
                                     "aria-label": "",
                                     "type": "select",
                                     "instructions": "",
@@ -115,16 +115,16 @@
                                     "parent_repeater": "field_63d8ddbf6026f"
                                 },
                                 {
-                                    "key": "field_63db8cbd23853",
-                                    "label": "Upload Column Image (Optional)",
-                                    "name": "upload_column_image",
+                                    "key": "field_63d8df2260272",
+                                    "label": "Slide Desktop Image",
+                                    "name": "slide_desktop_image",
                                     "aria-label": "",
                                     "type": "image",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "34",
+                                        "width": "33",
                                         "class": "",
                                         "id": ""
                                     },
@@ -141,9 +141,9 @@
                                     "parent_repeater": "field_63d8ddbf6026f"
                                 },
                                 {
-                                    "key": "field_63d8df2260272",
-                                    "label": "Slide Background Image",
-                                    "name": "slide_background_image",
+                                    "key": "field_63e1e46cee5ad",
+                                    "label": "Slide Mobile Image",
+                                    "name": "slide_mobile_image",
                                     "aria-label": "",
                                     "type": "image",
                                     "instructions": "",
@@ -181,10 +181,10 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "left": "Left",
-                                        "right": "Right"
+                                        "align-left": "Left",
+                                        "align-right": "Right"
                                     },
-                                    "default_value": "left",
+                                    "default_value": "align-left",
                                     "return_format": "value",
                                     "multiple": 0,
                                     "allow_null": 0,
@@ -676,7 +676,68 @@
                     "name": "form_section",
                     "label": "Form Section",
                     "display": "block",
-                    "sub_fields": [],
+                    "sub_fields": [
+                        {
+                            "key": "field_63e0d97b473fe",
+                            "label": "Form Heading",
+                            "name": "form_heading",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_63e0dd848cf04",
+                            "label": "Add Form Shortcode",
+                            "name": "add_form_shortcode",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_63e0d9d0473ff",
+                            "label": "Form Subheading",
+                            "name": "form_subheading",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        }
+                    ],
                     "min": "",
                     "max": ""
                 },
@@ -685,7 +746,88 @@
                     "name": "two_column_form_w_content_section",
                     "label": "Two Column Form w Content Section",
                     "display": "block",
-                    "sub_fields": [],
+                    "sub_fields": [
+                        {
+                            "key": "field_63e0c963976cf",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_63e0c96a976d0",
+                            "label": "Description",
+                            "name": "description",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_63e0cadeb6e94",
+                            "label": "Form Heading",
+                            "name": "form_heading",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_63e0cb34c8360",
+                            "label": "Add Form Shortcode",
+                            "name": "add_form_shortcode",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ],
                     "min": "",
                     "max": ""
                 }
@@ -713,5 +855,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1675667554
+    "modified": 1675749484
 }
