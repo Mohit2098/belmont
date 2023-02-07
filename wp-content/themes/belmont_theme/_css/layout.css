@@ -413,10 +413,21 @@ footer.global-footer .footer-copyright a:hover{
 /* ======= simple content section ========= */
 .simple-content-section {
     background-color: var(--theme-lt-gray);
-    
 }
-
-
+.simple-content-section {
+    background-color: var(--theme-lt-gray);
+}
+.simple-content-section .content-inner{
+    max-width: 89.375rem;
+    margin: auto;
+}
+.simple-content-section:not(.compact-section) .content-inner p{
+    font-size: 1.5625rem;
+    line-height: 2.5rem;
+}
+.simple-content-section.compact-section .content-inner{
+    max-width: 70rem;
+}
 
 
 
