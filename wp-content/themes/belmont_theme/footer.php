@@ -19,15 +19,12 @@
                 <div class="col-12">
                     <?php $copyright_text = get_field('copyright_text', 'option'); ?>
                     <div class="footer-copyright">
-                        <?php if (!empty($copyright_text)) {
-                            echo $copyright_text;
-                        };?>
+                        <?php if (!empty($copyright_text)) : ?><?php echo $copyright_text; ?><?php endif; ?>
                     </div>
                 </div>
                 <!-- /col -->
             </div>
         </div>
-       
     </footer>
     <?php wp_footer(); ?>
     </body>
