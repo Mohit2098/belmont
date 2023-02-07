@@ -58,7 +58,7 @@
             {
                 "param": "taxonomy",
                 "operator": "==",
-                "value": "trailer_type"
+                "value": "trailers"
             }
         ]
     ],
@@ -71,5 +71,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1675741818
+    "modified": 1675753568
 }

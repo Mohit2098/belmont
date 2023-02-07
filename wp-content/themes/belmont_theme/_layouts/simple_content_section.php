@@ -8,7 +8,8 @@ $upload_logo = get_sub_field('upload_logo');
 <section class="simple-content-section pt-70 pb-70 <?php echo $select_section_width; ?> <?php echo $select_heading_type; ?>">
     <div class="container">
         <div class="content-inner">
-            <?php if($section_heading != ''): ?><h2 class="h3"><?php echo $section_heading; ?></h2><?php endif; ?>
+            <?php if($section_heading != '' && $select_heading_type = "main-heading"): ?><h1><?php echo $section_heading; ?></h1><?php endif; ?>
+            <?php if($section_heading != '' && $select_heading_type = "small-heading"): ?><h2 class="h3"><?php echo $section_heading; ?></h2><?php endif; ?>
             <?php if($upload_logo != ''): ?><img src="<?php echo $upload_logo['url']; ?>" alt="<?php echo $upload_logo['alt']; ?>" /><?php endif; ?>
             <?php if($section_content):?><?php echo $section_content; ?><?php endif; ?>
         </div>
