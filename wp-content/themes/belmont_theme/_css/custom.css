@@ -125,6 +125,14 @@ h3, .h3 {
 .btn-custom-small:hover{
   background-color: var(--theme-yellow);
 }
+.btn-custom span,
+.btn-custom-small span{
+  font-size: 200%;
+  line-height: 0;
+  position: relative;
+  top: 3px;
+  font-weight: 300;
+}
 
 /* root font size */
 html{

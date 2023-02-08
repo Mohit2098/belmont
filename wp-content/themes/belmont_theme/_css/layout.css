@@ -13,7 +13,7 @@ header.site-header .bl-navigation ul{
  header.site-header .bl-navigation ul > li > a{
     font-size: 1.125rem;
     line-height: 1.375;
-    padding: .5rem 1.25rem;
+    padding: .5rem 3.25rem;
     color: var(--white);
     text-decoration: none;
     font-weight: 600;
@@ -204,7 +204,7 @@ footer.global-footer .footer-copyright a:hover{
     object-position: left center;
 }
 .hero-slider .items-hero:after{
-    content: '';
+    /* content: '';
     position: absolute;
     right: 0;
     top: 0;
@@ -213,7 +213,7 @@ footer.global-footer .footer-copyright a:hover{
     background: transparent;
     z-index: -1;
     border-left: 240px solid transparent;
-    border-bottom: 766px solid var(--theme-yellow);
+    border-bottom: 766px solid var(--theme-yellow); */
 }
 .hero-slider .items-hero .caption-wrap{
     max-width: 40rem;
@@ -283,6 +283,7 @@ footer.global-footer .footer-copyright a:hover{
 .hero-slider .items-hero.grey-bg p{
     color: var(--theme-lt-black);
 }
+
 /* ====== gallery-slider-section ======= */
 .gallery-slider-section{
     padding-top: 1.5rem;
@@ -312,6 +313,8 @@ footer.global-footer .footer-copyright a:hover{
 }
 .gallery-slider-section .gallery-slider .items img{
     transition: .4s;
+    height: 18.75rem;
+    object-fit: cover;
 }
 .gallery-slider-section .gallery-slider .items:hover img{
     transform: scale(1.04);
@@ -327,6 +330,7 @@ footer.global-footer .footer-copyright a:hover{
     letter-spacing: 1px;
     line-height: 1.1;
     padding-bottom: 1rem;
+    font-family: var(--font-rift);
 }
 .gallery-slider .items .text-box a{
     background: var(--theme-yellow);
@@ -337,6 +341,7 @@ footer.global-footer .footer-copyright a:hover{
     border-radius: 0.4rem;
     font-weight: 500;
 }
+
 .slick-slider{
     margin-bottom: 0 !important;
 }
@@ -428,8 +433,87 @@ footer.global-footer .footer-copyright a:hover{
 .simple-content-section.compact-section .content-inner{
     max-width: 70rem;
 }
+.heading-logo-wrap {
+    display: flex;
+    align-items: center;
+}
+.heading-logo-wrap h1{
+    max-width: 37.5rem;
+    line-height: 1;
+}
+.heading-logo-wrap img{
+    display: block;
+    width: 16.25rem;
+    height: 16.25rem;
+    margin-left: 3.5rem;
+}
+.simple-content-section.main-heading .heading-logo-wrap{
+    margin-bottom: 6.25rem;
+}
 
+/* ======== all-trailers-sec ======== */
+.all-trailers-sec{
+    background-color: var(--theme-lt-gray);
+}
+.all-trailers-sec .inner-white-box{
+    position: relative;
+    background-color: var(--white);
+    align-items: center;
+    margin: 0 auto 4.75rem;
+    max-width: 43.75rem;
+    height: 25rem;
+}
+.inner-white-box .trailer-bg{
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+ .inner-white-box .caption,
+.inner-white-box .img-box{
+    width: 50%;
+    position: relative;
+    z-index: 1;
+}
+.inner-white-box .caption{
+    padding-left: 3.5rem;
+    padding-right: 1rem;
+}
+ .inner-white-box .caption h3{
+    font-size: 4.6875rem;
+    line-height: 1;
+    font-family: var(--font-rift);
+ }
+ .inner-white-box::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .3);
+    z-index: -1;
+ }
+ .inner-white-box:hover:before{
+    z-index: 1;
+ }
 
+/* - hover state - */
+ .inner-white-box:hover .img-box{
+    opacity: 0;
+}
+ .inner-white-box:hover .caption h3{
+    color: var(--white);
+}
+ .inner-white-box:hover .caption .btn-custom-small{
+    background-color: var(--theme-yellow);
+    color: var(--white);
+}
+.inner-white-box:hover .trailer-bg{
+    z-index: 0;
+}
 
 @media screen and (min-width:992px){
     header.site-header .rt-menu-toggle{
@@ -461,6 +545,16 @@ footer.global-footer .footer-copyright a:hover{
         width: 100%;
         white-space: nowrap;
         cursor: pointer;
+        border-top: 1px solid rgb(255 255 255 / 55%);
+        font-weight: 600;
+        padding: 0.5rem 2.25rem 0.5rem 1rem;
+    }
+    header.site-header .site-branding img{
+        max-width: 346px;
+        width: 100%;
+    }
+    header.site-header .bl-navigation ul > li:first-child > a{
+        padding-left: 1rem;
     }
 }
 

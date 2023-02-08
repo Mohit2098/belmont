@@ -102,7 +102,6 @@
                                     },
                                     "choices": {
                                         "black-bg": "Black",
-                                        "yellow-bg": "Yellow",
                                         "grey-bg": "Grey"
                                     },
                                     "default_value": "black-bg",
@@ -855,5 +854,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1675763439
+    "modified": 1675772943
 }

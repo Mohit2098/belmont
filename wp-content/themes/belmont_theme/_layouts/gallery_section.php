@@ -20,7 +20,7 @@ if ( !empty($trailer_type) ) : ?>
                 <?php endif; ?>
                 <div class="text-box">
                     <h3><?php echo $trailer->name; ?></h3>
-                    <a href="<?php echo get_term_link($trailer->term_id); ?>" class="btn-custom-small"> See Models </a>
+                    <a href="<?php echo get_term_link($trailer->term_id); ?>" class="btn-custom-small"> See Models <span>»</span></a>
                 </div>
             </div>
         <?php endforeach; ?>

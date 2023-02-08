@@ -56,6 +56,6 @@ function current_year_shortcode() {
 	$current_year = date('Y');
 	return $current_year;
 }
-add_shortcode('current_year', 'current_year_shortcode');
+add_shortcode('year', 'current_year_shortcode');
 
 ?>
