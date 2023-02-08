@@ -101,8 +101,8 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "black-bg": "Black",
-                                        "grey-bg": "Grey"
+                                        "black-bg": "White",
+                                        "grey-bg": "Black"
                                     },
                                     "default_value": "black-bg",
                                     "return_format": "value",
@@ -1121,5 +1121,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1675853008
+    "modified": 1675856685
 }
