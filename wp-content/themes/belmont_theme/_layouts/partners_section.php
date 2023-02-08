@@ -2,7 +2,7 @@
 $section_heading = get_sub_field('section_heading');
 $select_partners = get_sub_field('select_partners');
 ?>
-<div class="partners-section">
+<div class="bl-section partners-section">
     <?php if($section_heading != ''): ?><h2><?php echo $section_heading; ?></h2><?php endif;
     if( $select_partners ): ?>
         <div class="partners-wrapper">
