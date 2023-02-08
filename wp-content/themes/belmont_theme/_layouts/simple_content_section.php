@@ -4,7 +4,7 @@ $select_heading_type = get_sub_field('select_heading_type');
 $section_content = get_sub_field('section_content');
 $select_section_width = get_sub_field('select_section_width');
 $upload_logo = get_sub_field('upload_logo');
-echo $additional_section_id = get_sub_field('additional_section_id');
+$additional_section_id = get_sub_field('additional_section_id');
 ?>
 <section class="simple-content-section pt-70 pb-70 <?php echo $select_section_width; ?> <?php echo $select_heading_type; ?>" id="<?php echo ($additional_section_id != '')? $additional_section_id : ''; ?>">
     <div class="container">
