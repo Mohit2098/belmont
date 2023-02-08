@@ -1,10 +1,22 @@
 <?php
+$ids_to_exclude = array();
+$get_terms_to_exclude =  get_terms(
+    array(
+        'fields'  => 'ids',
+        'slug'    => array('custom-builds'),
+        'taxonomy' => 'trailers',
+    )
+);
+if( !is_wp_error( $get_terms_to_exclude ) && count($get_terms_to_exclude) > 0){
+    $ids_to_exclude = $get_terms_to_exclude; 
+}
 $trailer_type = get_terms([
 'taxonomy' => 'trailers',
 'hide_empty' => false,
 'parent' => 0,
 'orderby'    => 'ID',
 'order'      => 'ASC',
+'exclude' => $ids_to_exclude
 ]);
 if ( !empty($trailer_type) ) : ?>
 <section class="all-trailers-sec">
