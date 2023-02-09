@@ -567,7 +567,7 @@
                             },
                             "choices": {
                                 "main-heading": "Main Heading",
-                                "medium-heading": "Medium Heading",
+                                "text-medium": "Medium Heading",
                                 "small-heading": "Small Heading"
                             },
                             "default_value": "main-heading",
@@ -1142,5 +1142,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1675925901
+    "modified": 1675927466
 }
