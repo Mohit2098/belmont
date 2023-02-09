@@ -632,7 +632,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "50",
+                                "width": "25",
                                 "class": "",
                                 "id": ""
                             },
@@ -647,6 +647,26 @@
                             "ui": 0,
                             "ajax": 0,
                             "placeholder": ""
+                        },
+                        {
+                            "key": "field_63e4680e17b36",
+                            "label": "Additional Section ID",
+                            "name": "additional_section_id",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
                         }
                     ],
                     "min": "",
@@ -1121,5 +1141,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1675856685
+    "modified": 1675913385
 }
