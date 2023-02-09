@@ -28,6 +28,16 @@ jQuery(document).ready(function($){
       })
       .trigger("resize");
   
+  // collapse
+  $(".trigger-toggle").click(function () {
+    $(".toggle-content").toggleClass("show");
+    $(this).toggleClass("only-one");
+  });
+  $(".option-toggle").click(function () {
+    $(".options-content").toggleClass("show-content");
+    $(this).toggleClass("opened");
+  });
+  
   // gallery slider
   $('.gallery-slider').slick({
     dots: false,
@@ -76,7 +86,23 @@ jQuery(document).ready(function($){
     ]
   });
 
-  
+  // single trailers sldier
+  $('.slider-product').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    fade: true,
+    asNavFor: '.products-nav'
+  });
+  $('.products-nav').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    asNavFor: '.slider-product',
+    arrows: true,
+    centerMode: false,
+    focusOnSelect: true
+  });
+
 });
 
 
