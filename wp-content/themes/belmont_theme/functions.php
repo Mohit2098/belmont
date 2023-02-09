@@ -58,4 +58,14 @@ function current_year_shortcode() {
 }
 add_shortcode('year', 'current_year_shortcode');
 
-?>
+
+// Gravity Forms Custom Validation.
+
+function gform_custom_validation( $result, $value, $form, $field ) {
+    if ( ! $result['is_valid'] && ! empty( $field->errorMessage ) ) {
+        $result['message'] = $field->errorMessage;
+    }
+    return $result;
+}
+add_filter( 'gform_field_validation', 'gform_custom_validation', 10, 4 );
+

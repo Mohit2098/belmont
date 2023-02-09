@@ -1,14 +1,22 @@
 <section class="flattrak-three-up-section">
     <div class="container">
-        <?php if (have_rows('flattrak_three_up_content')) : ?>
-            <?php
-            while (have_rows('flattrak_three_up_content')) : the_row();
-                $heading_bold = get_sub_field('heading_bold');
-                $description = get_sub_field('description');
-            ?>
-                <?php if (!empty($heading_bold)) : ?><h1><?php echo $heading_bold; ?></h1><?php endif; ?>
-                <?php if (!empty($description)) : ?><h2><?php echo $description; ?></h2><?php endif; ?>
-            <?php endwhile; ?>
-        <?php endif; ?>
+        <div class="row">
+            <?php if (have_rows('flattrak_three_up_content')) : ?>
+                <?php
+                while (have_rows('flattrak_three_up_content')) : the_row();
+                    $heading_bold = get_sub_field('heading_bold');
+                    $heading = get_sub_field('heading');
+                ?>
+                    <div class="col-lg-4">
+                        <div class="inner-box">
+                            <?php if (!(empty($heading_bold) && empty($heading))) : ?>
+                                <h3><strong><?php echo $heading_bold; ?></strong><?php echo $heading; ?></h3>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                <?php endwhile; ?>
+            <?php endif; ?>
+            <!-- /col -->
+        </div>
     </div>
 </section>

@@ -867,7 +867,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
@@ -892,7 +892,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
@@ -939,7 +939,7 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "",
+                                        "width": "50",
                                         "class": "",
                                         "id": ""
                                     },
@@ -952,15 +952,15 @@
                                 },
                                 {
                                     "key": "field_63e3773dcdbcb",
-                                    "label": "Description",
-                                    "name": "description",
+                                    "label": "Heading",
+                                    "name": "heading",
                                     "aria-label": "",
                                     "type": "text",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "",
+                                        "width": "50",
                                         "class": "",
                                         "id": ""
                                     },
@@ -1013,7 +1013,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "33.33",
                                 "class": "",
                                 "id": ""
                             },
@@ -1033,7 +1033,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "33.33",
                                 "class": "",
                                 "id": ""
                             },
@@ -1053,7 +1053,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "33.33",
                                 "class": "",
                                 "id": ""
                             },
@@ -1069,8 +1069,8 @@
                 },
                 "layout_63e37060ae2d2": {
                     "key": "layout_63e37060ae2d2",
-                    "name": "flattrak_full_width_section",
-                    "label": "FlatTrak Full Width Section",
+                    "name": "flattrak_logo_with_cta",
+                    "label": "FlatTrak Logo With Cta",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -1083,7 +1083,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
@@ -1108,7 +1108,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
@@ -1142,5 +1142,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1675927466
+    "modified": 1675933492
 }
