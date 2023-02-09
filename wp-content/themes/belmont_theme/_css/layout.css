@@ -548,6 +548,48 @@ footer.global-footer .footer-copyright a:hover{
     width: 100%;
 }
 
+/* ============ single trailers section ============ */
+.trailer-slide-wrap .slick-arrow{
+    background-color: red;
+}
+
+.detail-box{
+    position: relative;
+    border: 8px solid var(--theme-yellow);
+    margin-bottom: 4rem;
+}
+.toggle-content,
+.options-content{
+    display: none;
+}
+.trigger-toggle .less,
+.trigger-toggle.only-one .more{
+    display: none;
+}
+.trigger-toggle.only-one .less,
+.options-content.show-content,
+.toggle-content.show{
+    display: block;
+}
+.options-content ul{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 20px;
+}
+.options-content ul li{
+    width: 33.33%;
+}
+.table-wrap table thead{
+    background-color: var(--theme-yellow);
+}
+.table-wrap table th,
+.table-wrap table td{
+    padding: 5px 7px;
+    border: 2px solid var(--theme-yellow);
+}
+.table-wrap table{
+    margin-bottom: 2rem;    
+}
 
 
 @media screen and (min-width:769px){
