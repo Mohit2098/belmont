@@ -9,23 +9,18 @@ jQuery(document).ready(function($){
     });
     
     // submenu
-    $(window)
-      .on("load, resize", function mobileViewUpdate() {
+    $(".bl-navigation ul.menu > li .sub-menu").before(
+      "<span class='open-label'></span>"
+    );
+    $(window).on("resize", function mobileViewUpdate() {
         var viewportWidth = $(window).width();
         if (viewportWidth < 992) {
-          $(".rt-navigation ul.menu > li.menu-item-has-children > a").each(
-            function (index, value) {
-              $(value)
-                .unbind("click")
-                .click(function (e) {
-                  e.preventDefault();
-                  $(this).next(".sub-menu").slideToggle(500);
-                  $(this).parent().toggleClass("open-dropdown");
-                });
+          $(".bl-navigation ul.menu > li .open-label").click(function(){
+            $(this).next(".sub-menu").toggleClass("open-sub-menu");
+            $(this).parent().toggleClass("open-dropdown");
+          })
             }
-          );
-        }
-      })
+        })
       .trigger("resize");
   
   // collapse
@@ -86,6 +81,18 @@ jQuery(document).ready(function($){
     ]
   });
 
+    // testimonial slider
+    $('.testimonial-slider').slick({
+      dots: false,
+      arrows: false,
+      infinite: true,
+      autoplay: true,
+       speed: 400,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    });
+  
+  
   // single trailers sldier
   $('.slider-product').slick({
     slidesToShow: 1,

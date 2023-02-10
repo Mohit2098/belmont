@@ -7,7 +7,7 @@
                     $heading_bold = get_sub_field('heading_bold');
                     $heading = get_sub_field('heading');
                 ?>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 outer-box">
                         <div class="inner-box">
                             <?php if (!(empty($heading_bold) && empty($heading))) : ?>
                                 <h3><strong><?php echo $heading_bold; ?></strong><?php echo $heading; ?></h3>
