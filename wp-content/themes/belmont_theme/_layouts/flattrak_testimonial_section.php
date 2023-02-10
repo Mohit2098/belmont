@@ -10,7 +10,7 @@
                         $company_name = get_sub_field('company');
                         $location_name = get_sub_field('location');
                     ?>
-                    <div class="itenms">
+                    <div class="items">
                         <div class="testi-content">
                             <?php if (!empty($add_testimonial_content)) : ?><div><?php echo $add_testimonial_content; ?></div><?php endif; ?>
                             <?php if (!empty($author_name)) : ?><span class="author-name"><?php echo $author_name; ?></span><?php endif; ?>
