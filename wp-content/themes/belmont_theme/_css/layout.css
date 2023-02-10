@@ -592,6 +592,58 @@ footer.global-footer .footer-copyright a:hover{
 }
 
 
+/* ======== flattrak-hero-section ===== */
+.flattrak-hero-section {
+    position: relative;
+}
+.flattrak-hero-section img{
+    width: 100%;
+    height: 33.62500rem;
+    object-fit: cover;
+    vertical-align: bottom;
+}
+.flattrak-hero-section a{
+    position: absolute;
+    left: 50%;
+    bottom: 4.0625rem;
+    transform: translate(-50%, 0);
+    color: var(--white);
+    background-color: transparent;
+    border-color: var(--white);
+    z-index: 1;
+    transition: .4s;
+}
+.flattrak-hero-section a:hover{
+    background-color: var(--flat-track-green);
+    border-color: var(--flat-track-green);
+    color: var(--white);
+}
+.flattrak-hero-section:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: -moz-linear-gradient(90deg, rgb(59 53 52 / 60%) 7%, rgb(4 4 4 / 15%) 50%, rgb(59 53 52 / 59%) 92%);
+    background: -webkit-linear-gradient(90deg, rgb(59 53 52 / 60%) 7%, rgb(4 4 4 / 15%) 50%, rgb(59 53 52 / 59%) 92%);
+    background: linear-gradient(90deg, rgb(59 53 52 / 60%) 7%, rgb(4 4 4 / 15%) 50%, rgb(59 53 52 / 59%) 92%);
+    }
+
+/* ========= flattrak-three-up-section ========= */
+.flattrak-three-up-section{
+    background-color: var(--theme-lt-gray);
+}
+
+.flattrak-three-up-section .inner-box{
+    padding-top: 3.8125rem;
+    padding-bottom: 3.8125rem;
+}
+
+.inner-box h3{
+  font-size: 2.875rem;
+  line-height: 3.4375rem;
+}
 @media screen and (min-width:769px){
     .gallery-slider-section .gallery-slider .items .text-box{
         opacity: 0;
