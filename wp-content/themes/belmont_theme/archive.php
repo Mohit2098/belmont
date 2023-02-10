@@ -1,17 +1,43 @@
-<?php get_header(); ?>
+<?php get_header(); 
+$current_term_ID = get_queried_object()->term_id;
+$terms = wp_get_post_terms( $current_term_ID, 'trailers', array( 'order' => 'DESC') ); ?>
 <main id="content" class="category-page trailer-archive">
 	<section class="bl-section single-trailers-section">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-6">
 					<h1 class="text-medium">Single Axle Utility Trailers</h1>
-					<strong class="h3">5’ x 8’ | 5’ x 10’ | 6’ x 10’ | 6’ x 12’ | 6’ x 14’</strong>
+					<strong class="h3">
+					<?php
+					$args=array(    
+						'post_type' => 'btrailers',
+						'tax_query' => array(
+							array(
+								'taxonomy' => 'trailers',
+								'field'    => 'id',
+								'terms'    => $current_term_ID,
+							),
+						   ),
+						 );
+						$wp_query = new WP_Query( $args );
+						$count = $wp_query->post_count;
+						if ( $wp_query->have_posts() ): $i=0;
+							while($wp_query->have_posts()): $wp_query->the_post(); $i++;
+							$trailer_size = get_field('trailer_size');
+							echo $trailer_size; if($i != $count): echo ' | '; endif;
+							endwhile; endif; wp_reset_postdata(); ?>
+				</strong>
 				</div>
 				<!-- /col -->
 				<div class="col-lg-6">
 					<div class="tab-refresh">
-						<a href="#" class="tabs-link active">Tube Top Trailers</a>
-						<a href="#" class="tabs-link">Solid Side Trailers</a>
+						<?php
+						if( $terms && ! is_wp_error( $terms ) ){
+							foreach( $terms as $term ) {
+									echo '<a href="' . get_term_link( $term ) . '" class="tabs-link">' . $term->name . '</a>';
+							}
+						}
+						?>
 					</div>
 				</div>
 				<!-- /col -->
