@@ -23,7 +23,7 @@
                                 <?php if (!empty($heading)) : ?><h3><?php echo $heading; ?></h3><?php endif; ?>
                                 <?php if (!empty($description)) : ?><div><?php echo $description; ?></div><?php endif; ?>
                                 <?php if (!empty($add_cta)) : $button_target = $add_cta['target'] ? $add_cta['target'] : '_self'; ?>
-                                    <a class="learn-more" href="<?php echo $add_cta['url']; ?>" target="<?php echo $button_target; ?>">
+                                    <a class="learn-more" href="<?php echo esc_url($add_cta['url']); ?>" target="<?php echo $button_target; ?>">
                                         <?php echo $add_cta['title']; ?> <span>»</span>
                                     </a>
                                 <?php endif; ?>
@@ -37,7 +37,7 @@
                 <?php $section_cta = get_sub_field('section_cta'); ?>
                 <?php if (!empty($section_cta)) : ?>
                     <?php $section_cta_target = $section_cta['target'] ? $section_cta['target'] : '_self'; ?>
-                    <a class="btn-custom" href="<?php echo $section_cta['url']; ?>" target="<?php echo $section_cta_target; ?>">
+                    <a class="btn-custom" href="<?php echo esc_url($section_cta['url']); ?>" target="<?php echo $section_cta_target; ?>">
                         <?php echo $section_cta['title']; ?>
                     </a>
                 <?php endif; ?>
