@@ -389,6 +389,10 @@ footer.global-footer .footer-copyright a:hover{
     box-shadow: 2px 6px 25px rgb(0 0 0 / 12%);
     margin: 0 auto 6rem;
     max-width: 43.875rem;
+    transition: .4s;
+}
+.two-column-grid-section .col-wrap:hover{
+    box-shadow: 3px 8px 27px rgb(0 0 0 / 30%);
 }
 .two-column-grid-section .col-wrap .logo-left{
     width: 15.625rem;
@@ -710,6 +714,91 @@ footer.global-footer .footer-copyright a:hover{
     background-color: var(--flat-track-green);
     color: var(--white);
 }
+/* ======== form-with-content ======== */
+.form-with-content{
+    background-color: var(--theme-lt-gray);
+}
+.form-with-content .text-medium{
+    text-align: left;
+}
+.form-with-content .content-wrapper > div{
+    max-width: 48.875rem;
+}
+.form-with-content + .simple-content-section.fullwidth-section .content-inner{
+    max-width: 100%;
+}
+.gform_wrapper .gfield_label{
+    color: var(--theme-dark-gray);
+    font-weight: 500 !important;
+}
+.gform_wrapper .gfield_label span.gfield_required{
+    display: none;
+}
+.gform_wrapper .gform_fields .gfield input{
+    font-size: 1.4rem !important;
+}
+.gform_wrapper.gravity-theme .gfield .ginput_container_textarea textarea.medium{
+    height: 17.3125rem;
+}
+
+/* ======= form-section ========== */
+.form-section{
+    background-color: var(--theme-lt-gray);
+}
+.form-section .form-box{
+    max-width: 62.0625rem;
+    margin: auto;
+}
+.narrow-text{
+    max-width: 42.375rem;
+    margin: 0 auto 2rem;
+}
+.narrow-text a{
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 600;
+}
+.form-section .gform_wrapper.gravity-theme .gform_fields{
+    grid-column-gap: 23px;
+}
+.form-section .ginput_container_date input{
+    width: 100% !important;
+}
+.form-section .ginput_container_fileupload .gform_fileupload_multifile{
+    position: relative;
+    max-width: 288px;
+    height: 61px;
+    border: 1px solid var(--theme-dark-gray);
+    border-radius: 10px;
+    background: var(--white);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.form-section .ginput_container_fileupload .gform_fileupload_multifile .gform_drop_area{
+    padding: 0;
+    border: none;
+    background: transparent;
+    margin-bottom: 0;
+}
+.form-section .ginput_container_fileupload .gform_fileupload_multifile .gform_drop_area .gform_drop_instructions{
+    display: none;
+}
+.form-section .ginput_container_fileupload .gform_fileupload_multifile .gform_drop_area .gform_button_select_files{
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: var(--theme-dark-gray);
+    font-weight: 500;
+}
+.form-section .gfield .ginput_container_textarea textarea.medium{
+    height: 12.5rem !important;
+}
+
 
 
 
@@ -799,6 +888,12 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
         opacity: 1;
         visibility: visible;
         pointer-events: all;
+    }
+    .gfield .ginput_container input{
+        padding: 1.07rem 1rem !important;
+    }
+     .gform_wrapper .gfield_label{
+    font-size: 1.66rem !important;
     }
 }
 
@@ -974,6 +1069,12 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
      }
      .row .outer-box:nth-child(2) .inner-box:after{
         top: 100%;
+     }
+     .form-with-content .form-wrapper{
+        margin-top: 3rem;
+     }
+     .form-with-content{
+        padding-bottom: 0;
      }
 }
 
