@@ -1,21 +1,19 @@
 <?php get_header(); 
-$current_term_ID = get_queried_object()->term_id;
-
+$current_term = get_queried_object();
+$current_term_ID = $current_term->term_id;
 $terms = get_terms([
 	'taxonomy'    => 'trailers',
 	'hide_empty'  => true,
 	'parent'      => $current_term_ID,
 	'order' => 'DESC'
 ]);
-
-// $terms = wp_get_post_terms( $current_term_ID, 'trailers', array( 'order' => 'DESC') ); print_r($terms); ?>
+?>
 <main id="content" class="category-page trailer-archive">
 	<section class="bl-section single-trailers-section">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-6">
-					<h1 class="text-medium">Single Axle Utility Trailers</h1>
-					<strong class="h3">
+					<h1 class="text-medium"><?php echo $current_term->name; ?></h1>
 					<?php
 					$args=array(    
 						'post_type' => 'btrailers',
@@ -29,24 +27,27 @@ $terms = get_terms([
 						 );
 						$wp_query = new WP_Query( $args );
 						$count = $wp_query->post_count;
-						if ( $wp_query->have_posts() ): $i=0;
+						if($count > 0):
+						?>
+						<strong class="h3">
+						<?php if ( $wp_query->have_posts() ): $i=0;
 							while($wp_query->have_posts()): $wp_query->the_post(); $i++;
 							$trailer_size = get_field('trailer_size');
 							echo $trailer_size; if($i != $count): echo ' | '; endif;
 							endwhile; endif; wp_reset_postdata(); ?>
-				</strong>
+						</strong><?php endif; ?>
 				</div>
 				<!-- /col -->
 				<div class="col-lg-6">
+					<?php if( $terms && ! is_wp_error( $terms ) ): ?>
 					<div class="tab-refresh">
-						<?php
-						if( $terms && ! is_wp_error( $terms ) ){
-							foreach( $terms as $term ) {
-									echo '<a href="' . get_term_link( $term ) . '" class="tabs-link">' . $term->name . '</a>';
-							}
-						}
-						?>
-					</div>
+						<?php $ii=0; foreach( $terms as $term ): $ii++;
+								echo '<a href="' . get_term_link( $term ) . '" class="tabs-link">' . $term->name . '</a>';
+								if($ii == 1):$tab_term_name = $term->name; $tab_description = $term->description;
+								$trailer_gallery = get_term_meta($term->term_id,'trailer_gallery', true); endif;
+								
+						endforeach; ?>
+					</div><?php endif; ?> 
 				</div>
 				<!-- /col -->
 			</div>
@@ -54,68 +55,32 @@ $terms = get_terms([
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6">
+					<?php if(!empty($trailer_gallery)): ?>
 					<div class="trailer-slide-wrap">
 						<div class="slider-product">
+							<?php foreach($trailer_gallery as $gallery_item): ?>
 							<div class="items-product">
-							   <img src="<?php echo get_stylesheet_directory_uri() ?>/_images/dummy.png" alt=""> 
+							   <img src="<?php echo wp_get_attachment_url( $gallery_item); ?>" alt=""> 
 							</div>
-							<!-- /item -->
-							<div class="items-product">
-							   <img src="<?php echo get_stylesheet_directory_uri() ?>/_images/trailer.png" alt=""> 
-							</div>
-							<!-- /item -->
-							<div class="items-product">
-							   <img src="<?php echo get_stylesheet_directory_uri() ?>/_images/dummy.png" alt=""> 
-							</div>
-							<!-- /item -->
-							<div class="items-product">
-							   <img src="<?php echo get_stylesheet_directory_uri() ?>/_images/dummy.png" alt=""> 
-							</div>
-							<!-- /item -->
-							<div class="items-product">
-							   <img src="<?php echo get_stylesheet_directory_uri() ?>/_images/dummy.png" alt=""> 
-							</div>
-							<!-- /item -->
-							<div class="items-product">
-							   <img src="<?php echo get_stylesheet_directory_uri() ?>/_images/dummy.png" alt=""> 
-							</div>
-							<!-- /item -->
+							<?php endforeach; ?>
 						</div>
 						<!-- /upper slider -->
 						<div class="products-nav">
+						<?php foreach($trailer_gallery as $gallery_item): ?>
 							<div class="item-nav">
-								<img src="<?php echo get_stylesheet_directory_uri() ?>/_images/trailer.png" alt=""> 
+								<img src="<?php echo wp_get_attachment_url( $gallery_item); ?>" alt=""> 
 							</div>
-							<!-- /item -->
-							<div class="item-nav">
-								<img src="<?php echo get_stylesheet_directory_uri() ?>/_images/trailer.png" alt=""> 
-							</div>
-							<!-- /item -->
-							<div class="item-nav">
-								<img src="<?php echo get_stylesheet_directory_uri() ?>/_images/dummy.png" alt=""> 
-							</div>
-							<!-- /item -->
-							<div class="item-nav">
-								<img src="<?php echo get_stylesheet_directory_uri() ?>/_images/trailer.png" alt=""> 
-							</div>
-							<!-- /item -->
-							<div class="item-nav">
-								<img src="<?php echo get_stylesheet_directory_uri() ?>/_images/trailer.png" alt=""> 
-							</div>
-							<!-- /item -->
-							<div class="item-nav">
-								<img src="<?php echo get_stylesheet_directory_uri() ?>/_images/trailer.png" alt=""> 
-							</div>
-							<!-- /item -->
+						<?php endforeach; ?>
 						</div>
 						<!-- slider lower -->
 					</div>
+					<?php endif; ?>
 				</div>
 				<!-- /col -->
 				<div class="col-lg-6">
 					<div class="description">
-						<h2 class="text-medium">Tube Top Utility Trailers</h2>
-						<p>If you’re seeking a rugged, high-quality utility trailer, look no further. Built for daily use, this trailer is great for hauling around your ATV, commercial mower, or the host of other things that come up. This model series has been a bestseller for years and continues to be admired for a host of features and benefits not easily found elsewhere.</p>
+						<h2 class="text-medium"><?php echo $tab_term_name; ?></h2>
+						<p><?php echo $tab_description; ?></p>
 					</div>
 				</div>
 			</div>
@@ -128,16 +93,17 @@ $terms = get_terms([
 			if ( $wp_query->have_posts() ):
 			while($wp_query->have_posts()): $wp_query->the_post();
 			$trailer_size = get_field('trailer_size');
+			$trailer_featured_image = get_field('trailer_featured_image');
 			?>
 			<div class="detail-box">
 				<h2 class="text-medium"><?php echo get_the_title(); ?></h2>
 				<div class="row">
 					<div class="col-lg-6">
-					  <img src="<?php echo get_stylesheet_directory_uri() ?>/_images/trailer.png" alt=""> 	
-					  <div class="table-wrap">
-						<?php if( have_rows('add_trailer_attribute') ): $j=0;
-							$count_attr = count(get_field('add_trailer_attribute'));
-							while( have_rows('add_trailer_attribute') ) : the_row(); $j++;
+					  <?php if(!empty($trailer_featured_image)): ?><img src="<?php echo $trailer_featured_image['url']; ?>" alt="<?php echo $trailer_featured_image['alt']; ?>"><?php endif; ?> 	
+					  <?php if( have_rows('add_trailer_attribute') ): $j=0;
+							$count_attr = count(get_field('add_trailer_attribute')); ?>
+					  	<div class="table-wrap">
+							<?php while( have_rows('add_trailer_attribute') ) : the_row(); $j++;
 							$add_attribute_title = get_sub_field('add_attribute_title');
 							$add_attribute_detail = get_sub_field('add_attribute_detail'); ?>
 							<?php if($j== 1): ?><div class="d-flex"><?php endif; ?>
@@ -146,8 +112,7 @@ $terms = get_terms([
 									<span class="value"><?php echo $add_attribute_detail; ?></span>
 								</div>
 							<?php if($j==4): ?></div><?php $j=0; endif; endwhile; ?>
-						<?php endif; ?>
-					  </div>
+					  </div><?php endif; ?>
 				</div>
 			</div>
 					<!-- /col -->
@@ -157,52 +122,39 @@ $terms = get_terms([
 							<?php
 							$show_in_compare = get_post_meta(get_the_ID(),'show_in_compare', true); 
 							$upload_trailer_pdf = get_post_meta(get_the_ID(),'upload_trailer_pdf', true);
-							?>
-							<?php if($show_in_compare): ?><a href="#" class="btn-custom-small solid-yellow">IN COMPARE</a><?php endif; ?>
-							<?php if( $upload_trailer_pdf ):
-								$url = wp_get_attachment_url( $upload_trailer_pdf ); ?>
-								<a href="<?php echo esc_html($url); ?>" class="btn-custom-small solid-yellow" >Download PDF</a>
-							<?php endif; ?>
-							<?php if( have_rows('add_standard_features') ): $k=0;
-							$count_standard_attr = count(get_field('add_standard_features'));
-							?>
+							if($show_in_compare): ?><a href="#" class="btn-custom-small solid-yellow">IN COMPARE</a><?php endif;
+							if( $upload_trailer_pdf ): $url = wp_get_attachment_url( $upload_trailer_pdf ); ?>
+								<a href="<?php echo esc_html($url); ?>" class="btn-custom-small solid-yellow" >Download PDF</a><?php endif;
+							if( have_rows('add_standard_features') ): $k=0;
+							$count_standard_attr = count(get_field('add_standard_features')); ?>
 							<ul>
 							<?php while( have_rows('add_standard_features') ) : the_row(); $k++;
-									$add_feature = get_sub_field('add_feature'); ?>
-								<li><?php echo $add_feature. $k; ?></li>
-							<?php  if($k == 10):?>
-							</ul><ul class="toggle-content"><?php $k=0; endif; ?>
-							<?php endwhile;?>
-							    
-							<?php endif; ?>
-							</ul> <a href="javascript:void(0)" class="trigger-toggle"><span class="more">Show more</span><span class="less">Show less</span>  </a>
+								$add_feature = get_sub_field('add_feature'); ?>
+								<li><?php echo $add_feature; ?></li>
+							<?php if($k == 10):?></ul><ul class="toggle-content"><?php $k=0; endif; ?>
+							<?php endwhile; ?>
+							</ul><?php endif;
+							if($count_standard_attr > 10): ?><a href="javascript:void(0)" class="trigger-toggle"><span class="more">Show more</span><span class="less">Show less</span></a><?php endif; ?>
 						</div>
 					</div>
 					<!-- /col -->
 					<div class="col-12">
 						<h3><a href="javascript:void(0)" class="option-toggle">Available Options</a></h3>
+						<?php if( have_rows('add_additional_options') ):
+							$count_attr = count(get_field('add_additional_options')); ?>
 						<div class="options-content">
 							<ul>
-								<li>Hot Dipped Galvanized Finish • A-Frame Toolbox</li>
-								<li>Hot Dipped Galvanized Finish • A-Frame Toolbox</li>
-								<li>Hot Dipped Galvanized Finish • A-Frame Toolbox</li>
-								<li>Hot Dipped Galvanized Finish • A-Frame Toolbox</li>
-								<li>Hot Dipped Galvanized Finish • A-Frame Toolbox</li>
-								<li>Hot Dipped Galvanized Finish • A-Frame Toolbox</li>
-								<li>Hot Dipped Galvanized Finish • A-Frame Toolbox</li>
-								<li>Hot Dipped Galvanized Finish • A-Frame Toolbox</li>
-								<li>Hot Dipped Galvanized Finish • A-Frame Toolbox</li>
+								<?php while( have_rows('add_additional_options') ) : the_row();
+								$add_options = get_sub_field('add_options');
+								if($add_options != ''): ?><li><?php echo $add_options; ?></li><?php endif; endwhile; ?>
 							</ul>
 						</div>
+						<?php endif; ?>
 					</div>
 				</div>
-			</div>
-		
-							
+			</div>			
 			<?php endwhile; endif; ?>
 		</div>
 	</section>
-		
 </main>
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
