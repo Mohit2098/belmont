@@ -10,7 +10,7 @@ $hero_cta = get_sub_field('hero_cta');
     </div>
     <?php if (!empty($hero_cta)) :
             $button_target = $hero_cta['target'] ? $hero_cta['target'] : '_self'; ?>
-            <a href="<?php echo $hero_cta['url']; ?>" class="btn-custom" target="<?php echo $button_target; ?>">
+            <a href="<?php echo esc_url($hero_cta['url']); ?>" class="btn-custom" target="<?php echo $button_target; ?>">
                 <?php echo $hero_cta['title']; ?>
             </a>
         <?php endif; ?>

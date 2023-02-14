@@ -28,7 +28,7 @@
                            <?php if (!empty($slide_description)) : ?><div><?php echo $slide_description; ?></div><?php endif; ?>
                            <?php if (!empty($slide_cta)) :
                               $button_target = $slide_cta['target'] ? $slide_cta['target'] : '_self'; ?>
-                              <a class="btn-custom outline-yellow" href="<?php echo $slide_cta['url']; ?>" target="<?php echo $button_target; ?>">
+                              <a class="btn-custom outline-yellow" href="<?php echo esc_url($slide_cta['url']); ?>" target="<?php echo $button_target; ?>">
                                  <?php echo $slide_cta['title']; ?>
                               </a>
                            <?php endif; ?>

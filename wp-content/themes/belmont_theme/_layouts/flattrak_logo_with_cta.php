@@ -11,7 +11,7 @@ $add_cta = get_sub_field('add_cta');
                 <?php endif; ?>
                 <?php if (!empty($add_cta)) :
                     $button_target = $add_cta['target'] ? $add_cta['target'] : '_self'; ?>
-                    <a href="<?php echo $add_cta['url']; ?>" class="btn-custom" target="<?php echo $button_target; ?>">
+                    <a href="<?php echo esc_url($add_cta['url']); ?>" class="btn-custom" target="<?php echo $button_target; ?>">
                         <?php echo $add_cta['title']; ?>
                     </a>
                 <?php endif; ?>

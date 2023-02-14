@@ -714,6 +714,13 @@ footer.global-footer .footer-copyright a:hover{
     background-color: var(--flat-track-green);
     color: var(--white);
 }
+.flattrak-testimonial .testi-content img{
+    max-width: 43.75rem;
+    margin: 0 auto 2rem;
+    display: block;
+}
+
+
 /* ======== form-with-content ======== */
 .form-with-content{
     background-color: var(--theme-lt-gray);
@@ -791,15 +798,66 @@ footer.global-footer .footer-copyright a:hover{
     background: transparent;
     border: none;
     font-size: 25px;
+    color: transparent;
     text-transform: uppercase;
-    color: var(--theme-dark-gray);
     font-weight: 500;
 }
 .form-section .gfield .ginput_container_textarea textarea.medium{
     height: 12.5rem !important;
 }
 
-
+.form-section .ginput_container_fileupload .gform_fileupload_multifile .gform_drop_area .gform_button_select_files:after{
+    content: 'UPLOAD PHOTO(S)';
+    position: absolute;
+    left: -1px;
+    top: 0px;
+    height: 30px;
+    width: 202px;
+    color: var(--theme-dark-gray);
+    font-size: 1.8625rem;
+    line-height: 1.4;
+    font-weight: 500;
+}
+.form-section .ginput_container_fileupload .gform_fileupload_multifile .gform_drop_area .gform_button_select_files:before{
+    content: '';
+    position: absolute;
+    left: -28px;
+    top: 6px;
+    height: 20px;
+    width: 20px;
+    background: url("../_images/Icon-awesome.svg") center center no-repeat;
+    background-size: contain;
+    z-index: 11;
+}
+.form-section .ginput_container_fileupload .gform_fileupload_rules{
+    display: none;
+}
+ .gform_wrapper .gform_validation_errors{
+    display: none !important;
+}
+.form-section .gform_wrapper .gform_footer{
+    text-align: center;
+}
+.gform_wrapper .gform_footer .btn-custom{
+    font-size: 1.875rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+}
+.form-section .gform_wrapper .gform_footer .btn-custom{
+    color: var(--theme-yellow);
+}
+.form-section .gform_wrapper .gform_footer .btn-custom:hover{
+    color: var(--black);
+}
+.gform_wrapper .gform_footer .btn-custom span{
+    position: static;
+    font-size: 100%;
+    font-weight: 500;
+}
+.form-with-content .gform_wrapper .gform_footer{
+text-align: right;
+}
 
 
 header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > a,
