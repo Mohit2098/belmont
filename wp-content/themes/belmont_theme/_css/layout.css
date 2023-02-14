@@ -11,8 +11,8 @@ header.site-header .bl-navigation ul{
     list-style: none;
 }
  header.site-header .bl-navigation ul > li > a{
-    font-size: 1.125rem;
-    line-height: 1.375;
+    font-size: 1.5625rem;
+    line-height: 2.0625rem;
     padding: .5rem 3.25rem;
     color: var(--white);
     text-decoration: none;
@@ -133,6 +133,9 @@ header.site-header{
 }
 
 .top-utility-menu .menu-header ul li a{
+    font-size: 1.375rem;
+    line-height: 1.4;
+    font-weight: 700;
     padding: 10px 33px;
     background-color: var(--theme-yellow);
     color: var(--white);
@@ -220,6 +223,7 @@ footer.global-footer .footer-copyright a:hover{
 .hero-slider-bl .caption-wrap p{
     color: var(--white);
 }
+
 .hero-slider-bl .caption-wrap .btn-custom{
     margin-top: 2rem;
     text-transform: capitalize;
@@ -551,15 +555,60 @@ footer.global-footer .footer-copyright a:hover{
 }
 
 /* ============ single trailers section ============ */
-.trailer-slide-wrap .slick-arrow{
-    background-color: red;
+.tab-refresh a{
+    font-size: 2.1875rem;
+    line-height: 1.1;
+    font-weight: 500;
+    padding: 0.65rem 3.625rem;
+    color: var(--black);
+    border: 5px solid var(--theme-yellow);
+    background-color: transparent;
+    display: inline-block;
+    text-decoration: none;
+    transition: .4s;
+}
+.tab-refresh a:hover,
+.tab-refresh a.active{
+    background-color: var(--theme-yellow);
 }
 
+.details-section-trailer{
+    background-color: var(--theme-lt-gray);
+    padding-top: 3.5rem;
+}
+.trailer-img-contain{
+    max-width: 43.75rem;
+    height: 29.125rem;
+    object-fit: contain;
+    width: 100%;
+}
 .detail-box{
     position: relative;
     border: 8px solid var(--theme-yellow);
-    margin-bottom: 4rem;
+    padding: 0 3rem 2rem;
+    margin-bottom: 5rem;
 }
+.detail-box h2.text-medium{
+    position: relative;
+    padding: 0;
+    text-align: center;
+    background-color: var(--theme-lt-gray);
+    display: inline-block;
+    margin: -2.6rem auto 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 0px 1.5rem;
+}
+
+.feature-list h3{
+    font-size: 3.125rem;
+    line-height: 4.6875rem;
+}
+
+
+
+
+
 .toggle-content,
 .options-content{
     display: none;
@@ -861,6 +910,52 @@ footer.global-footer .footer-copyright a:hover{
  justify-content: flex-end;
 }
 
+/* ============ single trailer page ============= */
+.single-trailers-section{
+    background-color: var(--theme-lt-gray);
+}
+.single-trailers-section > .container-fluid strong.h3{
+    font-size: 2.8125rem;
+    line-height: 4.6875rem;
+    font-family: var(--font-rift);
+}
+.trailer-slide-wrap{
+    max-width: 46.875rem;
+}
+.trailer-slide-wrap .items-product img{
+    height: 28.125rem;
+    object-fit: cover;
+    width: 100%;
+}
+.trailer-slide-wrap .products-nav{
+    margin-top: 5px;
+}
+.trailer-slide-wrap .item-nav img{
+    height: 6.875rem;
+    width: 100%;
+    object-fit: cover;
+}
+.trailer-slide-wrap .slick-next,
+.trailer-slide-wrap .slick-prev{
+    z-index: 1;
+    height: 100%;
+    width: 6rem;
+}
+.trailer-slide-wrap .slick-next{
+    right: 0;
+    background: transparent linear-gradient(270deg, #00000098 0%, #00000000 100%) 0% 0% no-repeat padding-box;
+}
+.trailer-slide-wrap .slick-prev{
+    left: 0;
+    background: transparent linear-gradient(-270deg, #00000098 0%, #00000000 100%) 0% 0% no-repeat padding-box;
+}
+
+.trailer-slide-wrap .products-nav .slick-next,
+.trailer-slide-wrap .products-nav .slick-prev{
+    width: 3rem;
+}
+
+
 
 header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > a,
 header.site-header .bl-navigation ul.menu > li.current-menu-item > a,
@@ -932,7 +1027,7 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
         content: '';
         position: absolute;
         right: 2.15rem;
-        top: 7px;
+        top: 0.8rem;
         height: 0.625rem;
         width: 0.625rem;
         transform: rotate(-45deg);
@@ -949,6 +1044,11 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
         visibility: visible;
         pointer-events: all;
     }
+    .hero-slider-bl .caption-wrap p,
+    .single-trailers-section .description p{
+        font-size: 2.1875rem;
+        line-height: 1.3;
+    }
     .gfield .ginput_container input{
         padding: 1.07rem 1rem !important;
     }
@@ -957,6 +1057,12 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
     }
 }
 
+@media screen and (min-width:1600px){
+    .single-trailers-section > .container-fluid{
+      max-width: 100% !important;
+      padding-left: 5% !important;
+    }
+  }
 
 @media screen and (min-width:768px) and (max-width:991px){
     .hero-slider .items-hero{
