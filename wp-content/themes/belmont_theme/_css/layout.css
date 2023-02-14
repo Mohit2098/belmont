@@ -164,7 +164,7 @@ footer.global-footer nav ul li a:hover{
     color: var(--white);
 }
 footer.global-footer nav ul li{
-    min-width: 17rem;
+    min-width: 16rem;
     margin-bottom: 1rem;
 }
 footer.global-footer .footer-logo img{
@@ -714,7 +714,7 @@ footer.global-footer .footer-copyright a:hover{
     background-color: var(--flat-track-green);
     color: var(--white);
 }
-.flattrak-testimonial .testi-content img{
+.flattrak-testimonial .quote-img{
     max-width: 43.75rem;
     margin: 0 auto 2rem;
     display: block;
@@ -724,6 +724,7 @@ footer.global-footer .footer-copyright a:hover{
 /* ======== form-with-content ======== */
 .form-with-content{
     background-color: var(--theme-lt-gray);
+    padding-bottom: 0;
 }
 .form-with-content .text-medium{
     text-align: left;
@@ -830,7 +831,7 @@ footer.global-footer .footer-copyright a:hover{
     z-index: 11;
 }
 .form-section .ginput_container_fileupload .gform_fileupload_rules{
-    display: none;
+    display: none !important;
 }
  .gform_wrapper .gform_validation_errors{
     display: none !important;
@@ -856,7 +857,8 @@ footer.global-footer .footer-copyright a:hover{
     font-weight: 500;
 }
 .form-with-content .gform_wrapper .gform_footer{
-text-align: right;
+ text-align: right;
+ justify-content: flex-end;
 }
 
 

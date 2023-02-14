@@ -14,7 +14,7 @@
                         <div class="items">
                             <div class="testi-content">
                                 <?php if (!empty($flattrak_testimonial_logo)) : ?>
-                                    <img src="<?php echo esc_url($flattrak_testimonial_logo['url']); ?>" alt="<?php echo esc_attr($flattrak_testimonial_logo['alt']); ?>" />
+                                    <img class="quote-img" src="<?php echo esc_url($flattrak_testimonial_logo['url']); ?>" alt="<?php echo esc_attr($flattrak_testimonial_logo['alt']); ?>" />
                                 <?php endif; ?>
                                 <?php if (!empty($add_testimonial_content)) : ?><div><?php echo $add_testimonial_content; ?></div><?php endif; ?>
                                 <?php if (!empty($author_name)) : ?><span class="author-name"><?php echo $author_name; ?></span><?php endif; ?>
