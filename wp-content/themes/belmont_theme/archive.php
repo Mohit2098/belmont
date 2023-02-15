@@ -14,7 +14,7 @@ $current_child_term_ID = $terms[0]->term_id;
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-6">
-					<h1 class="text-medium"><?php echo $current_term->name; ?></h1>
+					<h1 class="text-medium"> <?php echo $current_term->name; ?></h1>
 					<?php
 					$args=array(    
 						'post_type' => 'btrailers',
@@ -53,7 +53,7 @@ $current_child_term_ID = $terms[0]->term_id;
 				<!-- /col -->
 			</div>
 		</div>
-		<div class="container">
+		<div class="container pt-70">
 			<div class="row">
 				<div class="col-lg-6">
 					<?php if(!empty($trailer_gallery)): ?>
@@ -97,10 +97,10 @@ $current_child_term_ID = $terms[0]->term_id;
 			$trailer_featured_image = get_field('trailer_featured_image');
 			?>
 			<div class="detail-box">
-				<h2 class="text-medium"><?php echo get_the_title(); ?></h2>
+				<h2 class="text-medium"> <?php echo get_the_title(); ?></h2>
 				<div class="row">
 					<div class="col-lg-6">
-					  <?php if(!empty($trailer_featured_image)): ?><img src="<?php echo $trailer_featured_image['url']; ?>" alt="<?php echo $trailer_featured_image['alt']; ?>"><?php endif; ?> 	
+					  <?php if(!empty($trailer_featured_image)): ?><img class="trailer-img-contain" src="<?php echo $trailer_featured_image['url']; ?>" alt="<?php echo $trailer_featured_image['alt']; ?>"><?php endif; ?> 	
 					  <?php if( have_rows('add_trailer_attribute') ): $j=0;
 							$count_attr = count(get_field('add_trailer_attribute')); ?>
 					  	<div class="table-wrap">
