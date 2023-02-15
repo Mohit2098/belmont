@@ -3,6 +3,24 @@
     "title": "Trailer Type Additional Fields",
     "fields": [
         {
+            "key": "field_63ec5f271443a",
+            "label": "Populate the below fields for",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<b>Trailers Main Category<\/b>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
             "key": "field_63e0cb8c465b0",
             "label": "Trailer Featured Image",
             "name": "trailer_type_featured_image",
@@ -53,6 +71,24 @@
             "preview_size": "medium"
         },
         {
+            "key": "field_63ec5f4d1443b",
+            "label": "Populate the below fields for",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<b>Trailers Sub Category<\/b>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
             "key": "field_63e9e67888edf",
             "label": "Trailer Gallery",
             "name": "trailer_gallery",
@@ -99,5 +135,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1676347959
+    "modified": 1676436580
 }

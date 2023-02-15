@@ -37,19 +37,10 @@ if ( !empty($trailer_type) ) : ?>
         </div>
         <?php if(!empty($trailer_icon)): ?>
             <div class="img-box"><img class="trailer-img" src="<?php echo $trailer_icon['url']; ?>" alt="<?php echo $trailer_icon['alt']; ?>" /></div>
-        <?php endif;  ?>
-
-            
-            
-            
-            
+        <?php endif;  ?> 
         </div>
     </div>
 <?php endforeach; ?>
-
-    
-    
-
 </div>
 </div>
 </section>
