@@ -123,9 +123,9 @@ $current_child_term_ID = $terms[0]->term_id;
 							<?php
 							$show_in_compare = get_post_meta(get_the_ID(),'show_in_compare', true); 
 							$upload_trailer_pdf = get_post_meta(get_the_ID(),'upload_trailer_pdf', true);
-							if($show_in_compare): ?><a href="#" class="btn-custom-small solid-yellow">IN COMPARE</a><?php endif;
+							if($show_in_compare): ?><a href="#" class="btn-custom-small solid-yellow"><img src="<?php echo get_stylesheet_directory_uri() ?>/_images/check-icon.svg" alt=""> IN COMPARE</a><?php endif;
 							if( $upload_trailer_pdf ): $url = wp_get_attachment_url( $upload_trailer_pdf ); ?>
-								<a href="<?php echo esc_html($url); ?>" download class="btn-custom-small solid-yellow" >Download PDF</a><?php endif;
+								<a href="<?php echo esc_html($url); ?>" download class="btn-custom-small solid-yellow"><img src="<?php echo get_stylesheet_directory_uri() ?>/_images/donwload-icon.svg" alt=""> Download PDF</a><?php endif;
 							if( have_rows('add_standard_features') ): $k=0;
 							$count_standard_attr = count(get_field('add_standard_features')); ?>
 							<ul>

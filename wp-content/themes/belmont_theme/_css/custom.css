@@ -29,6 +29,7 @@
  }
   body{
     -webkit-font-smoothing: antialiased;
+    background-color: var(--theme-lt-gray);
   }
  /* global spacing */
 .bl-section{
@@ -51,7 +52,7 @@
 h1, h2, h3, h4, h5, h6{
   font-family: "rift",sans-serif;
 }
-p, a{
+p, a,li{
   font-family: "neue-haas-unica",sans-serif;
 }
 
