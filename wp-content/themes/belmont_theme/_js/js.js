@@ -1,3 +1,24 @@
+function loadProductSlider(){
+  return {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    fade: true,
+    asNavFor: '.products-nav'
+  }
+}
+
+function loadProductNavSlider(){
+  return {
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    asNavFor: '.slider-product',
+    arrows: true,
+    centerMode: false,
+    focusOnSelect: true
+  }
+}
+
 jQuery(document).ready(function($){
     $(".rt-menu-toggle").click(function () {
         $("header.site-header").toggleClass("opened-menu");
@@ -92,22 +113,29 @@ jQuery(document).ready(function($){
       slidesToScroll: 1,
     });
   
-  
-  // single trailers sldier
-  $('.slider-product').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-    fade: true,
-    asNavFor: '.products-nav'
-  });
-  $('.products-nav').slick({
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    asNavFor: '.slider-product',
-    arrows: true,
-    centerMode: false,
-    focusOnSelect: true
+    $(".slider-product").slick(loadProductSlider());
+    $(".products-nav").slick(loadProductNavSlider());  
+
+  $(document).on('click','.tabs-link-detail', function() {
+    var tabID = $(this).data('tabid');
+    jQuery.ajax({
+      type: "POST",
+      url: "/wp-admin/admin-ajax.php",
+      data: {
+        action: "load_trailer_tab",
+        tab_ID: tabID,
+      },
+      beforeSend: function() {
+        // jQuery("#loading-container").addClass("show_loader");
+      },
+      success: function(data) {
+        jQuery(".trailer-archive").html(data);
+        jQuery(".slider-product").slick(loadProductSlider());
+        jQuery(".products-nav").slick(loadProductNavSlider());        },
+      error: function(errorThrown){
+        jQuery(".trailer-archive").html("<div class='result_content'><h3>No Trailers Found!</h3></div>");
+      }
+    });
   });
 
 });

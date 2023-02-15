@@ -32,6 +32,10 @@ require_once( __DIR__ . '/_includes/functions-pagination.php');
 ///* Register ACF Functions
 require_once( __DIR__ . '/_includes/functions-acf-sync.php');
 
+// Trailer AJAX Request File
+require_once( __DIR__ . '/_includes/trailer_ajax.php');
+
+
 
 //1.e. Require Featured Image
 // Required for valid structured data. Does not need to display on website frontend

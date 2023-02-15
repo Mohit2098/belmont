@@ -43,7 +43,7 @@ $current_child_term_ID = $terms[0]->term_id;
 					<?php if( $terms && ! is_wp_error( $terms ) ): ?>
 					<div class="tab-refresh">
 						<?php $ii=0; foreach( $terms as $term ): $ii++;
-								echo '<a href="' . get_term_link( $term ) . '" class="tabs-link">' . $term->name . '</a>';
+								echo '<a data-tabid="'.$term->term_id.'" class="tabs-link tabs-link-detail">' . $term->name . '</a>';
 								if($ii == 1):$tab_term_name = $term->name; $tab_description = $term->description;
 								$trailer_gallery = get_term_meta($term->term_id,'trailer_gallery', true); endif;
 								
@@ -81,7 +81,7 @@ $current_child_term_ID = $terms[0]->term_id;
 				<div class="col-lg-6">
 					<div class="description">
 						<h2 class="text-medium"><?php echo $tab_term_name; ?></h2>
-						<p><?php echo $tab_description; ?></p>
+						<?php if($tab_description != ''): ?><p><?php echo $tab_description; ?></p><?php endif; ?>
 					</div>
 				</div>
 			</div>
@@ -154,7 +154,7 @@ $current_child_term_ID = $terms[0]->term_id;
 					</div>
 				</div>
 			</div>			
-			<?php endwhile; endif; ?>
+			<?php endwhile; endif; wp_reset_postdata(); ?>
 		</div>
 	</section>
 </main>
