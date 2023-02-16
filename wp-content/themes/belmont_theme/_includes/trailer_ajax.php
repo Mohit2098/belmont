@@ -38,7 +38,7 @@ $html.='<section class="bl-section single-trailers-section">
 						if ( $wp_query->have_posts() ): $i=0;
 							while($wp_query->have_posts()): $wp_query->the_post(); $i++;
 							$trailer_size = get_field('trailer_size');
-							$html.= $trailer_size; if($i != $count): $html.= ' | '; endif;
+							$html.= '<a href="#'.$wp_query->posts[$i-1]->post_name.'" class="link-trailer" >'.$trailer_size.'</a>'; if($i != $count): $html.= ' | '; endif;
 							endwhile; endif; wp_reset_postdata();
 						$html.='</strong>';
                         endif;
@@ -46,8 +46,8 @@ $html.='<section class="bl-section single-trailers-section">
 				<div class="col-lg-6">';
 					if( $terms && ! is_wp_error( $terms ) ):
 					$html.='<div class="tab-refresh">';
-					$ii=0; foreach( $terms as $term ): $ii++;
-								$html.='<a data-tabid="'.$term->term_id.'" class="tabs-link tabs-link-detail">' . $term->name . '</a>';
+					$ii=0; foreach( $terms as $term ): $ii++; $activeTabCLass = ($term->term_id == $tab_ID)? "active": "";
+								$html.='<a data-tabid="'.$term->term_id.'" class="tabs-link tabs-link-detail '.$activeTabCLass.'">' . $term->name . '</a>';
 								if($term->term_id == $tab_ID):$tab_term_name = $term->name; $tab_description = $term->description;
 								$trailer_gallery = get_term_meta($tab_ID,'trailer_gallery', true); endif;
 								
@@ -56,22 +56,21 @@ $html.='<section class="bl-section single-trailers-section">
 				$html.='</div>
 			</div>
 		</div>
-		<div class="container">
+		<div class="container pt-70">
 			<div class="row">
 				<div class="col-lg-6">';
-                
 					if(!empty($trailer_gallery)):
 					$html.='<div class="trailer-slide-wrap">
 						<div class="slider-product">';
-							foreach($trailer_gallery as $gallery_item):
+							foreach($trailer_gallery as $gallery_item): $image_alt = get_post_meta($gallery_item, '_wp_attachment_image_alt', TRUE);
 							$html.='<div class="items-product">';
-							$html.='<img src="'. wp_get_attachment_url( $gallery_item).'" alt=""></div>';
+							$html.='<img src="'. wp_get_attachment_url( $gallery_item).'" alt="'.$image_alt.'"></div>';
 							endforeach;
 						$html.='</div>
 						<div class="products-nav">';
-						foreach($trailer_gallery as $gallery_item):
+						foreach($trailer_gallery as $gallery_item_nav): $image_alt_nav = get_post_meta($gallery_item_nav, '_wp_attachment_image_alt', TRUE);
 							$html.='<div class="item-nav">
-								<img src="'. wp_get_attachment_url( $gallery_item).'" alt=""> 
+								<img src="'. wp_get_attachment_url( $gallery_item_nav).'" alt="'.$image_alt_nav.'"> 
 							</div>';
 						endforeach;
 						$html.='</div>
@@ -89,11 +88,11 @@ $html.='<section class="bl-section single-trailers-section">
 	</section>
     <section class="details-section-trailer">
 		<div class="container">';
-			if ( $wp_query->have_posts() ):
-			while($wp_query->have_posts()): $wp_query->the_post();
+			if ( $wp_query->have_posts() ): $q=0;
+			while($wp_query->have_posts()): $wp_query->the_post(); $q++;
 			$trailer_size = get_field('trailer_size');
 			$trailer_featured_image = get_field('trailer_featured_image');
-			$html.='<div class="detail-box">
+			$html.='<div class="detail-box" id="'.$wp_query->posts[$q-1]->post_name.'">
 				<h2 class="text-medium">'.get_the_title($wp_query->ID).'</h2>
 				<div class="row">
 					<div class="col-lg-6">';
@@ -117,14 +116,14 @@ $html.='<section class="bl-section single-trailers-section">
 			</div>
 					<div class="col-lg-6">
 						<div class="feature-list">
-							<h3>Standard Features</h3>';
+							<h3>'.__('Standard Features', 'btrailers-theme').'</h3>';
 							$show_in_compare = get_post_meta(get_the_ID(),'show_in_compare', true); 
 							$upload_trailer_pdf = get_post_meta(get_the_ID(),'upload_trailer_pdf', true);
 							if($show_in_compare):
-                                $html.='<a href="#" class="btn-custom-small solid-yellow">IN COMPARE</a>';
+                                $html.='<a href="#" class="btn-custom-small solid-yellow">'.__('IN COMPARE','btrailers-theme').'</a>';
                             endif;
 							if( $upload_trailer_pdf ): $url = wp_get_attachment_url( $upload_trailer_pdf );
-								$html.='<a href="'. esc_html($url).'" download class="btn-custom-small solid-yellow" >Download PDF</a>'; endif;
+								$html.='<a href="'. esc_html($url).'" download class="btn-custom-small solid-yellow">'.__('Download PDF', 'btrailers-theme' ).'</a>'; endif;
 							if( have_rows('add_standard_features') ): $k=0;
 							$count_standard_attr = count(get_field('add_standard_features'));
 							$html.='<ul>';
@@ -135,11 +134,11 @@ $html.='<section class="bl-section single-trailers-section">
 							endwhile;
 							$html.='</ul>'; endif;
 							if($count_standard_attr > 10):
-                                $html.='<a href="javascript:void(0)" class="trigger-toggle"><span class="more">Show more</span><span class="less">Show less</span></a>'; endif;
+                                $html.='<a href="javascript:void(0)" class="trigger-toggle"><span class="more">'.__('Show more', 'btrailers-theme' ).'</span><span class="less">'.__('Show less', 'btrailers-theme').'</span></a>'; endif;
 						$html.= '</div>
 					</div>
 					<div class="col-12">
-						<h3><a href="javascript:void(0)" class="option-toggle">Available Options</a></h3>';
+						<h3><a href="javascript:void(0)" class="option-toggle">'.__('Available Options', 'btrailers-theme').'</a></h3>';
 						if( have_rows('add_additional_options') ):
 							$count_attr = count(get_field('add_additional_options'));
 						$html.= '<div class="options-content">
