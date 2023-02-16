@@ -45,11 +45,11 @@ jQuery(document).ready(function($){
       .trigger("resize");
   
   // collapse
-  $(".trigger-toggle").click(function () {
+  $(document).on('click','.trigger-toggle', function() {
     $(this).prev().toggleClass("show");
     $(this).toggleClass("only-one");
   });
-  $(".option-toggle").click(function () {
+  $(document).on('click','.option-toggle', function() {
     $(this).parent().next().toggleClass("show-content");
     $(this).toggleClass("opened");
   });
