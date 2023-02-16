@@ -45,8 +45,10 @@ $current_child_term_ID = $terms[0]->term_id;
 				<div class="col-lg-6">
 					<?php if( $terms && ! is_wp_error( $terms ) ): ?>
 					<div class="tab-refresh">
-						<?php $ii=0; foreach( $terms as $term ): $ii++; $activeTabClass = ($ii == 1)? "active": "";
-								echo '<a data-tabid="'.$term->term_id.'" class="tabs-link tabs-link-detail '.$activeTabClass.'">' . $term->name . '</a>';
+						<?php $ii=0; foreach( $terms as $term ): $ii++;
+						$activeTabClass = ($ii == 1)? "active": "";
+						if($ii != 1): $tabs_link_detail = "tabs-link-detail "; else: $tabs_link_detail = "tab-no-link "; endif;
+								echo '<a data-tabid="'.$term->term_id.'" class="tabs-link '. $tabs_link_detail .$activeTabClass.'">' . $term->name . '</a>';
 								if($ii == 1):$tab_term_name = $term->name; $tab_description = $term->description;
 								$trailer_gallery = get_term_meta($term->term_id,'trailer_gallery', true); endif;
 								
