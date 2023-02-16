@@ -383,3 +383,7 @@ https://inclusive-components.design/cards/
 #loading-container.show-loader{
   display: block;
 }
+
+.tab-no-link{
+  cursor: unset !important;
+}

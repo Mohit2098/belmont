@@ -60,8 +60,11 @@ $html.='<div class="col-12" id="loading-container"><img class="loading-image" sr
 				<div class="col-lg-6">';
 					if( $terms && ! is_wp_error( $terms ) ):
 					$html.='<div class="tab-refresh">';
-					$ii=0; foreach( $terms as $term ): $ii++; $activeTabCLass = ($term->term_id == $tab_ID)? "active": "";
-								$html.='<a data-tabid="'.$term->term_id.'" class="tabs-link tabs-link-detail '.$activeTabCLass.'">' . $term->name . '</a>';
+					$ii=0; foreach( $terms as $term ): $ii++;
+					$activeTabCLass = ($term->term_id == $tab_ID)? "active": "";
+					$tab_custom_label = get_term_meta($term->term_id, 'tab_custom_label', true);
+					if(!empty($tab_custom_label)): $tabLabel = $tab_custom_label; else: $tabLabel = $term->name; endif;
+								$html.='<a data-tabid="'.$term->term_id.'" class="tabs-link tabs-link-detail '.$activeTabCLass.'">' . $tabLabel . '</a>';
 								if($term->term_id == $tab_ID):$tab_term_name = $term->name; $tab_description = $term->description;
 								$trailer_gallery = get_term_meta($tab_ID,'trailer_gallery', true); endif;
 								
