@@ -113,6 +113,8 @@ header.site-header.solid-header{
 
 header.site-header{
     width: 100%;
+    position: sticky;
+    top: 0;
     z-index: 11;
     background-color: var(--black);
 }
@@ -331,21 +333,20 @@ footer.global-footer .footer-copyright a:hover{
     transform: scale(1.04);
 }
 .gallery-slider .items .text-box{
-    padding: 1.875rem 1.25rem;
+    padding: 1.3rem 1.25rem;
 }
 .gallery-slider .items .text-box h3{
     text-transform: uppercase;
-    max-width: 300px;
-    font-size: 3.75rem;
+    font-size: 4.275rem;
     font-weight: 500;
     letter-spacing: 1px;
-    line-height: 1.1;
+    line-height: 1;
     padding-bottom: 1rem;
     font-family: var(--font-rift);
 }
 .gallery-slider .items .text-box a{
     background: var(--theme-yellow);
-    padding: 0.3rem 1rem;
+    padding: 0.3rem 0.5rem;
     color: var(--black);
     line-height: 1;
     text-transform: uppercase;
@@ -362,7 +363,7 @@ footer.global-footer .footer-copyright a:hover{
     height: 100%;
 }
 .full-width-column .solid-bg-col{
-    background-color: var(--theme-yellow);
+    background-color: var(--theme-sec-yellow);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -373,6 +374,7 @@ footer.global-footer .footer-copyright a:hover{
     line-height: 2.5rem;
     font-family: var(--font-neue-haas);
     font-weight: 700;
+    padding-bottom: 0.8rem;
 }
 .full-width-column .solid-bg-col div:first-child{
     margin-bottom: 2.5rem;
@@ -501,6 +503,7 @@ footer.global-footer .footer-copyright a:hover{
  .inner-white-box .caption .btn-custom-small{
     align-self: flex-end;
     font-weight: 800;
+    padding: 0.62rem 1rem;
  }
  .inner-white-box .img-box{
     display: flex;
@@ -536,11 +539,16 @@ footer.global-footer .footer-copyright a:hover{
 }
 
 /* ======== partners-section ===== */
+.partners-section{
+    padding-top: 0;
+}
  .partners-wrapper{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 .partner-item{
     padding-left: 1rem;
@@ -549,7 +557,7 @@ footer.global-footer .footer-copyright a:hover{
     text-align: center;
 }
 .partner-item img{
-    max-width: 20rem;
+    max-width: 16rem;
     max-height: 8.75rem;
     height: auto;
     object-fit: contain;
@@ -639,7 +647,7 @@ footer.global-footer .footer-copyright a:hover{
 .trigger-toggle:after{
     content: '';
     right: -26px;
-    top: 7px;
+    top: 0.4rem;
     height: 0.3rem;
     width: 0.3rem;
     transform: rotate(-45deg) translate(-50%, 0);
@@ -798,6 +806,7 @@ footer.global-footer .footer-copyright a:hover{
   text-align: center;
   font-weight: 300;
   padding-bottom: 0;
+  font-family: var(--font-termina);
 }
 .inner-box h3 strong{
     display: block;
@@ -845,7 +854,10 @@ footer.global-footer .footer-copyright a:hover{
     line-height: 1.875rem;
     font-weight: 700;
 }
-
+.flattrak-testimonial .testi-content span.location-name{
+    display: block;
+    text-align: center;
+}
 /* flattrak-logo-with-cta-section */
 .flattrak-logo-with-cta-section{
     text-align: center;
@@ -867,6 +879,7 @@ footer.global-footer .footer-copyright a:hover{
 }
 .flattrak-testimonial .quote-img{
     max-width: 43.75rem;
+    width: 100%;
     margin: 0 auto 2rem;
     display: block;
 }
@@ -887,6 +900,7 @@ footer.global-footer .footer-copyright a:hover{
 }
 .gform_wrapper .gfield_label{
     color: var(--theme-dark-gray);
+    font-family: var(--font-neue-haas);
     font-weight: 500 !important;
 }
 .gform_wrapper .gfield_label span.gfield_required{
@@ -898,7 +912,17 @@ footer.global-footer .footer-copyright a:hover{
 .gform_wrapper.gravity-theme .gfield .ginput_container_textarea textarea.medium{
     height: 17.3125rem;
 }
-
+section .gform_confirmation_wrapper {
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+section.form-with-content .gform_confirmation_wrapper{
+    text-align: left;
+    padding-top: 0;
+    padding-left: 0;
+}
 /* ======= form-section ========== */
 
 .form-section .form-box{
@@ -961,10 +985,10 @@ footer.global-footer .footer-copyright a:hover{
     left: -1px;
     top: 0px;
     height: 30px;
-    width: 202px;
+    width: 220px;
     color: var(--theme-dark-gray);
-    font-size: 1.8625rem;
-    line-height: 1.4;
+    font-size: 1.45rem;
+    line-height: 1.5;
     font-weight: 500;
 }
 .form-section .ginput_container_fileupload .gform_fileupload_multifile .gform_drop_area .gform_button_select_files:before{
@@ -990,11 +1014,13 @@ footer.global-footer .footer-copyright a:hover{
 .gform_wrapper .gform_footer .btn-custom{
     font-size: 1.875rem;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 800;
     cursor: pointer;
+    padding: 0.5rem 4.625rem;
 }
 .form-section .gform_wrapper .gform_footer .btn-custom{
     color: var(--theme-yellow);
+    margin-bottom: 2.6rem;
 }
 .form-section .gform_wrapper .gform_footer .btn-custom:hover{
     color: var(--black);
@@ -1002,11 +1028,20 @@ footer.global-footer .footer-copyright a:hover{
 .gform_wrapper .gform_footer .btn-custom span{
     position: static;
     font-size: 100%;
-    font-weight: 500;
+    font-weight: 700;
 }
 .form-with-content .gform_wrapper .gform_footer{
  text-align: right;
  justify-content: flex-end;
+}
+section .gform_wrapper .gfield_validation_message, 
+section .gform_wrapper .validation_message{
+    padding: 0 !important;
+    background: transparent;
+    border: none;
+}
+.gform_wrapper.gravity-theme .ginput_container_date input::-webkit-input-placeholder{
+    color: transparent;
 }
 
 /* ============ single trailer page ============= */
@@ -1014,6 +1049,11 @@ footer.global-footer .footer-copyright a:hover{
 .single-trailers-section > .container-fluid strong.h3{
     font-size: 2.8125rem;
     line-height: 4.6875rem;
+    font-family: var(--font-rift);
+}
+.single-trailers-section > .container-fluid strong.h3 a{
+    color: inherit;
+    text-decoration: none;
     font-family: var(--font-rift);
 }
 .trailer-slide-wrap{
@@ -1087,7 +1127,20 @@ footer.global-footer .footer-copyright a:hover{
     height: 25px;
     width: 25px;
 }
-
+.trailer-archive #loading-container{
+    text-align: center;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgb(128 128 128 / 64%);
+    z-index: 11;
+}
+.trailer-archive #loading-container img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
 
 header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > a,
 header.site-header .bl-navigation ul.menu > li.current-menu-item > a,
@@ -1108,6 +1161,13 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
     .detail-box ul li{
         font-size: 1.5625rem;
         line-height: 1.3;
+    }
+    .partner-item{
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .partners-wrapper{
+        margin-top: 2rem;
     }
 }
 @media screen and (min-width:769px){
@@ -1189,7 +1249,7 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
         padding: 1.07rem 1rem !important;
     }
      .gform_wrapper .gfield_label{
-    font-size: 1.66rem !important;
+    font-size: 1.5625rem !important;
     }
     .feature-list .btn-custom-small{
         font-size: 1.5625rem;
@@ -1258,7 +1318,11 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
         object-position: right;
     }
 }
-
+@media screen and (min-width:992px) and (max-width:1600px){
+    .form-section .ginput_container_fileupload .gform_fileupload_multifile .gform_drop_area .gform_button_select_files:after{
+        font-size: 1.75rem;
+    }
+}
 @media screen and (min-width:992px) and (max-width:1200px){
     header.site-header .bl-navigation ul > li > a{
         padding: .5rem 2.25rem;
@@ -1350,7 +1414,7 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
     header.site-header{
         padding-bottom: 1rem;
         height: 92px;
-        position: relative;
+        /* position: relative; */
     }
     header.site-header.opened-menu{
         position: fixed;
@@ -1502,10 +1566,13 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
 /* mobile */
 @media screen and (max-width:767px){
    .two-column-grid-section .col-wrap{
-        padding-left: 9rem;
+        padding-left: 8.85rem;
         padding-top: 20px;
         padding-bottom: 20px;
         margin: 0 auto 2.625rem;
+        border-top-right-radius: 4rem;
+        border-bottom-right-radius: 4rem;
+        background-color: rgba(255, 255, 255, .50);
     }
     .two-column-grid-section .col-wrap .logo-left{
         width: 7.8125rem;
@@ -1519,6 +1586,7 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
         font-size: 1.5rem;
         line-height: 1;
         margin-bottom: 5px;
+        font-weight: 700;
     }
     .two-column-grid-section .col-wrap p{
         font-size: 0.875rem;
@@ -1636,5 +1704,25 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
     }
     .trailer-img-contain{
         height: 20.125rem;
+    }
+    .heading-logo-wrap h1{
+        font-size: 3.125rem;
+    }
+    .hero-slider-bl .caption-wrap .btn-custom{
+        margin-top: 1rem;
+    }
+    .hero-slider-bl .caption-wrap h1{
+        margin-bottom: 0.875rem;
+    }
+    .form-section .gform_wrapper .gform_footer .btn-custom{
+        color: var(--black);
+    }
+    .gform_wrapper .gform_footer .btn-custom{
+        font-size: 1.2rem;
+        padding: 0.5rem 2.625rem;
+    }
+    .partner-item img{
+        max-width: 8rem;
+        max-height: 4.75rem;
     }
 }

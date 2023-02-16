@@ -9,7 +9,8 @@
     --white: #ffffff;
     --black: #000000;
     --theme-blue: #4475BA;
-    --theme-yellow: #f0ae2e;
+    --theme-yellow: #F9B42D;
+    --theme-sec-yellow: #f0ae2e;
     --theme-lt-gray: #E6E7E8;
     --theme-lt-black: #313133;
     --theme-dark-gray: #6D6F71;
@@ -18,6 +19,7 @@
     /* fonts */
     --font-rift: "rift",sans-serif;
     --font-neue-haas: "neue-haas-unica",sans-serif;
+    --font-termina: "termina";
 }
 
 /* font families coming from third party (adobe link) in header */
@@ -26,6 +28,9 @@
  }
 .tk-neue-haas-unica { 
   font-family: "neue-haas-unica",sans-serif;
+ }
+ .termina{
+  font-family: "termina";
  }
   body{
     -webkit-font-smoothing: antialiased;
@@ -83,6 +88,7 @@ h3, .h3 {
 p{
   font-size: 1.125rem;
   line-height: 1.5625rem;
+  margin-bottom: 0.8rem;
 }
 .text-medium{
   font-size: 2.6875rem;
