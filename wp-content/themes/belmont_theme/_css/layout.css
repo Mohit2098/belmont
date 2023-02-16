@@ -498,7 +498,7 @@ footer.global-footer .footer-copyright a:hover{
     font-size: 4.6875rem;
     line-height: 1;
     font-family: var(--font-rift);
-    word-break: break-word;
+    /* word-break: break-word; */
  }
  .inner-white-box .caption .btn-custom-small{
     align-self: flex-end;
@@ -541,6 +541,8 @@ footer.global-footer .footer-copyright a:hover{
 /* ======== partners-section ===== */
 .partners-section{
     padding-top: 0;
+    padding-left: 0.875rem;
+    padding-right: 0.875rem;
 }
  .partners-wrapper{
     display: flex;
