@@ -145,7 +145,7 @@ $html.='<div class="col-12" id="loading-container"><img class="loading-image" sr
 								$add_feature = get_sub_field('add_feature');
 								$html.='<li>'.$add_feature.'</li>';
 							if($k == 10): $html.= '</ul><ul class="toggle-content">'; $k=0; endif;
-							endwhile;
+							endwhile; 
 							$html.='</ul>'; endif;
 							if($count_standard_attr > 10):
                                 $html.='<a href="javascript:void(0)" class="trigger-toggle"><span class="more">'.__('Show more', 'btrailers-theme' ).'</span><span class="less">'.__('Show less', 'btrailers-theme').'</span></a>'; endif;
