@@ -126,12 +126,14 @@ jQuery(document).ready(function($){
         tab_ID: tabID,
       },
       beforeSend: function() {
-        // jQuery("#loading-container").addClass("show_loader");
+      jQuery("#loading-container").addClass("show-loader");
       },
       success: function(data) {
         jQuery(".trailer-archive").html(data);
         jQuery(".slider-product").slick(loadProductSlider());
-        jQuery(".products-nav").slick(loadProductNavSlider());        },
+        jQuery(".products-nav").slick(loadProductNavSlider());
+        jQuery("#loading-container").removeClass("show-loader");
+      },
       error: function(errorThrown){
         jQuery(".trailer-archive").html("<div class='result_content'><h3>No Trailers Found!</h3></div>");
       }

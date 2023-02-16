@@ -10,6 +10,9 @@ $terms = get_terms([
 $current_child_term_ID = $terms[0]->term_id;
 ?>
 <main id="content" class="category-page trailer-archive">
+	<div class="col-12" id="loading-container">
+		<img class="loading-image" src="<?php echo get_template_directory_uri(); ?>/_images/spinner.svg" />
+	</div>
 	<section class="bl-section single-trailers-section">
 		<div class="container-fluid">
 			<div class="row">

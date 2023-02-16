@@ -16,7 +16,8 @@ $terms = get_terms([
 	'parent'      => $parentTerm->parent,
 	'order' => 'DESC'
 ]);
-$html.='<section class="bl-section single-trailers-section">
+$html.='<div class="col-12" id="loading-container"><img class="loading-image" src="'.get_template_directory_uri().'/_images/spinner.svg" />
+</div><section class="bl-section single-trailers-section">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-6">

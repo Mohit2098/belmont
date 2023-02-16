@@ -376,3 +376,10 @@ https://inclusive-components.design/cards/
 /*--------------------------------------------------------------
 8. Custom Theme Styles
 -------------------------------------------------------------- */
+#loading-container{
+  display: none;
+}
+
+#loading-container.show-loader{
+  display: block;
+}
