@@ -48,7 +48,9 @@ $current_child_term_ID = $terms[0]->term_id;
 						<?php $ii=0; foreach( $terms as $term ): $ii++;
 						$activeTabClass = ($ii == 1)? "active": "";
 						if($ii != 1): $tabs_link_detail = "tabs-link-detail "; else: $tabs_link_detail = "tab-no-link "; endif;
-								echo '<a data-tabid="'.$term->term_id.'" class="tabs-link '. $tabs_link_detail .$activeTabClass.'">' . $term->name . '</a>';
+						$tab_custom_label = get_term_meta($term->term_id, 'tab_custom_label', true);
+						if(!empty($tab_custom_label)): $tabLabel = $tab_custom_label; else: $tabLabel = $term->name; endif;
+								echo '<a data-tabid="'.$term->term_id.'" class="tabs-link '. $tabs_link_detail .$activeTabClass.'">' . $tabLabel . '</a>';
 								if($ii == 1):$tab_term_name = $term->name; $tab_description = $term->description;
 								$trailer_gallery = get_term_meta($term->term_id,'trailer_gallery', true); endif;
 								
@@ -60,8 +62,8 @@ $current_child_term_ID = $terms[0]->term_id;
 		</div>
 		<div class="container pt-70">
 			<div class="row">
+			<?php if(!empty($trailer_gallery)): ?>
 				<div class="col-lg-6">
-					<?php if(!empty($trailer_gallery)): ?>
 					<div class="trailer-slide-wrap">
 						<div class="slider-product">
 							<?php foreach($trailer_gallery as $gallery_item): $image_alt = get_post_meta($gallery_item, '_wp_attachment_image_alt', TRUE); ?>
@@ -80,10 +82,12 @@ $current_child_term_ID = $terms[0]->term_id;
 						</div>
 						<!-- slider lower -->
 					</div>
-					<?php endif; ?>
 				</div>
+			<?php endif; ?>
 				<!-- /col -->
+			<?php if(!empty($trailer_gallery)): ?>
 				<div class="col-lg-6">
+			<?php else: ?><div class="col-lg-12"><?php endif; ?>
 					<div class="description">
 						<h2 class="text-medium"><?php echo $tab_term_name; ?></h2>
 						<?php if($tab_description != ''): ?><p><?php echo $tab_description; ?></p><?php endif; ?>

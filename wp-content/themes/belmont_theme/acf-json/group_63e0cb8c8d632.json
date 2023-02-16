@@ -89,6 +89,26 @@
             "esc_html": 0
         },
         {
+            "key": "field_63ee0a3a92ade",
+            "label": "Tab Custom Label",
+            "name": "tab_custom_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "If this field is blank then default category name will be displayed as Tab Label.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_63e9e67888edf",
             "label": "Trailer Gallery",
             "name": "trailer_gallery",
@@ -135,5 +155,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1676436580
+    "modified": 1676544698
 }
