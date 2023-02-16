@@ -46,11 +46,11 @@ jQuery(document).ready(function($){
   
   // collapse
   $(".trigger-toggle").click(function () {
-    $(".toggle-content").toggleClass("show");
+    $(this).prev().toggleClass("show");
     $(this).toggleClass("only-one");
   });
   $(".option-toggle").click(function () {
-    $(".options-content").toggleClass("show-content");
+    $(this).parent().next().toggleClass("show-content");
     $(this).toggleClass("opened");
   });
   
