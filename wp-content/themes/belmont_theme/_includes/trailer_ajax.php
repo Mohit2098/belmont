@@ -10,12 +10,25 @@ function load_trailer_tab(){
 
 $current_child_term_ID = $tab_ID;
 $parentTerm = get_term($current_child_term_ID, 'trailers');
+
+
+
+if ( class_exists( 'Yikes_Custom_Taxonomy_Order' ) && wp_doing_ajax() ) {
+    add_filter( 'terms_clauses', [ Yikes_Custom_Taxonomy_Order::get_instance(), 'set_tax_order' ], 15, 3 );
+}
+
 $terms = get_terms([
 	'taxonomy'    => 'trailers',
 	'hide_empty'  => true,
 	'parent'      => $parentTerm->parent,
 	'order' => 'DESC'
 ]);
+
+if ( class_exists( 'Yikes_Custom_Taxonomy_Order' ) && wp_doing_ajax() ) {
+    remove_filter( 'terms_clauses', [ Yikes_Custom_Taxonomy_Order::get_instance(), 'set_tax_order' ], 15 );
+}
+
+
 $html.='<div class="col-12" id="loading-container"><img class="loading-image" src="'.get_template_directory_uri().'/_images/spinner.svg" />
 </div><section class="bl-section single-trailers-section">
 		<div class="container-fluid">
