@@ -1039,8 +1039,8 @@ section.form-with-content .gform_confirmation_wrapper{
 section .gform_wrapper .gfield_validation_message, 
 section .gform_wrapper .validation_message{
     padding: 0 !important;
-    background: transparent;
-    border: none;
+    background: transparent !important;
+    border: none !important;
 }
 .gform_wrapper.gravity-theme .ginput_container_date input::-webkit-input-placeholder{
     color: transparent;
