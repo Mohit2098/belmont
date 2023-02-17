@@ -43,7 +43,7 @@ $current_child_term_ID = $terms[0]->term_id;
 				</div>
 				<!-- /col -->
 				<div class="col-lg-6">
-					<?php if( $terms && ! is_wp_error( $terms ) ): ?>
+					<?php if ( ! empty( $terms ) && ! is_wp_error( $terms ) ): ?>
 					<div class="tab-refresh">
 						<?php $ii=0; foreach( $terms as $term ): $ii++;
 						$activeTabClass = ($ii == 1)? "active": "";

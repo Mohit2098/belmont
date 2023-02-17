@@ -58,7 +58,7 @@ $html.='<div class="col-12" id="loading-container"><img class="loading-image" sr
                         endif;
 				$html.='</div>
 				<div class="col-lg-6">';
-					if( $terms && ! is_wp_error( $terms ) ):
+					if ( ! empty( $terms ) && ! is_wp_error( $terms ) ):
 					$html.='<div class="tab-refresh">';
 					$ii=0; foreach( $terms as $term ): $ii++;
 					$activeTabCLass = ($term->term_id == $tab_ID)? "active": "";

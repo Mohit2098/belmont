@@ -6,7 +6,7 @@ $trailer_type = get_terms([
 'orderby'    => 'ID',
 'order'      => 'ASC',
 ]);
-if ( !empty($trailer_type) ) : ?>
+if ( ! empty( $trailer_type ) && ! is_wp_error( $trailer_type ) ): ?>
 <section class="gallery-slider-section">
 <div class="slider-wrapper container-fluid">
 <div class="row">

@@ -1,28 +1,20 @@
 <?php
-$ids_to_exclude = array();
-$get_terms_to_exclude =  get_terms(
-    array(
-        'fields'  => 'ids',
-        'slug'    => array('custom-builds'),
-        'taxonomy' => 'trailers',
-    )
-);
-if( !is_wp_error( $get_terms_to_exclude ) && count($get_terms_to_exclude) > 0){
-    $ids_to_exclude = $get_terms_to_exclude; 
-}
 $trailer_type = get_terms([
 'taxonomy' => 'trailers',
 'hide_empty' => false,
 'parent' => 0,
 'orderby'    => 'ID',
 'order'      => 'ASC',
-'exclude' => $ids_to_exclude
 ]);
-if ( !empty($trailer_type) ) : ?>
+$count_trailer_type = count($trailer_type);
+if ( ! empty( $trailer_type ) && ! is_wp_error( $trailer_type ) ):
+    $j=0; foreach( $trailer_type as $trailer ): $j++; if($trailer->slug == 'custom-builds'){ unset($trailer_type[$j-1]); $trailer_type[$count_trailer_type] = $trailer; } endforeach;
+?>
 <section class="bl-section all-trailers-sec">
 <div class="container">
 <div class="row">
-<?php foreach( $trailer_type as $trailer ):
+<?php 
+    $i=0; foreach( $trailer_type as $trailer ): $i++;
     $trailer_featured_img = get_field( 'trailer_type_featured_image', $trailer->taxonomy . '_' . $trailer->term_id );
     $trailer_icon = get_field( 'trailer_icon', $trailer->taxonomy . '_' . $trailer->term_id );
     ?>
