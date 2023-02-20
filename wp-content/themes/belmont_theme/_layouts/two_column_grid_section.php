@@ -1,12 +1,12 @@
 <section class="bl-section two-column-grid-section">
     <div class="container">
         <div class="row">
-            <div class="col-12 text-center pb-50">
                 <?php $section_heading = get_sub_field('section_heading'); ?>
                 <?php if (!empty($section_heading)) : ?>
+                    <div class="col-12 text-center pb-50">
                     <h2><?php echo $section_heading; ?></h2>
+                    </div>
                 <?php endif; ?>
-            </div>
             <?php if (have_rows('grid_content')) : ?>
                 <?php while (have_rows('grid_content')) : the_row();
                     $image = get_sub_field('image');
@@ -33,15 +33,16 @@
                 <?php endwhile; ?>
             <?php endif; ?>
             <!-- /col -->
-            <div class="col-12 text-center">
+            
                 <?php $section_cta = get_sub_field('section_cta'); ?>
                 <?php if (!empty($section_cta)) : ?>
+                    <div class="col-12 text-center">
                     <?php $section_cta_target = $section_cta['target'] ? $section_cta['target'] : '_self'; ?>
                     <a class="btn-custom" href="<?php echo esc_url($section_cta['url']); ?>" target="<?php echo $section_cta_target; ?>">
                         <?php echo $section_cta['title']; ?>
                     </a>
+                    </div>
                 <?php endif; ?>
-            </div>
         </div>
     </div>
 </section>
