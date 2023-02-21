@@ -144,13 +144,12 @@ $current_child_term_ID = $terms[0]->term_id;
 							<?php if($k == 10):?></ul><ul class="toggle-content"><?php $k=0; endif; ?>
 							<?php endwhile; ?>
 							</ul><?php endif;
-							if($count_standard_attr > 10): ?><a href="javascript:void(0)" class="trigger-toggle"><span class="more"><?php _e('Show more', 'btrailers-theme' ); ?></span><span class="less"><?php _e('Show less', 'btrailers-theme' ); ?></span></a><?php endif; ?>
+							if($count_standard_attr > 10): ?><a href="javascript:void(0)" class="trigger-toggle"><span class="more"><?php _e('See more', 'btrailers-theme' ); ?></span><span class="less"><?php _e('See less', 'btrailers-theme' ); ?></span></a><?php endif; ?>
 						</div>
 					</div>
 					<!-- /col -->
 					<div class="col-12">
 						<h3><a href="javascript:void(0)" class="option-toggle"><?php _e('Available Options', 'btrailers-theme' ); ?></a></h3>
-						
 						<?php if( have_rows('add_additional_options') ):
 						 $count_attr = count(get_field('add_additional_options')); ?>
 						<div class="options-content <?php if($count_attr == 1): echo "with-single-point"; endif;?>">
