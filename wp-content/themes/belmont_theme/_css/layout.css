@@ -150,6 +150,7 @@ header.site-header{
 footer.global-footer{
     background-color: var(--black);
     color: var(--white);
+    padding-bottom: 3.125rem;
 }
 footer.global-footer nav ul{
     list-style: none;
@@ -181,7 +182,7 @@ footer.global-footer .footer-copyright{
     margin: auto;
     text-align: center;
     color: var(--theme-yellow);
-    padding-top: 6.25rem;
+    padding-top: 5.25rem;
 }
 footer.global-footer .footer-copyright a{
     color: var(--theme-yellow);
@@ -352,6 +353,7 @@ footer.global-footer .footer-copyright a:hover{
     text-transform: uppercase;
     border-radius: 0.4rem;
     font-weight: 500;
+    font-size: 1.4375rem;
 }
 
 .slick-slider{
@@ -360,7 +362,8 @@ footer.global-footer .footer-copyright a:hover{
 
 /* ======= two column full width section ========= */
 .full-width-column .col-img{
-    height: 100%;
+    display: block;
+    vertical-align: baseline;
 }
 .full-width-column .solid-bg-col{
     background-color: var(--theme-sec-yellow);
@@ -414,7 +417,7 @@ footer.global-footer .footer-copyright a:hover{
     font-size: 1.5rem;
 }
 .learn-more{
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: var(--black);
     text-transform: uppercase;
     font-weight: 700;
@@ -713,6 +716,9 @@ footer.global-footer .footer-copyright a:hover{
 .options-content ul{
     padding-left: 5rem; 
     column-count: 3;
+}
+.with-single-point.options-content ul{
+    column-count: auto;
 }
 .options-content ul li{
     padding-right: 2.5rem;
@@ -1486,7 +1492,10 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
     }
      .inner-white-box .caption .btn-custom-small{
         background-color: var(--theme-yellow);
-        color: var(--white);
+        color: var(--black);
+    }
+    .inner-white-box:hover .caption .btn-custom-small{
+        color: var(--black);
     }
     .inner-white-box .trailer-bg{
         z-index: 0;
