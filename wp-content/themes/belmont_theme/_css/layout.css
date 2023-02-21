@@ -40,7 +40,7 @@ header.site-header .bl-navigation ul.sub-menu li > a{
     font-weight: 400;
 }
 header.site-header .bl-navigation ul > li > a:hover{
-    opacity: .8;
+    color: var(--link-footer);
 }
 
 header.site-header .bl-navigation ul > li ul.sub-menu{
@@ -1019,10 +1019,12 @@ section.form-with-content .gform_confirmation_wrapper{
     font-weight: 800;
     cursor: pointer;
     padding: 0.5rem 4.625rem;
+    font-family: var(--font-neue-haas);
 }
 .form-section .gform_wrapper .gform_footer .btn-custom{
     color: var(--theme-yellow);
     margin-bottom: 2.6rem;
+    font-family: var(--font-neue-haas);
 }
 .form-section .gform_wrapper .gform_footer .btn-custom:hover{
     color: var(--black);
@@ -1260,6 +1262,10 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
         padding: 0.3rem 1.2rem;
         margin-right: 2rem;
         text-transform: uppercase;
+    }
+    .form-with-content p{
+        font-size: 1.5625rem;
+        line-height: 2.5rem;
     }
 }
 @media screen and (min-width:768px){
@@ -1724,7 +1730,7 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
         padding: 0.5rem 2.625rem;
     }
     .partner-item img{
-        max-width: 8rem;
+        max-width: 7.5rem;
         max-height: 4.75rem;
     }
 }

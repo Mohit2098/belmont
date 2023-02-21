@@ -150,11 +150,13 @@ $current_child_term_ID = $terms[0]->term_id;
 					<!-- /col -->
 					<div class="col-12">
 						<h3><a href="javascript:void(0)" class="option-toggle"><?php _e('Available Options', 'btrailers-theme' ); ?></a></h3>
+						
 						<?php if( have_rows('add_additional_options') ):
-							$count_attr = count(get_field('add_additional_options')); ?>
-						<div class="options-content">
+						 $count_attr = count(get_field('add_additional_options')); ?>
+						<div class="options-content <?php if($count_attr == 1): echo "with-single-point"; endif;?>">
 							<ul>
-								<?php while( have_rows('add_additional_options') ) : the_row();
+								<?php
+								 while( have_rows('add_additional_options') ) : the_row();
 								$add_options = get_sub_field('add_options');
 								if($add_options != ''): ?><li><?php echo $add_options; ?></li><?php endif; endwhile; ?>
 							</ul>
