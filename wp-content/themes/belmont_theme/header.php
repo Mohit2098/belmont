@@ -7,13 +7,13 @@
   </head>
   <body <?php body_class(); ?>>
   	<?php wp_body_open(); ?>
-  	<a class="screen-reader-text" href="#content"><?php _e( 'Skip to Main Content', 'wpbp-theme' ); ?></a>
+  	<a class="screen-reader-text" href="#content"><?php _e( 'Skip to Main Content', 'btrailers-theme' ); ?></a>
 
   	<header class="site-header">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-12">
-					<nav id="access" class="top-utility-menu" aria-label="<?php _e( 'Top Bar Navigation', 'wpbp-theme' ); ?>" >
+					<nav id="access" class="top-utility-menu" aria-label="<?php _e( 'Top Bar Navigation', 'btrailers-theme' ); ?>" >
 				    <?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'top_bar_menu' ) ); ?>
 			</nav>
 				</div>
@@ -29,7 +29,7 @@
 					<button class="menu-toggle rt-menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Open Menu">
 						<span></span><span></span><span></span>
 					</button>
-					<nav id="site-navigation" class="main-navigation bl-navigation" aria-label="<?php _e( 'Primary Navigation', 'wpbp-theme' ); ?>" >
+					<nav id="site-navigation" class="main-navigation bl-navigation" aria-label="<?php _e( 'Primary Navigation', 'btrailers-theme' ); ?>" >
 					<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary_menu' ) ); ?>
 			</nav>
 				</div>

@@ -2,7 +2,7 @@
 <main id="content" class="category-page">
 		<header>
 			<h1 class="entry-title">
-				<?php echo single_cat_title( __( '', 'wpbp-theme' ) ); ?> <?php _e( 'Articles', 'wpbp-theme' ); ?>
+				<?php echo single_cat_title( __( '', 'btrailers-theme' ) ); ?> <?php _e( 'Articles', 'btrailers-theme' ); ?>
 			</h1>
 		</header>
     <ul>

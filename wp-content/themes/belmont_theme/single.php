@@ -9,7 +9,7 @@
 		<div class="entry-content">
 			<?php the_content(); ?>
 		</div>
-		<nav class="single-pagination" aria-label="<?php esc_html_e( 'Additional posts', 'wpbp-theme' ); ?>">
+		<nav class="single-pagination" aria-label="<?php esc_html_e( 'Additional posts', 'btrailers-theme' ); ?>">
 			<?php next_post_link( '%link', 'Next post', TRUE ); ?>
 			<?php previous_post_link('%link', 'Previous post', TRUE); ?>
 		</nav>

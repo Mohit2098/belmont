@@ -2,7 +2,7 @@
 <main id="content" class="search-page">
   <?php if ( have_posts() ) { ?>
 	<header>
-		<h1><?php echo $wp_query->found_posts; ?> <?php _e( 'search results found for', 'wpbp-theme' ); ?> "<?php the_search_query(); ?>"</h1>
+		<h1><?php echo $wp_query->found_posts; ?> <?php _e( 'search results found for', 'btrailers-theme' ); ?> "<?php the_search_query(); ?>"</h1>
 	</header>
 	<ul>
 	<?php while ( have_posts() ) { the_post(); ?>
@@ -18,7 +18,7 @@
 	<?php ;} else { ?>
 	<article>
 		<header>
-			<h1><?php _e( 'Sorry, No results found for', 'wpbp-theme' ); ?> "<?php echo get_search_query(); ?>"</h1>
+			<h1><?php _e( 'Sorry, No results found for', 'btrailers-theme' ); ?> "<?php echo get_search_query(); ?>"</h1>
 		</header>
 		<p>Try searching again:</p>
 		<p><?php get_search_form(); ?></p>

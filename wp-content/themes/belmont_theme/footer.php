@@ -11,7 +11,7 @@
                 </div>
                 <!-- /col -->
                 <div class="col-lg-8">
-                    <nav aria-label="<?php _e('Footer Navigation', 'wpbp-theme'); ?>">
+                    <nav aria-label="<?php _e('Footer Navigation', 'btrailers-theme'); ?>">
                         <?php wp_nav_menu(array('container_class' => 'menu-footer', 'theme_location' => 'footer_menu')); ?>
                     </nav>
                 </div>
