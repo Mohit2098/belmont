@@ -8,8 +8,8 @@ $add_cta = get_sub_field('add_cta');
             <div class="col-lg-6">
                 <?php if (!empty($logo)) : ?>
                 <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" />
-                <?php endif; ?>
-                <?php if (!empty($add_cta)) :
+                <?php endif;
+                if (!empty($add_cta)) :
                     $button_target = $add_cta['target'] ? $add_cta['target'] : '_self'; ?>
                     <a href="<?php echo esc_url($add_cta['url']); ?>" class="btn-custom" target="<?php echo $button_target; ?>">
                         <?php echo $add_cta['title']; ?>

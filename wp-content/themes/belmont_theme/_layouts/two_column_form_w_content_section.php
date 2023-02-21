@@ -10,8 +10,8 @@ $form_shortcode = get_sub_field('add_form_shortcode');
                 <div class="content-wrapper">
                     <?php if (!empty($heading)) : ?>
                         <h1 class="h2 text-medium"><?php echo $heading; ?></h1>
-                    <?php endif; ?>
-                    <?php if (!empty($description)) : ?>
+                    <?php endif;
+                    if (!empty($description)) : ?>
                         <div><?php echo $description; ?></div>
                     <?php endif; ?>
                 </div>
@@ -21,10 +21,8 @@ $form_shortcode = get_sub_field('add_form_shortcode');
                 <div class="form-wrapper">
                     <?php if (!empty($form_heading)) : ?>
                         <h2 class="h2 text-medium"><?php echo $form_heading; ?></h2>
-                    <?php endif; ?>
-                    <?php if (!empty($form_shortcode)) : ?>
-                        <?php echo do_shortcode($form_shortcode); ?>
-                    <?php endif; ?>
+                    <?php endif;
+                    if (!empty($form_shortcode)) : echo do_shortcode($form_shortcode); endif; ?>
                 </div>
             </div>
         </div>

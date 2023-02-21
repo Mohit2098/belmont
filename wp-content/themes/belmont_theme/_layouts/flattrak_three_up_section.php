@@ -2,8 +2,7 @@
     <section class="flattrak-three-up-section">
         <div class="container">
             <div class="row">
-                <?php
-                while (have_rows('flattrak_three_up_content')) : the_row();
+                <?php while (have_rows('flattrak_three_up_content')) : the_row();
                     $heading_bold = get_sub_field('heading_bold');
                     $heading = get_sub_field('heading'); ?>
                     <div class="col-lg-4 outer-box">
@@ -18,4 +17,3 @@
         </div>
     </section>
 <?php endif; ?>
-<!-- /col -->
