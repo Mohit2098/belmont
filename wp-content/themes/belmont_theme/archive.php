@@ -21,14 +21,16 @@ $current_child_term_ID = $terms[0]->term_id;
 					<?php
 					$args=array(    
 						'post_type' => 'btrailers',
+						'orderby' => 'date',
+						'order' => 'DESC',
 						'tax_query' => array(
 							array(
 								'taxonomy' => 'trailers',
 								'field'    => 'id',
 								'terms'    => $current_child_term_ID,
 							),
-						   ),
-						 );
+						),
+						);
 						$wp_query = new WP_Query( $args );
 						$count = $wp_query->post_count;
 						if($count > 0):
