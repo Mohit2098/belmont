@@ -1161,9 +1161,6 @@ section .gform_wrapper .validation_message{
     display: block;
 }
 
-
-
-
 header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > a,
 header.site-header .bl-navigation ul.menu > li.current-menu-item > a,
 header.site-header .bl-navigation ul.sub-menu > li.current-menu-item > a,
