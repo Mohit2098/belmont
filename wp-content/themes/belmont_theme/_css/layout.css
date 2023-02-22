@@ -39,9 +39,7 @@ header.site-header .bl-navigation ul{
 header.site-header .bl-navigation ul.sub-menu li > a{
     font-weight: 400;
 }
-header.site-header .bl-navigation ul > li > a:hover{
-    color: var(--link-footer);
-}
+
 
 header.site-header .bl-navigation ul > li ul.sub-menu{
     background-color: var(--black);
@@ -1161,6 +1159,13 @@ section .gform_wrapper .validation_message{
     display: block;
 }
 
+/* ======= shortcode-section ========= */
+.shortcode-section .location-box{
+    max-width: 970px;
+    margin: auto;
+}
+
+
 header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > a,
 header.site-header .bl-navigation ul.menu > li.current-menu-item > a,
 header.site-header .bl-navigation ul.sub-menu > li.current-menu-item > a,
@@ -1259,6 +1264,10 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
         opacity: 1;
         visibility: visible;
         pointer-events: all;
+    }
+    header.site-header .bl-navigation ul > li > a:hover,
+    header.site-header .bl-navigation ul > li ul.sub-menu > li > a:hover{
+        color: var(--link-footer);
     }
     .hero-slider-bl .caption-wrap p,
     .single-trailers-section .description p{
