@@ -25,7 +25,7 @@ if ( ! empty( $trailer_type ) && ! is_wp_error( $trailer_type ) ):
         <?php endif; ?>
         <div class="caption">
             <h3><?php echo $trailer->name; ?></h3>
-            <a href="<?php echo get_term_link($trailer->term_id); ?>" class="btn-custom-small outline-yellow">SEE TRAILER SPECS <span>»</span></a>
+            <a href="<?php echo get_term_link($trailer->term_id); ?>" class="btn-custom-small outline-yellow"><?php _e('SEE TRAILER SPECS ', 'btrailers-theme' ); ?><span>»</span></a>
         </div>
         <?php if(!empty($trailer_icon)): ?>
             <div class="img-box"><img class="trailer-img" src="<?php echo $trailer_icon['url']; ?>" alt="<?php echo $trailer_icon['alt']; ?>" /></div>
