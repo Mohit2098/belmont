@@ -22,7 +22,7 @@ $current_child_term_ID = $terms[0]->term_id;
 					$args=array(    
 						'post_type' => 'btrailers',
 						'orderby' => 'date',
-						'order' => 'DESC',
+						'order' => 'ASC',
 						'tax_query' => array(
 							array(
 								'taxonomy' => 'trailers',
