@@ -140,6 +140,12 @@ jQuery(document).ready(function($){
     });
   });
 
+  $(".link-trailer").on('click', function () {
+    $('html, body').animate({
+      scrollTop: $(".detail-box").offset().top - 200
+    }, 1000);
+  });
+
 });
 
 
