@@ -388,8 +388,8 @@ footer.global-footer .footer-copyright a:hover{
     align-items: center;
     position: relative;
     padding-left: 17.625rem;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
     border-radius: 12.5rem 1.25rem 1.25rem 12.5rem;
     box-shadow: 2px 6px 25px rgb(0 0 0 / 12%);
     margin: 0 auto 6rem;
@@ -595,7 +595,8 @@ footer.global-footer .footer-copyright a:hover{
     height: 29.125rem;
     object-fit: contain;
     width: 100%;
-    margin-bottom: 3rem;    
+    margin-bottom: 3rem;
+    margin-top: 1rem;    
 }
 .detail-box{
     position: relative;
@@ -690,7 +691,7 @@ footer.global-footer .footer-copyright a:hover{
     border-bottom: 0.8rem solid var(--black);
     border-right: 0.8rem solid transparent;
     border-top: 0.8rem solid transparent;
-    border-radius: 4px;
+    border-radius: 1px;
 }
 .option-toggle.opened:after{
     top: 25%;
@@ -1060,13 +1061,17 @@ section .gform_wrapper .validation_message{
 
 .single-trailers-section > .container-fluid strong.h3{
     font-size: 2.8125rem;
-    line-height: 4.6875rem;
+    line-height: 1;
     font-family: var(--font-rift);
+    display: block;
+    padding-bottom: 0;
+    margin-top: 1rem;
 }
 .single-trailers-section > .container-fluid strong.h3 a{
     color: inherit;
     text-decoration: none;
     font-family: var(--font-rift);
+    display: inline-block;
 }
 .trailer-slide-wrap{
     max-width: 46.875rem;
@@ -1097,6 +1102,10 @@ section .gform_wrapper .validation_message{
 .trailer-slide-wrap:hover .slick-prev{
     opacity: 1;
 }
+/* .trailer-slide-wrap:hover .slick-next.slick-disabled,
+.trailer-slide-wrap:hover .slick-prev.slick-disabled{
+    opacity: 0.5;
+} */
 .trailer-slide-wrap .slick-next{
     right: 0;
     background: transparent linear-gradient(270deg, #00000098 0%, #00000000 100%) 0% 0% no-repeat padding-box;
@@ -1251,7 +1260,7 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
      .bl-navigation ul > li.menu-item-has-children:after{
         content: '';
         position: absolute;
-        right: 2.15rem;
+        right: 1.9rem;
         top: 0.8rem;
         height: 0.625rem;
         width: 0.625rem;
@@ -1261,7 +1270,7 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
         transition: .4s;
      }
      .bl-navigation ul > li.menu-item-has-children:hover:after{
-        top: 5px;
+        top: 0.6rem; 
         transform: rotate(-135deg);
      }
      .main-navigation ul li:hover > ul{
@@ -1619,6 +1628,7 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
         font-size: 2.25rem;
         line-height: 1.1;
         display: block;
+        margin-bottom: 1rem;
     }
     .feature-list .btn-custom-small img{
         vertical-align: sub;
@@ -1764,7 +1774,8 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
         padding: 0.3rem 0.45rem;
     }
     .trailer-img-contain{
-        height: 20.125rem;
+        height: 18.125rem;
+        margin-bottom: 2rem;
     }
     .heading-logo-wrap h1{
         font-size: 3.125rem;
@@ -1818,10 +1829,13 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
 	display: block;
 }
 .results_wrapper .results_entry .location_name{
-	    font-size: 2.1875rem !important;
+	font-size: 2.1875rem !important;
     font-family: var(--font-rift);
     display: block;
     margin-bottom: 10px;
+}
+.results_wrapper .results_entry .slp_result_country{
+    display: none;
 }
 .results_wrapper .results_entry .location_distance{
 	display: none;

@@ -4,6 +4,7 @@ function loadProductSlider(){
     slidesToScroll: 1,
     arrows: true,
     fade: true,
+    infinite: false,
     asNavFor: '.products-nav'
   }
 }
@@ -14,6 +15,7 @@ function loadProductNavSlider(){
     slidesToScroll: 1,
     asNavFor: '.slider-product',
     arrows: true,
+    infinite: false,
     centerMode: false,
     focusOnSelect: true
   }
