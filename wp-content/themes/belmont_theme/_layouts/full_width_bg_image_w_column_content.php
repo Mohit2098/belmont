@@ -13,7 +13,7 @@
                         while (have_rows('column_content')) : the_row();
                         $heading = get_sub_field('heading');
                         $description = get_sub_field('description'); ?>
-                        <div>
+                        <div class="inner-text-wrap">
                             <?php if (!empty($heading)) : ?><h3><?php echo $heading; ?></h3><?php endif;
                             if (!empty($description)) : ?><div><?php echo $description; ?></div><?php endif; ?>
                         </div>

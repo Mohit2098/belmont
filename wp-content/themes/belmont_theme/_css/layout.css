@@ -359,9 +359,13 @@ footer.global-footer .footer-copyright a:hover{
 }
 
 /* ======= two column full width section ========= */
+.full-width-column{
+    background-color: var(--theme-sec-yellow);
+}
 .full-width-column .col-img{
     display: block;
     vertical-align: baseline;
+    width: 100%;
 }
 .full-width-column .solid-bg-col{
     background-color: var(--theme-sec-yellow);
@@ -1319,6 +1323,15 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
         padding-bottom: .4rem;
         margin-top: 2rem;
     }
+    
+    .full-width-column .col-img{
+        height: 100%;
+        object-fit: cover;
+        object-position: right top;
+    }
+    .solid-bg-col .inner-text-wrap{
+        padding-right: 20px;
+    }
 }
 @media screen and (min-width:768px){
     .single-trailers-section > .container-fluid{
@@ -1335,6 +1348,9 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
     .single-trailers-section > .container-fluid{
         padding-left: calc((100% - 1120px)/2);
     }
+    .full-width-column .solid-bg-col{
+        padding-right: calc((100% - 1120px)/2) !important;
+      }
 }
 @media screen and (min-width:1400px){
     .single-trailers-section > .container-fluid{
@@ -1346,6 +1362,18 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
       max-width: 100% !important;
       padding-left: 5% !important;
     }
+    .full-width-column .solid-bg-col{
+        padding-right: calc((100% - 1520px)/2) !important;
+      }
+  }
+  @media screen and (min-width:2000px){
+    .single-trailers-section > .container-fluid{
+        max-width: 1920px !important;
+        padding-left: 15px !important;
+      }
+      .full-width-column .solid-bg-col{
+        padding-right: calc((100% - 1820px)/2) !important;
+      }
   }
 
 @media screen and (min-width:768px) and (max-width:991px){
@@ -1395,6 +1423,10 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
     header.site-header .bl-navigation ul > li > a{
         padding: .5rem 2.25rem;
         font-size: 1.3rem;
+    }
+    .bl-navigation ul > li.menu-item-has-children:after{
+        right: 1.1rem;
+        top: 0.7rem;    
     }
 }
 @media screen and (max-width:991px){
