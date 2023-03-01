@@ -1,5 +1,5 @@
 <?php
-// Added the functionailty for the ProRodeo Concert Page Ajax
+// Added the functionailty for the Trailers Page Ajax
 add_action("wp_ajax_load_trailer_tab", "load_trailer_tab");
 add_action("wp_ajax_nopriv_load_trailer_tab", "load_trailer_tab");
 
