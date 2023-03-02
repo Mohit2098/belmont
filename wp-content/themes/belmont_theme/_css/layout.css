@@ -1872,7 +1872,8 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
     display: block;
     margin-bottom: 10px;
 }
-.results_wrapper .results_entry .location_distance{
+.results_wrapper .results_entry .location_distance,
+.results_wrapper .results_entry .slp_result_country{
 	display: none;
 }
 .results_wrapper .results_entry .location_secondary{
