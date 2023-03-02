@@ -137,10 +137,10 @@ $html.='<div class="col-12" id="loading-container"><img class="loading-image" sr
 							$show_in_compare = get_post_meta(get_the_ID(),'show_in_compare', true); 
 							$upload_trailer_pdf = get_post_meta(get_the_ID(),'upload_trailer_pdf', true);
 							if($show_in_compare):
-                                $html.='<a href="#" class="btn-custom-small solid-yellow">'.__('IN COMPARE','btrailers-theme').'</a>';
+                                $html.='<a href="#" class="btn-custom-small solid-yellow"><img src="'.get_stylesheet_directory_uri().'/_images/check-icon.svg" alt="check icon">'.__('IN COMPARE','btrailers-theme').'</a>';
                             endif;
 							if( $upload_trailer_pdf ): $url = wp_get_attachment_url( $upload_trailer_pdf );
-								$html.='<a href="'. esc_html($url).'" download class="btn-custom-small solid-yellow">'.__('Download PDF', 'btrailers-theme' ).'</a>'; endif;
+								$html.='<a href="'. esc_html($url).'" download class="btn-custom-small solid-yellow"><img src="'.get_stylesheet_directory_uri().'/_images/donwload-icon.svg" alt="download icon">'.__('Download PDF', 'btrailers-theme' ).'</a>'; endif;
 							if( have_rows('add_standard_features') ): $k=0;
 							$count_standard_attr = count(get_field('add_standard_features'));
 							$html.='<ul>';
