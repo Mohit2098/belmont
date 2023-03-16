@@ -18,10 +18,12 @@ if ( ! empty( $trailer_type ) && ! is_wp_error( $trailer_type ) ): ?>
                 <?php if(!empty($trailer_featured_img)): ?><img src="<?php echo $trailer_featured_img['url']; ?>" alt="<?php echo $trailer_featured_img['alt']; ?>"><?php else: ?>
                 <img src="<?php echo get_stylesheet_directory_uri() ?>/_images/dummy.png" alt="default image">    
                 <?php endif; ?>
+                <a href="<?php echo get_term_link($trailer->term_id); ?>">
                 <div class="text-box">
                     <h3><?php echo $trailer->name; ?></h3>
-                    <a href="<?php echo get_term_link($trailer->term_id); ?>" class="btn-custom-small"> <?php _e('View Trailers', 'btrailers-theme' ); ?> <span>»</span></a>
+                    <label class="btn-custom-small"> <?php _e('View Trailers', 'btrailers-theme' ); ?> <span>»</span></label>
                 </div>
+                </a>
             </div>
         <?php endforeach; ?>
         </div>

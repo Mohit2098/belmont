@@ -344,6 +344,9 @@ footer.global-footer .footer-copyright a:hover{
     font-family: var(--font-rift);
 }
 .gallery-slider .items .text-box a{
+    display: block;
+}
+.gallery-slider .items .text-box .btn-custom-small{
     background: var(--theme-yellow);
     padding: 0.3rem 0.5rem;
     color: var(--black);
@@ -352,6 +355,7 @@ footer.global-footer .footer-copyright a:hover{
     border-radius: 0.4rem;
     font-weight: 500;
     font-size: 1.4375rem;
+    pointer-events: none;
 }
 
 .slick-slider{
@@ -1632,13 +1636,13 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
         line-height: 1;
         letter-spacing: 0;
     }
-    .gallery-slider .items .text-box a{
+    .gallery-slider .items .text-box .btn-custom-small{
         font-size: 0.6875rem;
         line-height: 1;
         border-radius: 4px;
         padding: 2px 10px;
     }
-    .gallery-slider .items .text-box a span{
+    .gallery-slider .items .text-box .btn-custom-small span{
         display: none;
     }
     .simple-content-section.simple-content-w-logo.main-heading .heading-logo-wrap{
