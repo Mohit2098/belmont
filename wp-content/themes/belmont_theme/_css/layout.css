@@ -1177,6 +1177,59 @@ section .gform_wrapper .validation_message{
     display: block;
 }
 
+/* ==== filter-stripe-wrap ===== */
+.filter-stripe-wrap {
+    background: var(--link-footer);
+    position: fixed;
+    padding: 25px;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+}
+.filter-stripe-wrap .wrapperCl{
+    flex-grow: 1;  
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px; 
+}   
+.filter-stripe-wrap .compare-box{
+    position: relative;
+    width: 100%;
+    border: 2px dashed var(--white);
+    background-color: var(--theme-dark-gray);
+}
+.filter-stripe-wrap .action-wrap{
+    padding: 0px 2.375rem;
+}
+.action-wrap .clear-button{
+    display: block;
+}
+.compare-box .inner-box{
+    background-color: var(--white);
+    display: flex;
+}
+.compare-box .inner-box img{
+    width: 50%;
+}
+.compare-box .inner-box h5{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    font-size: 2.1875rem;
+    line-height: 1.2;
+}
+.inner-box .dismiss{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    background: transparent;
+    font-weight: 600;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
 /* =========== default template ========== */
 .bl-default-template .entry-content h3{
     padding-bottom: 0.4rem;
@@ -1186,8 +1239,6 @@ section .gform_wrapper .validation_message{
 .bl-default-template .entry-content h3{
     text-align: left;
 }
-
-
 header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > a,
 header.site-header .bl-navigation ul.menu > li.current-menu-item > a,
 header.site-header .bl-navigation ul.sub-menu > li.current-menu-item > a,

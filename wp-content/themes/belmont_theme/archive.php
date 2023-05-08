@@ -171,12 +171,32 @@ $current_child_term_ID = $terms[0]->term_id;
 	</section>
 		<!-- cookie result fetch data  -->
 		<div class="filter-stripe-wrap">
-                            <div class="wrapperCl d-flex" style="background:red;">
-                            </div>
-                            <div class="action-wrap d-none">
-                                <a class="compare-button">compare</a>
-                                <button class="clear-button">Clear</button>
-                            </div>
+			<div class="wrapperCl">
+				<div class="compare-box">
+				    <div class="inner-box">
+						<img width="180" height="160" class="compare-box-img" src="<?php echo get_template_directory_uri(); ?>/_images/trailer.png" alt=""/>
+						<h5>UT508TT – 5’ x 8’ Utility Trailer</h5>
+						<button type="button" class="dismiss">X</button>
+					</div>
+				</div>
+				<!-- compare box -->
+				<div class="compare-box">
+				   <p>Select at least 2 trailers to compare</p>
+				</div>
+				<!-- compare box -->
+				<div class="compare-box">
+				    
+				</div>
+				<!-- compare box -->
+				<div class="compare-box">
+				   
+				</div>
+				<!-- compare box -->
+			</div>
+			<div class="action-wrap">
+				<a href="#" class="compare-button btn-custom">compare</a>
+				<button class="clear-button">Clear All</button>
+			</div>
         </div>
 		<!-- cookie result fetch data  -->
 </main>
