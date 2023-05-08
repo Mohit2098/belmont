@@ -169,5 +169,15 @@ $current_child_term_ID = $terms[0]->term_id;
 			<?php endwhile; endif; wp_reset_postdata(); ?>
 		</div>
 	</section>
+		<!-- cookie result fetch data  -->
+		<div class="filter-stripe-wrap">
+                            <div class="wrapperCl d-flex" style="background:red;">
+                            </div>
+                            <div class="action-wrap d-none">
+                                <a class="compare-button">compare</a>
+                                <button class="clear-button">Clear</button>
+                            </div>
+        </div>
+		<!-- cookie result fetch data  -->
 </main>
 <?php get_footer(); ?>

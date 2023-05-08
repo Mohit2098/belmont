@@ -166,5 +166,44 @@ slider.on('wheel', (function(e) {
 
 });
 
+function ajaxRequest() {
+  let trailerCookie = $.cookie("trailerCookies") || "";
+  $.ajax({
+    type: "POST",
+    url: "/wp-admin/admin-ajax.php",
+    data: {
+      action: "trailer_cookie",
+      trailerCookies: trailerCookie
+    },
+    success: function (data) {
+      if(data.trim().length > 0){
+        $('.action-wrap').removeClass('d-none');
+      }
+      else{
+        $('.action-wrap').addClass('d-none');
+      }
+      $(".filter-stripe-wrap >.wrapperCl").html(data);
+    },
+  });
+}
+
+// Add trailer to compare
+$(document).on("click", ".inCompare", function () {
+  let trailerCookie = $.cookie("trailerCookies") || "";
+  let trailerData = $(this).attr("data-id");
+
+  // Check if trailers are 4 or more than four
+  if (trailerCookie.split(",").length >= 5 || trailerCookie.includes(trailerData)) {
+    alert("You can only compare up to 4 trailers or this trailer is already added!");
+    return;
+  }
+
+  // Create cookie for trailers
+  $.cookie("trailerCookies", trailerCookie + trailerData + ",", {
+    path: "/",
+  });
+  ajaxRequest();
+});
+
 
 
