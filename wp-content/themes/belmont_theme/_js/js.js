@@ -249,7 +249,7 @@ jQuery(document).ready(function ($) {
     let trailerCookie = $.cookie("trailerCookies") || "";
 
     if (trailerCookie.split(",").length >= 3) {
-      $(".compare-button").attr("href", "http://belmont.local/in-compare");
+      $(".compare-button").attr("href", "http://belmont.local/in-compare/");
     } else {
       $(".compare-button").removeAttr("href");
       $(".compare-box.highlight-border").css("border", "2px dashed red");

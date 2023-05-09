@@ -1185,6 +1185,7 @@ section .gform_wrapper .validation_message{
     bottom: 0;
     width: 100%;
     display: flex;
+    align-items: center;
 }
 .filter-stripe-wrap .wrapperCl{
     flex-grow: 1;  
@@ -1197,26 +1198,35 @@ section .gform_wrapper .validation_message{
     width: 100%;
     border: 2px dashed var(--white);
     background-color: var(--theme-dark-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .filter-stripe-wrap .action-wrap{
     padding: 0px 2.375rem;
 }
-.action-wrap .clear-button{
-    display: block;
-}
+
 .compare-box .inner-box{
     background-color: var(--white);
     display: flex;
+    height: 100%;
+    padding: 10px 0 10px 10px;
 }
 .compare-box .inner-box img{
-    width: 50%;
+    width: 50% !important;
+    max-width: 170px;
+    height: 100% !important;
+    object-fit: contain;
 }
 .compare-box .inner-box h5{
     width: 50%;
     display: flex;
+    flex-grow: 1;
     align-items: center;
     font-size: 2.1875rem;
-    line-height: 1.2;
+    line-height: 1.1;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .inner-box .dismiss{
     position: absolute;
@@ -1228,6 +1238,13 @@ section .gform_wrapper .validation_message{
     padding: 5px 10px;
     cursor: pointer;
 }
+.compare-box .messageCl{
+    color: var(--theme-lt-gray);
+    font-size: 1.25rem; 
+    line-height: 1.1;
+    text-align: center;
+    padding: 0px 8px;
+}
 .hidden-filter {
   bottom: -100%;
   transition: 0.4s;
@@ -1235,6 +1252,24 @@ section .gform_wrapper .validation_message{
 .show-filter {
   bottom: 0;
   transition:0.4s;
+}
+.clear-button{
+    font-size: 1.875rem;
+    line-height: 1.1;
+    font-weight: 700;
+    padding: 0.875rem 3.625rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin-top: 10px;
+}
+.action-wrap .btn-custom{
+    color: var(--theme-yellow);
+    cursor: pointer;
+}
+.action-wrap .btn-custom:hover{
+    color: var(--theme-lt-black);
 }
 
 /* =========== default template ========== */
@@ -1489,6 +1524,12 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
     .bl-navigation ul > li.menu-item-has-children:after{
         right: 1.1rem;
         top: 0.7rem;    
+    }
+    .compare-box .inner-box img{
+        max-width: 80px;
+    }
+    .compare-box .inner-box h5{
+        font-size: 1.1875rem;
     }
 }
 @media screen and (max-width:991px){
