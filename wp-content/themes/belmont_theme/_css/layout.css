@@ -1229,13 +1229,13 @@ section .gform_wrapper .validation_message{
     cursor: pointer;
 }
 .hidden-filter {
-    bottom: -100%;
-    transition: 0.4s;
-  }
-  .show-filter {
-    bottom: 0;
-    transition:0.4s;
-  }
+  bottom: -100%;
+  transition: 0.4s;
+}
+.show-filter {
+  bottom: 0;
+  transition:0.4s;
+}
 
 /* =========== default template ========== */
 .bl-default-template .entry-content h3{
