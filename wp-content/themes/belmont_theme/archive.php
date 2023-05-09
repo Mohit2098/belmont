@@ -128,13 +128,14 @@ $current_child_term_ID = $terms[0]->term_id;
 				</div>
 			</div>
 					<!-- /col -->
+					
 					<div class="col-lg-6">
 						<div class="feature-list">
 							<h3><?php _e('Standard Features', 'btrailers-theme' ); ?></h3>
 							<?php
 							$show_in_compare = get_post_meta(get_the_ID(),'show_in_compare', true); 
 							$upload_trailer_pdf = get_post_meta(get_the_ID(),'upload_trailer_pdf', true);
-							if($show_in_compare): ?><a href="#" class="btn-custom-small solid-yellow"><img src="<?php echo get_stylesheet_directory_uri() ?>/_images/check-icon.svg" alt="check icon"><?php _e('IN COMPARE', 'btrailers-theme' ); ?></a><?php endif;
+							if($show_in_compare): ?><a href="javascript:void(0)" data-id=<?php echo get_the_ID();?> class="btn-custom-small solid-yellow inCompare"><img src="<?php echo get_stylesheet_directory_uri() ?>/_images/check-icon.svg" alt="check icon"><?php _e('IN COMPARE', 'btrailers-theme' ); ?></a><?php endif;
 							if( $upload_trailer_pdf ): $url = wp_get_attachment_url( $upload_trailer_pdf ); ?>
 								<a href="<?php echo esc_html($url); ?>" download class="btn-custom-small solid-yellow"><img src="<?php echo get_stylesheet_directory_uri() ?>/_images/donwload-icon.svg" alt="download icon"><?php _e('Download PDF', 'btrailers-theme' ); ?></a><?php endif;
 							if( have_rows('add_standard_features') ): $k=0;
@@ -169,15 +170,13 @@ $current_child_term_ID = $terms[0]->term_id;
 			<?php endwhile; endif; wp_reset_postdata(); ?>
 		</div>
 	</section>
-		<!-- cookie result fetch data  -->
-		<div class="filter-stripe-wrap">
-                            <div class="wrapperCl d-flex" style="background:red;">
-                            </div>
-                            <div class="action-wrap d-none">
-                                <a class="compare-button">compare</a>
-                                <button class="clear-button">Clear</button>
-                            </div>
+		<div class="filter-stripe-wrap hidden-filter">
+			<div class="wrapperCl">
+			</div>
+			<div class="action-wrap">
+				<a href="#" class="compare-button btn-custom">Compare</a>
+				<button class="clear-button">Clear All</button>
+			</div>
         </div>
-		<!-- cookie result fetch data  -->
 </main>
 <?php get_footer(); ?>

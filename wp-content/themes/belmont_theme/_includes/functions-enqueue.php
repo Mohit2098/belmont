@@ -28,6 +28,7 @@ function wp_nq_scripts() {
   //Scripts
 
   wp_enqueue_script("slick-min-js","https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js",array('jquery'), 1.8, true);
+  wp_enqueue_script("cookie-min-js","https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js",array('jquery'), 1.8, true);
   wp_enqueue_script ('wp-script', get_stylesheet_directory_uri() . '/_js/js.js', array('jquery'), 1.0, true);
 }
 add_action('wp_enqueue_scripts', 'wp_nq_scripts');
