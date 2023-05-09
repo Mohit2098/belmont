@@ -230,7 +230,6 @@ function trailer_cookie()
 	$trailerCookie = $_POST['trailerCookies'];
 
 	if ($trailerCookie) {
-		$trailerCookie = $_COOKIE['trailerCookies'];
 		$cookieArr = explode(",", $trailerCookie);
 		array_pop($cookieArr);
 		// Add counter variable
