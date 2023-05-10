@@ -174,7 +174,13 @@ $current_child_term_ID = $terms[0]->term_id;
 			<div class="wrapperCl">
 			</div>
 			<div class="action-wrap">
-				<a href="#" class="compare-button btn-custom">Compare</a>
+			<?php $set_incomparison_page = get_field('set_incomparison_page','option');?>
+			<?php if (!empty($set_incomparison_page)) :
+                              $button_target = $set_incomparison_page['target'] ? $set_incomparison_page['target'] : '_self'; ?>
+                              <a class="compare-button btn-custom" data-redirect="<?php echo esc_url($set_incomparison_page['url']); ?>" target="<?php echo $button_target; ?>">
+                                 <?php echo $set_incomparison_page['title']; ?>
+                              </a>
+                           <?php endif; ?>
 				<button class="clear-button">Clear All</button>
 			</div>
         </div>
