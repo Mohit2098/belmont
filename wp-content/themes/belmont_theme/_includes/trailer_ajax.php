@@ -205,14 +205,19 @@ function load_trailer_tab()
 	wp_reset_postdata();
 	$html .= '</div>
 	</section>';
-	$html .= '<div class="filter-stripe-wrap hidden-filter">
-	<div class="wrapperCl">
-	</div>
-	<div class="action-wrap">
-		<a href="#" class="compare-button btn-custom">compare</a>
-		<button class="clear-button">Clear All</button>
-	</div>
-</div>';
+	$html .= '<div class="filter-stripe-wrap hidden-filter">';
+	$html .= '<div class="wrapperCl">';
+	$html .= '</div>';
+	$html .='<div class="action-wrap">';
+	$set_incomparison_page = get_field('set_incomparison_page','option');?>
+	<?php if (!empty($set_incomparison_page)) :$button_target = $set_incomparison_page['target'] ? $set_incomparison_page['target'] : '_self';
+	$html .= '<a class="compare-button btn-custom" data-redirect="' . esc_url($set_incomparison_page['url']). '" target="'. esc_attr($button_target) .'">';
+	$html .= esc_html__($set_incomparison_page['title']);
+	$html .= '</a>';
+	 endif;
+	$html .= '<button class="clear-button">Clear All</button>';
+	$html .= '</div>';
+	$html .='</div>';
 	echo $html;
 	wp_die();
 }
