@@ -1272,6 +1272,56 @@ section .gform_wrapper .validation_message{
     color: var(--theme-lt-black);
 }
 
+
+/* ========= comparison table ======== */
+.comparison-table{
+    width: 100%;
+    table-layout: fixed;
+}
+.comparison-table .img-head a,
+.comparison-table .img-head a span{
+    display: block;
+    text-decoration: none;
+    color: var(--theme-lt-black);
+}
+.comparison-table .img-head a span{
+    display: block;
+}
+.comparison-table .img-head{
+    padding-bottom: 1rem;
+}
+.comparison-table .img-head img{
+    max-width: 140px;
+    width: 100%;
+}
+.comparison-table thead tr th:first-child{
+    text-align: left;
+}
+.comparison-table tr td{
+    padding: 12px 16px;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+}
+.comparison-table tr:last-child td{
+    border-bottom: 1px solid gray;
+}
+.comparison-table tr td:last-child{
+    border-right: 1px solid gray;
+}
+.gray-bg-td{
+    background-color: #b9b9b9;
+    font-weight: 700;
+}
+.gray-lt-bg-td{
+    background-color: #d1d1d1;
+    font-weight: 700;
+}
+.comparison-table .text-medium{
+    font-family: var(--font-neue-haas);
+}
+
+
+
 /* =========== default template ========== */
 .bl-default-template .entry-content h3{
     padding-bottom: 0.4rem;
