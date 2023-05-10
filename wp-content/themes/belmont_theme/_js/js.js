@@ -208,10 +208,9 @@ jQuery(document).ready(function ($) {
   }
 
   // Add trailer to compare
+  
   $(document).on("click", ".inCompare", function () {
-
     let trailerCookie = $.cookie("trailerCookies") || "";
-
     let trailerData = $(this).attr("data-id");
 
     if (trailerCookie.split(",").length >= 5) {
@@ -221,6 +220,10 @@ jQuery(document).ready(function ($) {
       trailerCookie = trailerArray.join(",") + ",";
     } else {
       let trailerArray = trailerCookie.split(",");
+
+      if (trailerArray.includes(trailerData)) {
+        trailerCookie = trailerCookie.replace(`${trailerData+ ','}`,'');
+      }
       if (!trailerArray.includes(trailerData)) {
         trailerCookie = trailerCookie + trailerData + ",";
       }
@@ -249,10 +252,11 @@ jQuery(document).ready(function ($) {
     let trailerCookie = $.cookie("trailerCookies") || "";
 
     if (trailerCookie.split(",").length >= 3) {
-      $(".compare-button").attr("href", "http://belmont.local/in-compare/");
+      let dataSource = $(".compare-button").attr("data-redirect");
+      $(".compare-button").attr("href",dataSource);
     } else {
       $(".compare-button").removeAttr("href");
       $(".compare-box.highlight-border").css("border", "2px dashed red");
     }
   });
-});
+  });
