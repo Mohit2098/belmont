@@ -1181,6 +1181,7 @@ section .gform_wrapper .validation_message{
 .filter-stripe-wrap {
     background: var(--link-footer);
     position: fixed;
+    z-index: 1;
     padding: 25px;
     bottom: 0;
     width: 100%;
@@ -1555,6 +1556,16 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
     .bl-default-template .entry-content h2{
         font-size: 3rem;
     }
+    
+    .filter-stripe-wrap .compare-box{
+        margin-bottom: 10px;
+    }
+    .compare-box .inner-box img{
+        max-width: 100px;
+    }
+    .compare-box .inner-box h5{
+        font-size: 1.5rem;
+    }
 }
 @media screen and (min-width:1599px) and (max-width:1750px){
     header.site-header .bl-navigation ul > li > a{
@@ -1582,6 +1593,7 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
         font-size: 1.1875rem;
     }
 }
+
 @media screen and (max-width:991px){
     /* ----==----==- mobile menu --==----==------ */
     nav.bl-navigation{
@@ -1773,6 +1785,14 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
     .trailer-slide-wrap .slick-next, 
     .trailer-slide-wrap .slick-prev{
         opacity: 1;
+    }
+    .clear-button{
+        font-size: 0.875rem;
+        margin-right: 0;
+        padding: 0.6rem 1.625rem;
+    }
+    .filter-stripe-wrap .wrapperCl{
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -2122,8 +2142,47 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
 	.slp_search_form .search_box .search_item.search-range-select > div{
 		width: 100%;
 		justify-content: center;
-    padding-top: 1rem;
+        padding-top: 1rem;
 	}
+    .compare-box .inner-box{
+        flex-wrap: wrap;
+        height: auto;
+    }
+    .compare-box .inner-box img,
+    .compare-box .inner-box h5{
+        width: 100% !important;
+    }
+    .compare-box .inner-box h5{
+        font-size: .8rem;
+        margin-top: 5px;    
+    }
+    .filter-stripe-wrap{
+        padding: 10px;
+    }
+    .filter-stripe-wrap .wrapperCl{
+        width: 65%;
+        grid-gap: 10px;
+    }
+    .filter-stripe-wrap .action-wrap{
+        width: 35%;
+        padding: 0px 5px;
+        text-align: center;
+    }
+    .compare-box .inner-box{
+        padding: 5px;
+    }
+    .compare-box .inner-box img{
+        max-width: 80px;
+        margin: auto;
+    }
+    .action-wrap .btn-custom{
+        color: var(--theme-lt-black);
+        font-size: 1rem;
+    }
+    .compare-box .messageCl{
+        font-size: .9rem;
+        margin-top: 10px;
+    }
 }
 
 
