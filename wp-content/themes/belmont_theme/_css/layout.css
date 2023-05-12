@@ -1254,6 +1254,9 @@ section .gform_wrapper .validation_message{
   bottom: 0;
   transition:0.4s;
 }
+.highlight-border-cl{
+    border:2px dashed red!important;
+}
 .clear-button{
     font-size: 1.875rem;
     line-height: 1.1;

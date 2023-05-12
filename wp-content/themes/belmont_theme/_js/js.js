@@ -22,7 +22,7 @@ function loadProductNavSlider() {
 }
 
 jQuery(document).ready(function ($) {
-  if($.cookie("trailerCookies")){
+  if ($.cookie("trailerCookies")) {
     ajaxRequest(); //call function for the page load
   }
   $(".rt-menu-toggle").click(function () {
@@ -208,36 +208,37 @@ jQuery(document).ready(function ($) {
   }
 
   // Add trailer to compare
-  
+
   $(document).on("click", ".inCompare", function () {
     let trailerCookie = $.cookie("trailerCookies") || "";
     let trailerData = $(this).attr("data-id");
-
-    if (trailerCookie.split(",").length >= 5) {
-      let trailerArray = trailerCookie.split(",");
-      trailerArray.pop();
-      trailerArray.pop();
-      trailerCookie = trailerArray.join(",") + ",";
+    let trailerArray = trailerCookie.split(",");
+    if (trailerArray.length >= 4) {
+      trailerArray.splice(-1, 1);
+      trailerCookie = trailerArray.toString() + ",";
     } else {
-      let trailerArray = trailerCookie.split(",");
-
       if (trailerArray.includes(trailerData)) {
-        trailerCookie = trailerCookie.replace(`${trailerData+ ','}`,'');
-      }
-      if (!trailerArray.includes(trailerData)) {
-        trailerCookie = trailerCookie + trailerData + ",";
+        trailerArray.splice(trailerArray.indexOf(trailerData), 1);
+        trailerCookie = trailerArray.toString() + ",";
+      } else {
+        trailerCookie = trailerCookie.length
+          ? trailerCookie + "," + trailerData + ","
+          : trailerData + ",";
       }
     }
-    // Create cookie for trailers
-    $.cookie("trailerCookies", trailerCookie, {path: "/",});
+    $.cookie("trailerCookies", trailerCookie.slice(0, -1), { path: "/" });
     ajaxRequest();
   });
 
   // Remove trailer from compare
   $(document).on("click", ".remove-trailer", function () {
-    let trailerData = $(this).attr("data-id");
-    let trailerCookie = $.cookie("trailerCookies").replace(`${trailerData + ","}`,"");
-    $.cookie("trailerCookies", trailerCookie, { path: "/" });
+    let removeTrailerData = $(this).attr("data-id");
+    let removeTrailerCookie = $.cookie("trailerCookies").split(",");
+    removeTrailerCookie.splice(
+      removeTrailerCookie.indexOf(removeTrailerData),
+      1
+    );
+    $.cookie("trailerCookies", removeTrailerCookie, { path: "/" });
     ajaxRequest();
   });
 
@@ -249,14 +250,13 @@ jQuery(document).ready(function ($) {
 
   // Compare trailers
   $(document).on("click", ".compare-button", function () {
-    let trailerCookie = $.cookie("trailerCookies") || "";
-
-    if (trailerCookie.split(",").length >= 3) {
+    let compareTrailerCookie = $.cookie("trailerCookies") || "";
+    if (compareTrailerCookie.split(",").length >= 2) {
       let dataSource = $(".compare-button").attr("data-redirect");
-      $(".compare-button").attr("href",dataSource);
+      $(".compare-button").attr("href", dataSource);
     } else {
       $(".compare-button").removeAttr("href");
-      $(".compare-box.highlight-border").css("border", "2px dashed red");
+      $(".compare-box.highlight-border").addClass("highlight-border-cl");
     }
   });
-  });
+});

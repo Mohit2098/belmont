@@ -208,35 +208,32 @@ function load_trailer_tab()
 	$html .= '<div class="filter-stripe-wrap hidden-filter">';
 	$html .= '<div class="wrapperCl">';
 	$html .= '</div>';
-	$html .='<div class="action-wrap">';
-	$set_incomparison_page = get_field('set_incomparison_page','option');?>
-	<?php if (!empty($set_incomparison_page)) :$button_target = $set_incomparison_page['target'] ? $set_incomparison_page['target'] : '_self';
-	$html .= '<a class="compare-button btn-custom" data-redirect="' . esc_url($set_incomparison_page['url']). '" target="'. esc_attr($button_target) .'">';
-	$html .= esc_html__($set_incomparison_page['title']);
-	$html .= '</a>';
-	 endif;
+	$html .= '<div class="action-wrap">';
+	$set_incomparison_page = get_field('set_incomparison_page', 'option'); ?>
+	<?php if (!empty($set_incomparison_page)) : $button_target = $set_incomparison_page['target'] ? $set_incomparison_page['target'] : '_self';
+		$html .= '<a class="compare-button btn-custom" data-redirect="' . esc_url($set_incomparison_page['url']) . '" target="' . esc_attr($button_target) . '">';
+		$html .= esc_html__($set_incomparison_page['title']);
+		$html .= '</a>';
+	endif;
 	$html .= '<button class="clear-button">Clear All</button>';
 	$html .= '</div>';
-	$html .='</div>';
+	$html .= '</div>';
 	echo $html;
 	wp_die();
 }
-?>
+	?>
 
 <?php
 add_action("wp_ajax_trailer_cookie", "trailer_cookie");
 add_action("wp_ajax_nopriv_trailer_cookie", "trailer_cookie");
 
 // Added the functionailty for trailer comparison
-
 function trailer_cookie()
 {
-
 	$trailerCookie = $_POST['trailerCookies'];
-
 	if ($trailerCookie) {
-		$cookieArr = explode(",", $trailerCookie);
-		array_pop($cookieArr);
+		$trailerArray = explode(',', $trailerCookie); // Split trailerCookie into an array of IDs
+		$cookieArr = $trailerArray;
 		// Add counter variable
 		$count = 0;
 		$totalPosts = count($cookieArr);
