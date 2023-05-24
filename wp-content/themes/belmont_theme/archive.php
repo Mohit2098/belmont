@@ -133,9 +133,15 @@ $current_child_term_ID = $terms[0]->term_id;
 						<div class="feature-list">
 							<h3><?php _e('Standard Features', 'btrailers-theme' ); ?></h3>
 							<?php
-							$show_in_compare = get_post_meta(get_the_ID(),'show_in_compare', true); 
-							$upload_trailer_pdf = get_post_meta(get_the_ID(),'upload_trailer_pdf', true);
-							if($show_in_compare): ?><a href="javascript:void(0)" data-id=<?php echo get_the_ID();?> class="btn-custom-small solid-yellow inCompare"><img src="<?php echo get_stylesheet_directory_uri() ?>/_images/check-icon.svg" alt="check icon"><?php _e('IN COMPARE', 'btrailers-theme' ); ?></a><?php endif;
+							$check_icon = get_field('check_icon','option');
+							$add_to_compare = get_post_meta(get_the_ID(),'add_to_compare', true);
+							$upload_trailer_pdf = get_post_meta(get_the_ID(),'upload_trailer_pdf', true);?>
+							<?php if($check_icon):?>
+							<input type="hidden" value="<?php echo esc_url($check_icon['url']); ?>" alt="<?php echo esc_attr($check_icon['alt']);?>"  id="img-url">	
+							<?php endif;?>
+							<?php
+							if($add_to_compare): ?><a href="javascript:void(0)" data-id=<?php echo get_the_ID();?> class="btn-custom-small solid-yellow addToCompare">
+							<?php _e('ADD TO COMPARE', 'btrailers-theme' ); ?></a><?php endif;
 							if( $upload_trailer_pdf ): $url = wp_get_attachment_url( $upload_trailer_pdf ); ?>
 								<a href="<?php echo esc_html($url); ?>" download class="btn-custom-small solid-yellow"><img src="<?php echo get_stylesheet_directory_uri() ?>/_images/donwload-icon.svg" alt="download icon"><?php _e('Download PDF', 'btrailers-theme' ); ?></a><?php endif;
 							if( have_rows('add_standard_features') ): $k=0;
@@ -181,7 +187,7 @@ $current_child_term_ID = $terms[0]->term_id;
 								<?php echo esc_html__($set_incomparison_page['title']); ?>
 							</a>
 						<?php endif; ?>
-			<button class="clear-button">Clear All</button>
+			<button class="clear-button"><?php echo __('Clear All', 'btrailers-theme');?></button>
 		</div>
 	</div>
 </main>

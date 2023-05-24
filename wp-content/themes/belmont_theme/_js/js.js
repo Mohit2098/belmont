@@ -22,8 +22,13 @@ function loadProductNavSlider() {
 }
 
 jQuery(document).ready(function ($) {
+
+  if ($.cookie("tabCookie")) {
+    loadTabContent($.cookie("tabCookie"));
+  }
   if ($.cookie("trailerCookies")) {
-    ajaxRequest(); //call function for the page load
+    ajaxRequest();
+    updateCompareButtons();
   }
   $(".rt-menu-toggle").click(function () {
     $("header.site-header").toggleClass("opened-menu");
@@ -139,34 +144,57 @@ jQuery(document).ready(function ($) {
   $(".slider-product").slick(loadProductSlider());
   $(".products-nav").slick(loadProductNavSlider());
 
+  // Created tabCookie for tabContent
+  function activateTab(tabID) {
+    $.cookie("tabCookie", tabID, { path: "/" });
+  }
+
+  $(document).on("click", ".tabContentCl", function () {
+    let tabID = $(this).data("tabid");
+    activateTab(tabID);
+  });
+
   $(document).on("click", ".tabs-link-detail", function () {
+    let tabID = $(this).data("tabid");
+    loadTabContent(tabID);
+  });
+
+  function loadTabContent(tabID) {
     ajaxRequest();
-    var tabID = $(this).data("tabid");
-    jQuery.ajax({
+    updateCompareButtons();
+
+    $.ajax({
       type: "POST",
       url: "/wp-admin/admin-ajax.php",
       data: {
         action: "load_trailer_tab",
         tab_ID: tabID,
       },
-
       beforeSend: function () {
-        jQuery("#loading-container").addClass("show-loader");
+        $("#loading-container").addClass("show-loader");
       },
       success: function (data) {
-        jQuery(".trailer-archive").html(data);
-        jQuery(".slider-product").slick(loadProductSlider());
-        jQuery(".products-nav").slick(loadProductNavSlider());
-        jQuery("#loading-container").removeClass("show-loader");
+        $(".trailer-archive").html(data);
+        $(".slider-product").slick(loadProductSlider());
+        $(".products-nav").slick(loadProductNavSlider());
+        $("#loading-container").removeClass("show-loader");
         ajaxRequest();
+        updateCompareButtons();
       },
       error: function (errorThrown) {
-        jQuery(".trailer-archive").html(
+        $(".trailer-archive").html(
           "<div class='result_content'><h3>No Trailers Found!</h3></div>"
         );
       },
+      complete: function () {
+        destroyTabCookie();
+      },
     });
-  });
+  }
+  // function to destroy the tabcookie
+  function destroyTabCookie() {
+    $.removeCookie("tabCookie", { path: "/" });
+  }
 
   $(".link-trailer").on("click", function () {
     $("html, body").animate(
@@ -177,8 +205,7 @@ jQuery(document).ready(function ($) {
     );
   });
 
-  // Define function to make AJAX request
-
+  // Define function to make AJAX request for trailerCookies
   function ajaxRequest() {
     let trailerCookie = $.cookie("trailerCookies") || "";
     $.ajax({
@@ -207,9 +234,29 @@ jQuery(document).ready(function ($) {
     });
   }
 
-  // Add trailer to compare
+  // Update the compare button
+  function updateCompareButtons() {
+    let trailerCookie = $.cookie("trailerCookies");
+    let trailerArray = trailerCookie ? trailerCookie.split(",") : [];
+    let inCompareButtons = $(".addToCompare");
 
-  $(document).on("click", ".inCompare", function () {
+    inCompareButtons.each(function () {
+      let trailerData = $(this).attr("data-id");
+      let ImageUrl = $("#img-url").val();
+      let AltText = $("#img-url").attr("alt");
+
+      if (trailerArray.includes(trailerData)) {
+        $(this)
+          .addClass("addedCompare")
+          .html('<img src="' + ImageUrl + '" alt="' + AltText + '">IN COMPARE');
+      } else {
+        $(this).removeClass("addedCompare").text("ADD TO COMPARE");
+      }
+    });
+  }
+
+  // Add trailer to compare
+  $(document).on("click", ".addToCompare", function () {
     let trailerCookie = $.cookie("trailerCookies") || "";
     let trailerData = $(this).attr("data-id");
     let trailerArray = trailerCookie.split(",");
@@ -228,6 +275,7 @@ jQuery(document).ready(function ($) {
     }
     $.cookie("trailerCookies", trailerCookie.slice(0, -1), { path: "/" });
     ajaxRequest();
+    updateCompareButtons();
   });
 
   // Remove trailer from compare
@@ -240,12 +288,14 @@ jQuery(document).ready(function ($) {
     );
     $.cookie("trailerCookies", removeTrailerCookie, { path: "/" });
     ajaxRequest();
+    updateCompareButtons();
   });
 
   // Clear all cookies
   $(document).on("click", ".clear-button", function () {
     $.removeCookie("trailerCookies", { path: "/" });
     ajaxRequest();
+    updateCompareButtons();
   });
 
   // Compare trailers

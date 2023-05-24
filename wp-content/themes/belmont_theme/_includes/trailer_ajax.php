@@ -157,10 +157,14 @@ function load_trailer_tab()
 					<div class="col-lg-6">
 						<div class="feature-list">
 							<h3>' . __('Standard Features', 'btrailers-theme') . '</h3>';
-			$show_in_compare = get_post_meta(get_the_ID(), 'show_in_compare', true);
+			$check_icon = get_field('check_icon','option');
+			$add_to_compare = get_post_meta(get_the_ID(), 'add_to_compare', true);
 			$upload_trailer_pdf = get_post_meta(get_the_ID(), 'upload_trailer_pdf', true);
-			if ($show_in_compare) :
-				$html .= '<a href="javascript:void(0)" class="btn-custom-small solid-yellow inCompare" data-id="' . get_the_ID() . '"><img src="' . get_stylesheet_directory_uri() . '/_images/check-icon.svg" alt="check icon">' . __('IN COMPARE', 'btrailers-theme') . '</a>';
+			if($check_icon):
+				$html .= '<input type="hidden" value="'.esc_url($check_icon['url']).'" alt="'.esc_attr($check_icon['alt']).'" id="img-url">';
+			endif;
+			if ($add_to_compare) :
+				$html .= '<a href="javascript:void(0)" class="btn-custom-small solid-yellow addToCompare" data-id="' . get_the_ID() .'">'. __('ADD TO COMPARE', 'btrailers-theme') . '</a>';
 			endif;
 			if ($upload_trailer_pdf) : $url = wp_get_attachment_url($upload_trailer_pdf);
 				$html .= '<a href="' . esc_html($url) . '" download class="btn-custom-small solid-yellow"><img src="' . get_stylesheet_directory_uri() . '/_images/donwload-icon.svg" alt="download icon">' . __('Download PDF', 'btrailers-theme') . '</a>';
