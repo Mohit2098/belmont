@@ -89,8 +89,8 @@
         },
         {
             "key": "field_63e0ae801476c",
-            "label": "Show In Compare",
-            "name": "show_in_compare",
+            "label": "Add To Compare",
+            "name": "add_to_compare",
             "aria-label": "",
             "type": "true_false",
             "instructions": "",
@@ -282,5 +282,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1676619139
+    "modified": 1684819943
 }
