@@ -22,7 +22,6 @@ function loadProductNavSlider() {
 }
 
 jQuery(document).ready(function ($) {
-
   if ($.cookie("tabCookie")) {
     loadTabContent($.cookie("tabCookie"));
   }
@@ -239,16 +238,10 @@ jQuery(document).ready(function ($) {
     let trailerCookie = $.cookie("trailerCookies");
     let trailerArray = trailerCookie ? trailerCookie.split(",") : [];
     let inCompareButtons = $(".addToCompare");
-
     inCompareButtons.each(function () {
       let trailerData = $(this).attr("data-id");
-      let ImageUrl = $("#img-url").val();
-      let AltText = $("#img-url").attr("alt");
-
       if (trailerArray.includes(trailerData)) {
-        $(this)
-          .addClass("addedCompare")
-          .html('<img src="' + ImageUrl + '" alt="' + AltText + '">IN COMPARE');
+        $(this).addClass("addedCompare").html('<img src="/wp-content/themes/belmont_theme/_images/check-icon.svg">IN COMPARE');
       } else {
         $(this).removeClass("addedCompare").text("ADD TO COMPARE");
       }
