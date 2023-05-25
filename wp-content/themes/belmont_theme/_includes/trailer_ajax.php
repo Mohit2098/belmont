@@ -157,12 +157,8 @@ function load_trailer_tab()
 					<div class="col-lg-6">
 						<div class="feature-list">
 							<h3>' . __('Standard Features', 'btrailers-theme') . '</h3>';
-			$check_icon = get_field('check_icon','option');
 			$add_to_compare = get_post_meta(get_the_ID(), 'add_to_compare', true);
 			$upload_trailer_pdf = get_post_meta(get_the_ID(), 'upload_trailer_pdf', true);
-			if($check_icon):
-				$html .= '<input type="hidden" value="'.esc_url($check_icon['url']).'" alt="'.esc_attr($check_icon['alt']).'" id="img-url">';
-			endif;
 			if ($add_to_compare) :
 				$html .= '<a href="javascript:void(0)" class="btn-custom-small solid-yellow addToCompare" data-id="' . get_the_ID() .'">'. __('ADD TO COMPARE', 'btrailers-theme') . '</a>';
 			endif;
