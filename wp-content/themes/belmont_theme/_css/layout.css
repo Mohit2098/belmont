@@ -1836,6 +1836,7 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
         z-index: 1;
         border-right: 1px solid gray;
     }
+
     .comparison-table .gray-lt-bg-td,
     .comparison-table .yellow-bg-td{
        border-left: 0;
@@ -1853,6 +1854,12 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
     }
     .comparison-table tr td:nth-child(2){
         border-left: 0;
+    }
+    .comparison-table .gray-lt-bg-td .inner-td-wrap{
+        background-color: #d1d1d1;
+    }
+    .comparison-table .yellow-bg-td .inner-td-wrap{
+        background-color: var(--theme-yellow);
     }
 }
 
