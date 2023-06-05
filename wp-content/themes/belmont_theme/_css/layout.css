@@ -1278,6 +1278,9 @@ section .gform_wrapper .validation_message{
 
 
 /* ========= comparison table ======== */
+.in-compare-section .text-medium{
+    font-family: var(--font-neue-haas);
+}
 .comparison-table{
     width: 100%;
     table-layout: fixed;
@@ -1289,13 +1292,14 @@ section .gform_wrapper .validation_message{
     color: var(--theme-lt-black);
 }
 .comparison-table .img-head a span{
-    display: block;
+    font-family: var(--font-rift);
+    margin-top: 5px;
 }
 .comparison-table .img-head{
     padding-bottom: 1rem;
 }
 .comparison-table .img-head img{
-    max-width: 140px;
+    max-width: 130px;
     width: 100%;
 }
 .comparison-table thead tr th:first-child{
@@ -1312,8 +1316,17 @@ section .gform_wrapper .validation_message{
 .comparison-table tr td:last-child{
     border-right: 1px solid gray;
 }
-.gray-bg-td{
-    background-color: #b9b9b9;
+.comparison-table tr td ul,
+.comparison-table tr td ol{
+    padding-left: 20px;
+}
+.comparison-table tr td ul li,
+.comparison-table tr td ol li{
+    margin-bottom: 13px;
+}
+.yellow-bg-td{
+    background-color: var(--theme-yellow);
+    color: var(--black);
     font-weight: 700;
 }
 .gray-lt-bg-td{
@@ -1796,6 +1809,50 @@ header.site-header .bl-navigation ul.menu > li.current-menu-ancestor > ul.sub-me
     }
     .filter-stripe-wrap .wrapperCl{
         grid-template-columns: repeat(2, 1fr);
+    }
+    /* in compare responsive */
+    .table-wrap-comparison{
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+    }
+    .table-wrap-comparison .comparison-table{
+        table-layout: auto;
+    }
+    .table-wrap-comparison th,
+    .table-wrap-comparison td{
+        min-width: 150px;
+    }
+    .comparison-table .img-head{
+        padding: 10px 10px 15px 10px;
+    }
+    .comparison-table .img-head img{
+        max-width: 90px;
+    }
+    .comparison-table tr td:first-child{
+        position: sticky;
+        left: 0;
+        background-color: var(--theme-lt-gray);
+        z-index: 1;
+        border-right: 1px solid gray;
+    }
+    .comparison-table .gray-lt-bg-td,
+    .comparison-table .yellow-bg-td{
+       border-left: 0;
+       padding: 0;
+    }
+    .comparison-table .yellow-bg-td .inner-td-wrap,
+    .comparison-table .gray-lt-bg-td .inner-td-wrap{
+        border-left: 1px solid gray;
+        padding: 12px 16px;
+    }
+    .comparison-table .inner-td-wrap{
+        position: sticky;
+        left: 0;
+        width: calc(100vw - 25px);
+    }
+    .comparison-table tr td:nth-child(2){
+        border-left: 0;
     }
 }
 

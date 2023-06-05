@@ -279,6 +279,9 @@ html{
       font-size: 4.6875rem;
       line-height: 1;
     }
+    .in-compare-section .text-medium{
+      font-size: 3rem;
+  }
 }
 
 .text-start {
