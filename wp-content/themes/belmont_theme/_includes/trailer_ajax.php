@@ -215,7 +215,7 @@ function load_trailer_tab()
 		$html .= esc_html__($set_incomparison_page['title']);
 		$html .= '</a>';
 	endif;
-	$html .= '<button class="clear-button">'.__("Clear All").'</button>';
+	$html .= '<button class="clear-button">'.__('Clear All' , 'btrailers-theme').'</button>';
 	$html .= '</div>';
 	$html .= '</div>';
 	echo $html;
