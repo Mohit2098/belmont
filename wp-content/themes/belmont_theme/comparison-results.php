@@ -35,7 +35,7 @@ get_header();
                                             }
                                             $postLink = $termLink;
                                             $activeClass = (isset($_COOKIE['tabCookie']) && $_COOKIE['tabCookie'] == $tabID) ? 'active' : '';
-                                            echo '<th class="img-head"><a href="' . $postLink . '" data-tabid="' . $tabID . '" class="tabContentCl' . $activeClass . '"> <img class="comp-trailer" width="150" height="100" src="' . $featured['url'] . '" /> <span>' . get_the_title($cookieArr[$i]) . '</span> </a> </th>';
+                                            echo '<th class="img-head"><a href="' . $postLink . '" data-tabid="' . $tabID . '" class="tabContentCl' . $activeClass . '"> <img class="comp-trailer" width="150" height="100" src="' . esc_url($featured['url']) . '" alt="'.__($featured['alt']).'" /> <span>' . get_the_title($cookieArr[$i]) . '</span> </a> </th>';
                                     ?>
                                     <?php endfor;
                                     } ?>

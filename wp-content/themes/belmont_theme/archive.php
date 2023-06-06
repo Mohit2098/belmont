@@ -11,13 +11,13 @@ $current_child_term_ID = $terms[0]->term_id;
 ?>
 <main id="content" class="category-page trailer-archive">
 	<div class="col-12" id="loading-container">
-		<img class="loading-image" src="<?php echo get_template_directory_uri(); ?>/_images/spinner.svg" />
+		<img class="loading-image" src="<?php echo get_template_directory_uri(); ?>/_images/spinner.svg" alt='loader-spinner'/>
 	</div>
 	<section class="bl-section single-trailers-section">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-6">
-					<h1 class="text-medium"> <?php echo $current_term->name; ?></h1>
+					<h1 class="text-medium"> <?php echo esc_html__($current_term->name); ?></h1>
 					<?php
 					$args=array(    
 						'post_type' => 'btrailers',
@@ -70,7 +70,7 @@ $current_child_term_ID = $terms[0]->term_id;
 						<div class="slider-product">
 							<?php foreach($trailer_gallery as $gallery_item): $image_alt = get_post_meta($gallery_item, '_wp_attachment_image_alt', TRUE); ?>
 							<div class="items-product">
-							   <img src="<?php echo wp_get_attachment_url( $gallery_item); ?>" alt="<?php echo $image_alt; ?>"> 
+							   <img src="<?php echo wp_get_attachment_url( $gallery_item); ?>" alt="<?php  echo esc_attr($image_alt); ?>"> 
 							</div>
 							<?php endforeach; ?>
 						</div>
@@ -78,7 +78,7 @@ $current_child_term_ID = $terms[0]->term_id;
 						<div class="products-nav">
 						<?php foreach($trailer_gallery as $gallery_item_nav): $image_alt_nav = get_post_meta($gallery_item_nav, '_wp_attachment_image_alt', TRUE); ?>
 							<div class="item-nav">
-								<img src="<?php echo wp_get_attachment_url( $gallery_item_nav); ?>" alt="<?php echo $image_alt_nav; ?>"> 
+								<img src="<?php echo wp_get_attachment_url( $gallery_item_nav); ?>" alt="<?php  echo esc_attr($image_alt_nav); ?>"> 
 							</div>
 						<?php endforeach; ?>
 						</div>
@@ -91,8 +91,8 @@ $current_child_term_ID = $terms[0]->term_id;
 				<div class="col-lg-6">
 			<?php else: ?><div class="col-lg-12"><?php endif; ?>
 					<div class="description">
-						<h2 class="text-medium"><?php echo $tab_term_name; ?></h2>
-						<?php if($tab_description != ''): ?><p><?php echo $tab_description; ?></p><?php endif; ?>
+						<h2 class="text-medium"><?php echo esc_html__($tab_term_name); ?></h2>
+						<?php if($tab_description != ''): ?><p><?php echo esc_html__($tab_description); ?></p><?php endif; ?>
 					</div>
 				</div>
 			</div>
@@ -108,10 +108,10 @@ $current_child_term_ID = $terms[0]->term_id;
 			$trailer_featured_image = get_field('trailer_featured_image');
 			?>
 			<div class="detail-box" id="<?php echo $wp_query->posts[$kk-1]->post_name; ?>">
-				<h2 class="text-medium"> <?php echo get_the_title(); ?></h2>
+				<h2 class="text-medium"> <?php echo esc_html__(get_the_title()); ?></h2>
 				<div class="row">
 					<div class="col-lg-6">
-					  <?php if(!empty($trailer_featured_image)): ?><img class="trailer-img-contain" src="<?php echo $trailer_featured_image['url']; ?>" alt="<?php echo $trailer_featured_image['alt']; ?>"><?php endif; ?> 	
+					  <?php if(!empty($trailer_featured_image)): ?><img class="trailer-img-contain" src="<?php echo esc_url($trailer_featured_image['url']); ?>" alt="<?php echo esc_attr($trailer_featured_image['alt']); ?>"><?php endif; ?> 	
 					  <?php if( have_rows('add_trailer_attribute') ): $j=0;
 							$count_attr = count(get_field('add_trailer_attribute')); ?>
 					  	<div class="table-wrap">
@@ -120,8 +120,8 @@ $current_child_term_ID = $terms[0]->term_id;
 							$add_attribute_detail = get_sub_field('add_attribute_detail'); ?>
 							<?php if($j== 1): ?><div class="d-flex"><?php endif; ?>
 								<div class="entity">
-									<span class="head"><?php echo $add_attribute_title; ?></span>
-									<span class="value"><?php echo $add_attribute_detail; ?></span>
+									<span class="head"><?php echo esc_html__($add_attribute_title); ?></span>
+									<span class="value"><?php echo esc_html__($add_attribute_detail); ?></span>
 								</div>
 							<?php if($j==4): ?></div><?php $j=0; endif; endwhile; ?>
 					  </div><?php endif; ?>
@@ -139,13 +139,13 @@ $current_child_term_ID = $terms[0]->term_id;
 							if($add_to_compare): ?><a href="javascript:void(0)" data-id=<?php echo get_the_ID();?> class="btn-custom-small solid-yellow addToCompare">
 							<?php _e('ADD TO COMPARE', 'btrailers-theme' ); ?></a><?php endif;
 							if( $upload_trailer_pdf ): $url = wp_get_attachment_url( $upload_trailer_pdf ); ?>
-								<a href="<?php echo esc_html($url); ?>" download class="btn-custom-small solid-yellow"><img src="<?php echo get_stylesheet_directory_uri() ?>/_images/donwload-icon.svg" alt="download icon"><?php _e('Download PDF', 'btrailers-theme' ); ?></a><?php endif;
+								<a href="<?php echo esc_url($url); ?>" download class="btn-custom-small solid-yellow"><img src="<?php echo get_stylesheet_directory_uri() ?>/_images/donwload-icon.svg" alt="download icon"><?php _e('Download PDF', 'btrailers-theme' ); ?></a><?php endif;
 							if( have_rows('add_standard_features') ): $k=0;
 							$count_standard_attr = count(get_field('add_standard_features')); ?>
 							<ul>
 							<?php while( have_rows('add_standard_features') ) : the_row(); $k++;
 								$add_feature = get_sub_field('add_feature'); ?>
-								<li><?php echo $add_feature; ?></li>
+								<li><?php echo esc_html__($add_feature); ?></li>
 							<?php if($k == 10):?></ul><ul class="toggle-content"><?php $k=0; endif; ?>
 							<?php endwhile; ?>
 							</ul><?php endif;
@@ -162,7 +162,7 @@ $current_child_term_ID = $terms[0]->term_id;
 								<?php
 								 while( have_rows('add_additional_options') ) : the_row();
 								$add_options = get_sub_field('add_options');
-								if($add_options != ''): ?><li><?php echo $add_options; ?></li><?php endif; endwhile; ?>
+								if($add_options != ''): ?><li><?php echo esc_html__($add_options); ?></li><?php endif; endwhile; ?>
 							</ul>
 						</div>
 						<?php endif; ?>
@@ -183,7 +183,7 @@ $current_child_term_ID = $terms[0]->term_id;
 								<?php echo esc_html__($set_incomparison_page['title']); ?>
 							</a>
 						<?php endif; ?>
-			<button class="clear-button"><?php echo __('Clear All', 'btrailers-theme');?></button>
+			<button class="clear-button"><?php _e('Clear All', 'btrailers-theme');?></button>
 		</div>
 	</div>
 </main>

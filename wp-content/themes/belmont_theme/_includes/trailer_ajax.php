@@ -32,13 +32,13 @@ function load_trailer_tab()
 	}
 
 
-	$html .= '<div class="col-12" id="loading-container"><img class="loading-image" src="' . get_template_directory_uri() . '/_images/spinner.svg" />
+	$html .= '<div class="col-12" id="loading-container"><img class="loading-image" src="' . get_template_directory_uri() . '/_images/spinner.svg" alt="loader-spinner"/>
 </div><section class="bl-section single-trailers-section">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-6">
 				
-					<h1 class="text-medium">' . get_the_category_by_ID($parentTerm->parent) . '</h1>';
+					<h1 class="text-medium">' .esc_html__(get_the_category_by_ID($parentTerm->parent)) . '</h1>';
 	$args = array(
 		'post_type' => 'btrailers',
 		'tax_query' => array(
@@ -96,13 +96,13 @@ function load_trailer_tab()
 						<div class="slider-product">';
 		foreach ($trailer_gallery as $gallery_item) : $image_alt = get_post_meta($gallery_item, '_wp_attachment_image_alt', TRUE);
 			$html .= '<div class="items-product">';
-			$html .= '<img src="' . wp_get_attachment_url($gallery_item) . '" alt="' . $image_alt . '"></div>';
+			$html .= '<img src="' . wp_get_attachment_url($gallery_item) . '" alt="' . esc_attr($image_alt) . '"></div>';
 		endforeach;
 		$html .= '</div>
 						<div class="products-nav">';
 		foreach ($trailer_gallery as $gallery_item_nav) : $image_alt_nav = get_post_meta($gallery_item_nav, '_wp_attachment_image_alt', TRUE);
 			$html .= '<div class="item-nav">
-								<img src="' . wp_get_attachment_url($gallery_item_nav) . '" alt="' . $image_alt_nav . '"> 
+								<img src="' . wp_get_attachment_url($gallery_item_nav) . '" alt="' . esc_attr($image_alt_nav) . '"> 
 							</div>';
 		endforeach;
 		$html .= '</div>
@@ -111,8 +111,8 @@ function load_trailer_tab()
 	$html .= '</div>
 				<div class="col-lg-6">
 					<div class="description">
-						<h2 class="text-medium">' . $tab_term_name . '</h2>';
-	if ($tab_description != '') : $html .= '<p>' . $tab_description . '</p>';
+						<h2 class="text-medium">' . esc_html__($tab_term_name) . '</h2>';
+	if ($tab_description != '') : $html .= '<p>' . esc_html__($tab_description) . '</p>';
 	endif;
 	$html .= '</div>
 				</div>
@@ -127,11 +127,11 @@ function load_trailer_tab()
 			$trailer_size = get_field('trailer_size');
 			$trailer_featured_image = get_field('trailer_featured_image');
 			$html .= '<div class="detail-box" id="' . $wp_query->posts[$q - 1]->post_name . '">
-				<h2 class="text-medium">' . get_the_title($wp_query->ID) . '</h2>
+				<h2 class="text-medium">' . esc_html__(get_the_title($wp_query->ID)) . '</h2>
 				<div class="row">
 					<div class="col-lg-6">';
 			if (!empty($trailer_featured_image)) :
-				$html .= '<img src="' . $trailer_featured_image['url'] . '" alt="' . $trailer_featured_image['alt'] . '"/>';
+				$html .= '<img src="' . ($trailer_featured_image['url']) . '" alt="' . $trailer_featured_image['alt'] . '"/>';
 			endif;
 			if (have_rows('add_trailer_attribute')) : $j = 0;
 				$count_attr = count(get_field('add_trailer_attribute'));
@@ -143,8 +143,8 @@ function load_trailer_tab()
 					if ($j == 1) : $html .= '<div class="d-flex">';
 					endif;
 					$html .= '<div class="entity">
-									<span class="head">' . $add_attribute_title . '</span>
-									<span class="value">' . $add_attribute_detail . '</span>
+									<span class="head">' . esc_html__($add_attribute_title) . '</span>
+									<span class="value">' . esc_html__($add_attribute_detail) . '</span>
 								</div>';
 					if ($j == 4) : $html .= '</div>';
 						$j = 0;
@@ -163,7 +163,7 @@ function load_trailer_tab()
 				$html .= '<a href="javascript:void(0)" class="btn-custom-small solid-yellow addToCompare" data-id="' . get_the_ID() .'">'. __('ADD TO COMPARE', 'btrailers-theme') . '</a>';
 			endif;
 			if ($upload_trailer_pdf) : $url = wp_get_attachment_url($upload_trailer_pdf);
-				$html .= '<a href="' . esc_html($url) . '" download class="btn-custom-small solid-yellow"><img src="' . get_stylesheet_directory_uri() . '/_images/donwload-icon.svg" alt="download icon">' . __('Download PDF', 'btrailers-theme') . '</a>';
+				$html .= '<a href="' . esc_url($url) . '" download class="btn-custom-small solid-yellow"><img src="' . get_stylesheet_directory_uri() . '/_images/donwload-icon.svg" alt="download icon">' . __('Download PDF', 'btrailers-theme') . '</a>';
 			endif;
 			if (have_rows('add_standard_features')) : $k = 0;
 				$count_standard_attr = count(get_field('add_standard_features'));
@@ -171,7 +171,7 @@ function load_trailer_tab()
 				while (have_rows('add_standard_features')) : the_row();
 					$k++;
 					$add_feature = get_sub_field('add_feature');
-					$html .= '<li>' . $add_feature . '</li>';
+					$html .= '<li>' . esc_html__($add_feature) . '</li>';
 					if ($k == 10) : $html .= '</ul><ul class="toggle-content">';
 						$k = 0;
 					endif;
@@ -191,7 +191,7 @@ function load_trailer_tab()
 							<ul>';
 				while (have_rows('add_additional_options')) : the_row();
 					$add_options = get_sub_field('add_options');
-					if ($add_options != '') : $html .= '<li>' . $add_options . '</li>';
+					if ($add_options != '') : $html .= '<li>' . esc_html__($add_options) . '</li>';
 					endif;
 				endwhile;
 				$html .= '</ul>
@@ -215,7 +215,7 @@ function load_trailer_tab()
 		$html .= esc_html__($set_incomparison_page['title']);
 		$html .= '</a>';
 	endif;
-	$html .= '<button class="clear-button">Clear All</button>';
+	$html .= '<button class="clear-button">'.__("Clear All").'</button>';
 	$html .= '</div>';
 	$html .= '</div>';
 	echo $html;
@@ -239,7 +239,7 @@ function trailer_cookie()
 		$totalPosts = count($cookieArr);
 		$messageArr =  array('Select at least 2 trailers to compare', 'Add up to 2 more trailers to compare', 'Add 1 more trailers to compare');
 		$html = '';
-		$html .= '<div class="col-12" id="loading-container"><img class="loading-image" src="' . get_template_directory_uri() . '/_images/spinner.svg" /></div>';
+		$html .= '<div class="col-12" id="loading-container"><img class="loading-image" src="' . get_template_directory_uri() . '/_images/spinner.svg" alt="loader-spinner"/></div>';
 		if ($cookieArr) :
 			for ($count = 0; $count < 4; $count++) :
 
@@ -247,9 +247,10 @@ function trailer_cookie()
 				$html .= ' <div class="compare-box' . ' ' . $highlight_border . '">';
 
 				if ($cookieArr[$count]) :
-					$featured = get_field('trailer_featured_image', $cookieArr[$count]);
+					$featured = get_field('trailer_featured_image', $cookieArr[$count]
+				);
 					$html .= ' <div class="inner-box">';
-					$html .= '<img src="' . $featured['sizes']['thumbnail'] . '" style="height: 160px; width: 180px;">';
+					$html .= '<img src="' . $featured['sizes']['thumbnail'] . '" alt="'.$featured['alt'].'" style="height: 160px; width: 180px;">';
 					$html .= '<h5>' . get_the_title($cookieArr[$count]) . '</h5>';
 					$html .= '<button type="button" class="dismiss remove-trailer" data-id="' . $cookieArr[$count] . '">X</button>';
 					$html .= '</div>';
@@ -257,7 +258,7 @@ function trailer_cookie()
 					$message = '';
 					if ($totalPosts === $count) {
 						$message = $messageArr[$count - 1];
-						$html .= '<p class="messageCl">' . $message . '</p>';
+						$html .= '<p class="messageCl">' . __($message) . '</p>';
 					}
 				endif;
 				$html .= '</div>';
