@@ -52,7 +52,7 @@ $current_child_term_ID = $terms[0]->term_id;
 						if($ii != 1): $tabs_link_detail = "tabs-link-detail "; else: $tabs_link_detail = "tab-no-link "; endif;
 						$tab_custom_label = get_term_meta($term->term_id, 'tab_custom_label', true);
 						if(!empty($tab_custom_label)): $tabLabel = $tab_custom_label; else: $tabLabel = $term->name; endif;
-								echo '<a data-tabid="'.$term->term_id.'" class="tabs-link '. $tabs_link_detail .$activeTabClass.'">' . $tabLabel . '</a>';
+								echo '<a data-tabid="'.base64_encode($term->term_id).'" class="tabs-link '. $tabs_link_detail .$activeTabClass.'">' . $tabLabel . '</a>';
 								if($ii == 1):$tab_term_name = $term->name; $tab_description = $term->description;
 								$trailer_gallery = get_term_meta($term->term_id,'trailer_gallery', true); endif;
 								
@@ -136,7 +136,7 @@ $current_child_term_ID = $terms[0]->term_id;
 							$add_to_compare = get_post_meta(get_the_ID(),'add_to_compare', true);
 							$upload_trailer_pdf = get_post_meta(get_the_ID(),'upload_trailer_pdf', true);?>
 							<?php
-							if($add_to_compare): ?><a href="javascript:void(0)" data-id=<?php echo get_the_ID();?> class="btn-custom-small solid-yellow addToCompare">
+							if($add_to_compare): ?><a href="javascript:void(0)" data-id=<?php echo base64_encode(get_the_ID());?> class="btn-custom-small solid-yellow addToCompare">
 							<?php _e('ADD TO COMPARE', 'btrailers-theme' ); ?></a><?php endif;
 							if( $upload_trailer_pdf ): $url = wp_get_attachment_url( $upload_trailer_pdf ); ?>
 								<a href="<?php echo esc_url($url); ?>" download class="btn-custom-small solid-yellow"><img src="<?php echo get_stylesheet_directory_uri() ?>/_images/donwload-icon.svg" alt="download icon"><?php _e('Download PDF', 'btrailers-theme' ); ?></a><?php endif;

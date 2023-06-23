@@ -21,8 +21,9 @@ get_header();
                                     <th> </th>
                                     <?php if (!empty($cookieArr)) {
                                         for ($i = 0; $i < count($cookieArr); $i++) :
-                                            $featured = get_field('trailer_featured_image', $cookieArr[$i]);
-                                            $terms = get_the_terms($cookieArr[$i], 'trailers');
+                                            $cookieValue = base64_decode($cookieArr[$i]);
+                                            $featured = get_field('trailer_featured_image', $cookieValue);
+                                            $terms = get_the_terms($cookieValue, 'trailers');
                                             $termLink = '';
                                             $tabID = '';
 
@@ -34,8 +35,8 @@ get_header();
                                                 $tabID = $terms[1]->term_id;
                                             }
                                             $postLink = $termLink;
-                                            $activeClass = (isset($_COOKIE['tabCookie']) && $_COOKIE['tabCookie'] == $tabID) ? 'active' : '';
-                                            echo '<th class="img-head"><a href="' . $postLink . '" data-tabid="' . $tabID . '" class="tabContentCl' . $activeClass . '"> <img class="comp-trailer" width="150" height="100" src="' . esc_url($featured['url']) . '" alt="'.__($featured['alt']).'" /> <span>' . get_the_title($cookieArr[$i]) . '</span> </a> </th>';
+                                            $activeClass = (isset($_COOKIE['tabCookie']) && base64_decode($_COOKIE['tabCookie'])) == $tabID ? 'active' : '';
+                                            echo '<th class="img-head"><a href="' . $postLink . '" data-tabid="' .base64_encode($tabID) . '" class="tabContentCl' . $activeClass . '"> <img class="comp-trailer" width="150" height="100" src="' . esc_url($featured['url']) . '" alt="'.__($featured['alt']).'" /> <span>' . get_the_title($cookieValue) . '</span> </a> </th>';
                                     ?>
                                     <?php endfor;
                                     } ?>
@@ -60,7 +61,8 @@ get_header();
                                     $details = array();
 
                                     for ($i = 0; $i < count($cookieArr); $i++) {
-                                        $add_attribute_rows = get_field('add_trailer_attribute', $cookieArr[$i]);
+                                        $cookieValue = base64_decode($cookieArr[$i]);
+                                        $add_attribute_rows = get_field('add_trailer_attribute', $cookieValue);
 
                                         foreach ($add_attribute_rows as $add_attribute_row) {
                                             $add_attribute_title = $add_attribute_row['add_attribute_title'];
@@ -97,7 +99,8 @@ get_header();
                                     echo '<tr>';
                                     echo '<td>' . __('Standard Features', 'btrailers-theme') . '</td>';
                                     foreach ($cookieArr as $trailerId) {
-                                        $features = get_field('add_standard_features', $trailerId);
+                                        $cookieValue = base64_decode($trailerId);
+                                        $features = get_field('add_standard_features',$cookieValue);
                                         $trailer_standard_features = array();
                                         foreach ($features as $feature) {
                                             array_push($trailer_standard_features, $feature['add_feature']);
@@ -123,7 +126,8 @@ get_header();
                                     echo '<tr>';
                                     echo '<td>' . __('Additional Options', 'btrailers-theme') . '</td>';
                                     foreach ($cookieArr as $trailerId) {
-                                        $options = get_field('add_additional_options', $trailerId);
+                                        $cookieValue = base64_decode($trailerId);
+                                        $options = get_field('add_additional_options', $cookieValue);
                                         $trailer_additional_options = array();
                                         foreach ($options as $option) {
                                             array_push($trailer_additional_options, $option['add_options']);

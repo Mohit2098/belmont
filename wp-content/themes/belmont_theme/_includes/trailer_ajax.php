@@ -10,8 +10,9 @@ function load_trailer_tab()
 		extract($_POST);
 	}
 
-
-	$current_child_term_ID = $tab_ID;
+	
+	$current_child_term_ID = base64_decode($tab_ID);
+	$tab_ID = base64_decode($tab_ID);
 	$parentTerm = get_term($current_child_term_ID, 'trailers');
 
 
@@ -71,13 +72,13 @@ function load_trailer_tab()
 		$html .= '<div class="tab-refresh">';
 		$ii = 0;
 		foreach ($terms as $term) : $ii++;
-			$activeTabCLass = ($term->term_id == $tab_ID) ? "active" : "";
+			$activeTabCLass = ($term->term_id == $tab_ID)? "active" : "";
 			$tab_custom_label = get_term_meta($term->term_id, 'tab_custom_label', true);
 			if (!empty($tab_custom_label)) : $tabLabel = $tab_custom_label;
 			else : $tabLabel = $term->name;
 			endif;
-			$html .= '<a data-tabid="' . $term->term_id . '" class="tabs-link tabs-link-detail ' . $activeTabCLass . '">' . $tabLabel . '</a>';
-			if ($term->term_id == $tab_ID) : $tab_term_name = $term->name;
+			$html .= '<a data-tabid="' . base64_encode($term->term_id) . '" class="tabs-link tabs-link-detail ' . $activeTabCLass . '">' . $tabLabel . '</a>';
+			if ($term->term_id ==  $tab_ID) : $tab_term_name = $term->name;
 				$tab_description = $term->description;
 				$trailer_gallery = get_term_meta($tab_ID, 'trailer_gallery', true);
 			endif;
@@ -160,7 +161,7 @@ function load_trailer_tab()
 			$add_to_compare = get_post_meta(get_the_ID(), 'add_to_compare', true);
 			$upload_trailer_pdf = get_post_meta(get_the_ID(), 'upload_trailer_pdf', true);
 			if ($add_to_compare) :
-				$html .= '<a href="javascript:void(0)" class="btn-custom-small solid-yellow addToCompare" data-id="' . get_the_ID() .'">'. __('ADD TO COMPARE', 'btrailers-theme') . '</a>';
+				$html .= '<a href="javascript:void(0)" class="btn-custom-small solid-yellow addToCompare" data-id="' . base64_encode(get_the_ID()) .'">'. __('ADD TO COMPARE', 'btrailers-theme') . '</a>';
 			endif;
 			if ($upload_trailer_pdf) : $url = wp_get_attachment_url($upload_trailer_pdf);
 				$html .= '<a href="' . esc_url($url) . '" download class="btn-custom-small solid-yellow"><img src="' . get_stylesheet_directory_uri() . '/_images/donwload-icon.svg" alt="download icon">' . __('Download PDF', 'btrailers-theme') . '</a>';
@@ -247,12 +248,12 @@ function trailer_cookie()
 				$html .= ' <div class="compare-box' . ' ' . $highlight_border . '">';
 
 				if ($cookieArr[$count]) :
-					$featured = get_field('trailer_featured_image', $cookieArr[$count]
+					$featured = get_field('trailer_featured_image', base64_decode($cookieArr[$count])
 				);
 					$html .= ' <div class="inner-box">';
 					$html .= '<img src="' . $featured['sizes']['thumbnail'] . '" alt="'.$featured['alt'].'" style="height: 160px; width: 180px;">';
-					$html .= '<h5>' . get_the_title($cookieArr[$count]) . '</h5>';
-					$html .= '<button type="button" class="dismiss remove-trailer" data-id="' . $cookieArr[$count] . '">X</button>';
+					$html .= '<h5>' . get_the_title(base64_decode($cookieArr[$count])) . '</h5>';
+					$html .= '<button type="button" class="dismiss remove-trailer" data-id="' . base64_decode($cookieArr[$count]) . '">X</button>';
 					$html .= '</div>';
 				else :
 					$message = '';
